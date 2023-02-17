@@ -1,5 +1,14 @@
-import Logo from "../src/components/logo/Logo";
-
+import { Container } from "@mui/material";
+import Header from "../src/components/header/Header";
+ 
+ 
 export default function Index() {
-  return <Logo type="muted" />;
+  return (
+  <Container >
+    <Header >
+
+    </Header>
+  
+  </Container>
+  );
 }
