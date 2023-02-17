@@ -5,7 +5,7 @@ import Link from "../link/Link";
 import classNames from "classnames";
 import styles from "./Header.module.scss";
 import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
-import SearchIcon from '@mui/icons-material/Search';
+import {Search} from '@mui/icons-material';
 
  
  
@@ -14,21 +14,18 @@ export default function Header() {
 console.log(styles);
     return( 
       <div className={classNames(styles.wrapper)}>
-          <Container className={classNames(styles.container)} maxWidth="xl">
-                <Grid  container >
+          <Container >
+                <Grid  container className={classNames(styles.container)} maxWidth="xl">
                     <Grid item xs={4}>
 
                         <Logo />
                     </Grid>
                     <Grid item xs={4}>
+                        <Search color='secondary'  />
+                        <form >
 
-                        <form>
-
-                        <TextField fullWidth variant="standard" label='Find items, users and activities' color='secondary' className={classNames(styles.backgroundInputSearch)} >
-                        <Grid item xs={8}>
-                    <SearchIcon />
-                </Grid>
-                        </TextField>
+                        <TextField className={classNames(styles.backgroundInputSearch)} fullWidth variant="standard" label='Find items, users and activities' color='secondary'  />
+                 
                         </form>
                     </Grid>
                     <Grid item xs={4}>
