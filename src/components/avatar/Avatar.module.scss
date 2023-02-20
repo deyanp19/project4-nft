@@ -1,10 +1,24 @@
 @use '../../styles/colors.scss';
 
- 
+
 .avatar {
+    position: relative;
+    color: white;
     width: 100%;
+
 }
 
 .image {
-    width:100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.badge {
+    position: absolute;
+    right: 32%;
+    left: 68.19%;
+    top: 60.83%;
+    
+     
+    width: 40%;
 }
