@@ -1,17 +1,18 @@
 import { Container, Grid, SvgIcon, TextField } from "@mui/material";
 import theme from "../../theme";
 import Logo from "../logo/Logo";
-import Link from "../link/Link";
+ 
 import classNames from "classnames";
 import styles from "./Header.module.scss";
-import { AccessAlarm, ThreeDRotation } from '@mui/icons-material';
+ 
 import {Search} from '@mui/icons-material';
-
- 
- 
+import { InputAdornment } from '@mui/material';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Input from '@mui/material/Input';
 
 export default function Header() {
-console.log(styles);
+ 
     return( 
       <div className={classNames(styles.wrapper)}>
           <Container >
@@ -21,18 +22,31 @@ console.log(styles);
                         <Logo />
                     </Grid>
                     <Grid item xs={4}>
-                        <Search color='secondary'  />
+                       
                         <form >
+                            <TextField
+                            InputProps={{
+                                startAdornment: (
+                                     <InputAdornment position='start' >
 
-                        <TextField className={classNames(styles.backgroundInputSearch)} fullWidth variant="standard" label='Find items, users and activities' color='secondary'  />
-                 
+                                    <Search sx={{color:'white'}}  />
+                                    </InputAdornment>
+                                ),
+                                disableUnderline:true
+                            }}
+                            className={classNames(styles.backgroundInputSearch)} 
+                            fullWidth 
+                            variant="standard" 
+                             placeholder='Find items, users and activities' color='secondary'  />
                         </form>
                     </Grid>
-                    <Grid item xs={4}>
-                        <Link   href='/' >Home</Link>
-                        <Link className={classNames(styles.navLinks)}  href='/' >Activity</Link>
-                        <Link className={classNames(styles.navLinks)}  href='/' >Explore</Link>
+                    <Grid className={classNames(styles.navLinks)} item xs={4}>
+                        <Stack direction='row' spacing={2} >
 
+                    <Button   >Home</Button>
+                    <Button >Activity</Button> 
+                    <Button href='/' variant="contained" >Explore</Button>
+                        </Stack>
                     </Grid>
                 </Grid>
             </Container>
