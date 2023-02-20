@@ -1,7 +1,4 @@
 import styles from './Avatar.module.scss';
- 
-
-console.log('hello');
 export default function Avatar({size=90,url='/images/avatar.png',verified=false}) {
         
        console.log(styles);
