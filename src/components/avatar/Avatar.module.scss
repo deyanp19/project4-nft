@@ -5,7 +5,8 @@
     position: relative;
     color: white;
     width: 100%;
-
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 2;
 }
 
 .image {

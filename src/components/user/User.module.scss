@@ -1,14 +1,24 @@
 @use '../../styles/colors.scss';
 
+.userWrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+ 
+}
 .user {
+
   background-color: colors.$primary_main;
+  grid-row: 1 / span 2;
+  
 }
 
 .name {
   color:colors.$text_primary;
   size: 1.23rem;
+
 }
 .info {
     color:colors.$secondary_main;
     size:1.08rem;
 }
+
