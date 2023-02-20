@@ -1,0 +1,14 @@
+@use '../../styles/colors.scss';
+
+.user {
+  background-color: colors.$primary_main;
+}
+
+.name {
+  color:colors.$text_primary;
+  size: 1.23rem;
+}
+.info {
+    color:colors.$secondary_main;
+    size:1.08rem;
+}

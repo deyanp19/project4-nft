@@ -3,7 +3,7 @@ import styles from './Avatar.module.scss';
 
 export default function Avatar({size={width:"90",heigth:"90"},url='/images/avatar.png',verified=false}) {
     return (
-        <div >
+        <div>
             <div className={styles.avatar} height= {size.heigth}  width= {size.height}>
                 <img src='/images/avatar.png'  alt='avatar' className={styles.image} />
             </div>
