@@ -12,7 +12,6 @@ export default function Index() {
     <Header >
 
     </Header>
-    <Card />
     <Trending />
   {/* <Example></Example> */}
   </Container>
