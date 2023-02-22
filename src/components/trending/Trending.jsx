@@ -58,7 +58,7 @@ const element={"cards":[
                        
  export default function Trending( {cards=[]} ) {
     return (
-        <Container >
+        <Container className={classNames(styles.container)} maxWidth="xl" >
             <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >
 
                 <Grid item >
