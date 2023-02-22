@@ -1,4 +1,5 @@
-import { Box, Chip, Container, FormControl, Grid,  MenuItem, Typography } from '@mui/material';
+import { Box, Chip,  FormControl, Grid,  MenuItem, Typography } from '@mui/material';
+import { Container } from "@mui/material";
 import Card from '../card/Card';
 import styles from './Trending.module.scss';
 import classNames from 'classnames';
