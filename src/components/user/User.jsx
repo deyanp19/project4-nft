@@ -3,7 +3,7 @@ import Avatar from '../avatar/Avatar';
 import { Container } from '@mui/material';
 
 
-export default function User({name='pablo',info='some info',avatar='',size=55 ,verified=false}) {
+export default function User({name='',info='',avatar='',size=55 ,verified=false}) {
     return (
         <Container className={styles.userWrapper} >
         <div className={styles.user}>

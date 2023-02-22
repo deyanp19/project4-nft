@@ -15,10 +15,12 @@
 
 .name {
   color: colors.$text_primary;
-  size: 1.23rem;
+  font-size: 1.23rem;
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
+
+  line-height: 20px;
 }
 
 .info {
