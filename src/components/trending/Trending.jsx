@@ -64,7 +64,7 @@ const element={"cards":[
                 <Grid item >
                     <Typography variant='h1' component='h4' >Trending  </Typography>
                 </Grid>
-                <Grid item sx={3}>
+                <Grid item >
                     <FormControl  sx={{ m: 1}} size="small" >
                         {/* <TextField fullWidth */}
                         <Select 
