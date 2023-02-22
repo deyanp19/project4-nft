@@ -57,17 +57,17 @@ const element={"cards":[
                                 ]
                         }
                        
- export default function Trending( {cards=[]} ) {
+ export default function Trending( {cards=[element.cards]} ) {
+     console.log(cards);
     return (
-        <Container className={classNames(styles.container)} maxWidth="xl" >
+        <Grid className={classNames(styles.container)}  >
             <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >
 
-                <Grid item >
+                <Grid item lg={3} >
                     <Typography variant='h1' component='h4' >Trending  </Typography>
                 </Grid>
-                <Grid item >
+                <Grid item  lg={3}>
                     <FormControl  sx={{ m: 1}} size="small" >
-                        {/* <TextField fullWidth */}
                         <Select 
                         color='secondary'
                         placeholder='This week'
@@ -83,18 +83,6 @@ const element={"cards":[
                                  />
                             </Box>)}
                         >
-                        {/* select
-                         InputProps={{
-                                startAdornment: (
-                                     <InputAdornment position='end' >
-
-                                    <KeyboardArrowDownIcon sx={{color:'white'}}  />
-                                    </InputAdornment>
-                                ),
-                                disableUnderline:true
-                            }}
-                            > */}
-                                
                             <MenuItem value={'this_week'}>This week</MenuItem>
                             <MenuItem value={'last_week'}>Last week</MenuItem>
                             <MenuItem value={'last_month'}>Last month</MenuItem>
@@ -107,11 +95,12 @@ const element={"cards":[
                 </Grid>
             </Grid>
             <Grid container wrap='nowrap' spacing={1} >
-            {cards && cards.map(x=>{
-               return <Grid item lg={3} ><Card mediaUrl={x.mediaUrl}  title={x.name}  likes={x.likes}  verified={x.user.verified}   price={x.price} currency={x.currency} /></Grid>
+            {cards.map(x=>{
+                console.log(x);
+               return <Grid item lg={3} ><Card key={x.name} mediaUrl={x.mediaUrl}  title={x.name}  likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} /></Grid>
             })}            
             </Grid>
-        </Container>
+        </Grid>
       
     );
 }
