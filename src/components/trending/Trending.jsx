@@ -56,7 +56,7 @@ const element={"cards":[
                                 ]
                         }
                        
- export default function Trending( {cards=element.cards} ) {
+ export default function Trending( {cards=[]} ) {
     return (
         <Container >
             <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >
