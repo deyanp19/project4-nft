@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
-import Card2 from "../src/components/card/Card";
- 
+import Card from "../src/components/card/Card";
+ import Example from '../src/components/example/Example'
 import Header from "../src/components/header/Header";
 import User from "../src/components/user/User";
  
@@ -12,8 +12,8 @@ export default function Index() {
 
     </Header>
    
-    <Card2 />
-  
+    <Card />
+  {/* <Example></Example> */}
   </Container>
   );
 }

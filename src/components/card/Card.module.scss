@@ -1,0 +1,41 @@
+.card {
+    background: #181828;
+    border-radius: 15px;
+}
+
+.media {
+
+    border-radius: 15px;
+    width: 100%;
+    padding:15px;
+}
+
+.title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 20px;
+
+    /* text-primary */
+    color: #FFFFFF;
+}
+
+.price {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14.0752px;
+    line-height: 17px;
+
+    /* accent-primary */
+    color: #24F25E;
+}
+
+.likes {
+   background: rgba(36, 242, 94, 0.1);
+
+/* accent-primary */
+border: 2px solid #24F25E;
+border-radius: 17px;
+}
