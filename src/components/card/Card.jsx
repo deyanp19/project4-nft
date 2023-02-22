@@ -11,19 +11,15 @@ import millify from 'millify';
 import styles from './Card.module.scss';
 import classNames from "classnames";
 
-console.log(CardOrigin);
-
-export default function Card2({mediaUrl="/images/nft.jpg",name="Clock",likes=0,user={avatar:{url:''},verified:bool,},price='123',currency="ETH"}){
+export default function Card({mediaUrl="/images/nft.jpg",name="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH"}){
 
     return (
 
-        <CardOrigin className={classNames(styles.card)} sx={{maxWidth:350}}>
+        <CardOrigin className={classNames(styles.card)} sx={{maxWidth:339}}>
            <CardHeader 
            avatar={
-               <Avatar ></Avatar>
+               <Avatar url={user.avatar.url} verified={user.avatar.verified}></Avatar>
            }
-           title='Batman'
-           subheader="Feb 22 2023"
            />
            <CardMedia className={classNames(styles.media)}
                 component="img"
