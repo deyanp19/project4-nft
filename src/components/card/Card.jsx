@@ -11,7 +11,7 @@ import millify from 'millify';
 import styles from './Card.module.scss';
 import classNames from "classnames";
 
-export default function Card({mediaUrl="/images/nft.jpg",name="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH"}){
+export default function Card({mediaUrl="/images/nft.jpg",title="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH"}){
 
     return (
 
@@ -29,8 +29,8 @@ export default function Card({mediaUrl="/images/nft.jpg",name="Clock",likes=0,us
                 alt="image of BUM"
            />
             <CardContent >
-                <Typography className={classNames(styles.name)}>{name}
-                    <Typography className={classNames(styles.price)}>~{price} {currency}</Typography>
+                <Typography className={classNames(styles.title)}>{title}
+                    <Typography classtitle={classNames(styles.price)}>~{price} {currency}</Typography>
                 </Typography>
                 <Stack  direction="row" spacing={1}>
                    
