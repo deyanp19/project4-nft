@@ -52,7 +52,7 @@ const element={"cards":[
 }
 
 
-export default function Auctions({cards=element.cards,}) {
+export default function Auctions({cards=[],}) {
     console.log(cards);
     return (
         <div>
