@@ -7,10 +7,10 @@ const element={"cards":[
     {
         "name": String,
         "user": {
-           "avatar": String,
+           "avatar": '/images/nft.jpg',
            "verified": Boolean
         },
-        "mediaUrl": String,
+        "mediaUrl": '/images/nft.jpg',
         "price": String,
         "currency": String,
         "timeLeft": Number
@@ -52,7 +52,7 @@ const element={"cards":[
 }
 
 
-export default function Auctions({cards=[],}) {
+export default function Auctions({cards=element.cards,}) {
     console.log(cards);
     return (
         <div>
