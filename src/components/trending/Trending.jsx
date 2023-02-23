@@ -57,7 +57,7 @@ const element={"cards":[
                                 ]
                         }
                        
- export default function Trending( {cards=[element.cards]} ) {
+ export default function Trending( {cards=[]} ) {
      console.log(cards);
     return (
         <div>
