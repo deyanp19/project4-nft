@@ -3,17 +3,7 @@ import classNames from 'classnames';
 import styles from './Auctions.module.scss';
 import Card from '../card/Card';
 
-export default function Auctions({cards=[{
-    "name": String,
-    "user": {
-       "avatar": String,
-       "verified": Boolean
-    },
-    "mediaUrl": String,
-    "price": String,
-    "currency": String,
-    "timeLeft": Number
-   }]}) {
+export default function Auctions({cards=[]}) {
        console.log({...cards[0]});
     return (
         <div>
