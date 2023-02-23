@@ -58,17 +58,17 @@ export default function Card({mediaUrl="/images/nft.jpg",name="Clock",likes=0,us
                         height="286"
                         sx={{borderRadius:1}}
                         image={mediaUrl}
-                        alt="image of BUM"
+                        alt={mediaUrl}
                         />
                       </div>
                     <CardContent >
                         <Grid container sx={{justifyContent:'space-between', alignItems:'center'}} wrap='nowrap' >
                             <Grid item>
-                                <Typography className={styles.name}>{name} </Typography>
-                                <Typography className={styles.price}>~{price} {currency}</Typography>
+                                <h2 className={classNames(styles.name)}>{name} </h2>
+                                <p className={classNames(styles.price)}>~{price} {currency}</p>
                             </Grid>
                             <Grid item>
-                        <Stack  direction="row" spacing={1}>
+                        {/* <Stack  direction="row" spacing={1}> */}
                             <Chip className={classNames(styles.likes)}
                                 color='secondary'
                                 icon={<FavoriteIcon />} 
@@ -77,7 +77,7 @@ export default function Card({mediaUrl="/images/nft.jpg",name="Clock",likes=0,us
                                     
                                     variant="outlined" 
                                     />
-                        </Stack>
+                        {/* </Stack> */}
                                     </Grid>
                         </Grid>
                     </CardContent>

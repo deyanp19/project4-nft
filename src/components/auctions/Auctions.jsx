@@ -81,17 +81,17 @@ export default function Auctions({cards=element.cards,}) {
                     </FormControl>
                 </Grid>
             </Grid>
-        </Container>  
+        
             <Grid container wrap='nowrap' spacing={1} >
-               
+                
 
                     {[...cards].slice(0,4).map((x,i)=>{
                         console.log(x.name,i);
                         return <Grid item lg={3} key={x.mediaUrl+i} ><Card key={x.mediaUrl} {...x} verified={true} timeLeft={5555}/></Grid>
                     })}            
-            
+           
             </Grid>
-        
+         </Container> 
         </div>
     );
 }
