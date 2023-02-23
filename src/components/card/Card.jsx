@@ -12,7 +12,7 @@ import classNames from "classnames";
 import Countdown from 'react-countdown';
 import Circle from '@mui/icons-material/Circle'
 
-export default function Card({mediaUrl="/images/nft.jpg",title="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH",timeLeft=0}){
+export default function Card({mediaUrl="/images/nft.jpg",name="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH",timeLeft=0}){
     if (timeLeft!=0) {
             console.log('live',timeLeft);
             // Random component
@@ -63,7 +63,7 @@ export default function Card({mediaUrl="/images/nft.jpg",title="Clock",likes=0,u
                     <CardContent >
                         <Grid container sx={{justifyContent:'space-between', alignItems:'center'}} wrap='nowrap' >
                             <Grid item>
-                                <Typography className={styles.title}>{title} </Typography>
+                                <Typography className={styles.name}>{name} </Typography>
                                 <Typography className={styles.price}>~{price} {currency}</Typography>
                             </Grid>
                             <Grid item>
@@ -101,7 +101,7 @@ export default function Card({mediaUrl="/images/nft.jpg",title="Clock",likes=0,u
             <CardContent >
                 <Grid container sx={{justifyContent:'space-between', alignItems:'center'}} wrap='nowrap' >
                     <Grid item>
-                        <Typography className={styles.title}>{title} </Typography>
+                        <Typography className={styles.name}>{name} </Typography>
                         <Typography className={styles.price}>~{price} {currency}</Typography>
                     </Grid>
                     <Grid item>
