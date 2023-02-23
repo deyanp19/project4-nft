@@ -12,9 +12,9 @@ const element={"cards":[
            "verified": true
         },
         "mediaUrl": '/images/nft.jpg',
-        "price": String,
-        "currency": String,
-        "timeLeft": Number
+        "price": "String",
+        "currency": "String",
+        "timeLeft": "Number"
        },
        {
         "name": 'Dodge',
@@ -22,10 +22,10 @@ const element={"cards":[
            "avatar": "/images/nft.jpg",
            "verified": true
         },
-        "mediaUrl": String,
-        "price": String,
-        "currency": String,
-        "timeLeft": Number
+        "mediaUrl": "/images/nft.jpg",
+        "price": "String",
+        "currency": "String",
+        "timeLeft": "Number"
        },
        {
         "name": 'BTC',
@@ -33,27 +33,27 @@ const element={"cards":[
            "avatar": "/images/logo.svg",
            "verified": false
         },
-        "mediaUrl": String,
-        "price": String,
-        "currency": String,
-        "timeLeft": Number
+        "mediaUrl": "/images/logo.svg",
+        "price": "String",
+        "currency": "String",
+        "timeLeft": "Number"
        },
        {
         "name": 'Litecoin',
         "user": {
-           "avatar": String,
+           "avatar": "/images/logo.svg",
            "verified": true
         },
-        "mediaUrl": String,
-        "price": String,
-        "currency": String,
-        "timeLeft": Number
+        "mediaUrl": "/images/logo.svg",
+        "price": "String",
+        "currency": "String",
+        "timeLeft": "Number"
        }
     ]
 }
 
 
-export default function Auctions({cards=[],}) {
+export default function Auctions({cards=element.cards,}) {
     console.log(cards);
     return (
         <div>
@@ -85,9 +85,9 @@ export default function Auctions({cards=[],}) {
             <Grid container wrap='nowrap' spacing={1} >
                 <ImageList cols={4} >
 
-                    {[...cards].map((x,i)=>{
+                    {[...cards].slice(0,4).map((x,i)=>{
                         console.log(x.name,i);
-                        return <ImageListItem item lg={3} key={x.mediaUrl} ><Card key={x.mediaUrl} {...x} verified={true} timeLeft={5555}/></ImageListItem>
+                        return <ImageListItem  lg={3} key={x.mediaUrl+i} ><Card key={x.mediaUrl} {...x} verified={true} timeLeft={5555}/></ImageListItem>
                     })}            
             </ImageList>
             </Grid>
