@@ -1,5 +1,6 @@
-import {  Container, FormControl, Grid, MenuItem, Select, Typography } from '@mui/material';
+import {   FormControl, Grid, MenuItem, Select, Typography } from '@mui/material';
 import classNames from 'classnames';
+import { Container } from "@mui/material";
 import styles from './Auctions.module.scss';
 import Card from '../card/Card';
 
@@ -52,7 +53,7 @@ const element={"cards":[
 }
 
 
-export default function Auctions({cards=element.cards,}) {
+export default function Auctions({cards=[],}) {
     console.log(cards);
     return (
         <div>
@@ -84,7 +85,7 @@ export default function Auctions({cards=element.cards,}) {
             <Grid container wrap='nowrap' spacing={1} >
             {[...cards].map((x,i)=>{
                 console.log(x.name,i);
-               return <Grid item lg={3} key={x.i} ><Card {...x} verified={true} timeLeft={5555}/></Grid>
+               return <Grid item lg={3} key={i} ><Card {...x} verified={true} timeLeft={5555}/></Grid>
             })}            
             </Grid>
         </Container>
