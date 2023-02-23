@@ -3,8 +3,56 @@ import classNames from 'classnames';
 import styles from './Auctions.module.scss';
 import Card from '../card/Card';
 
-export default function Auctions({cards=[]}) {
-       console.log({...cards[0]});
+const element={"cards":[
+    {
+        "name": String,
+        "user": {
+           "avatar": String,
+           "verified": Boolean
+        },
+        "mediaUrl": String,
+        "price": String,
+        "currency": String,
+        "timeLeft": Number
+       },
+       {
+        "name": String,
+        "user": {
+           "avatar": String,
+           "verified": Boolean
+        },
+        "mediaUrl": String,
+        "price": String,
+        "currency": String,
+        "timeLeft": Number
+       },
+       {
+        "name": String,
+        "user": {
+           "avatar": String,
+           "verified": Boolean
+        },
+        "mediaUrl": String,
+        "price": String,
+        "currency": String,
+        "timeLeft": Number
+       },
+       {
+        "name": String,
+        "user": {
+           "avatar": String,
+           "verified": Boolean
+        },
+        "mediaUrl": String,
+        "price": String,
+        "currency": String,
+        "timeLeft": Number
+       }
+    ]
+}
+
+
+export default function Auctions({cards=element.cards,}) {
     return (
         <div>
         <Container className={classNames(styles.container)}  >
@@ -33,8 +81,9 @@ export default function Auctions({cards=[]}) {
                 </Grid>
             </Grid>
             <Grid container wrap='nowrap' spacing={1} >
-            {cards.map(x=>{
-               return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  name={x.name}  likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} timeLeft={x.timeLeft} /></Grid>
+            {cards.slice(0,4).map((x,i)=>{
+
+               return <Grid item lg={3} key={x.i} ><Card {...x} verified={true} timeLeft={5555}/></Grid>
             })}            
             </Grid>
         </Container>
