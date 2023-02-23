@@ -1,4 +1,5 @@
 import { Container } from "@mui/material";
+import Auctions from "../src/components/auction/Auctions";
 import Card from "../src/components/card/Card";
  import Example from '../src/components/example/Example'
 import Header from "../src/components/header/Header";
@@ -11,8 +12,8 @@ export default function Index() {
   <Container >
     <Header >
     </Header>
-
-    <Trending />
+    <Auctions />
+    {/* <Trending /> */}
   {/* <Example></Example> */}
   </Container>
   );
