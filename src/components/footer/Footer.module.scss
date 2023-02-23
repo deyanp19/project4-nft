@@ -1,0 +1,38 @@
+@use '../../styles/colors';
+
+
+.footerContainer {
+    position: absolute;
+    width: 100%;
+    bottom: 0%;
+
+    /* base-primary */
+    background: colors.$background_paper;
+}
+
+.policy {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    /* identical to box height */
+
+    /* text-primary-contrast */
+    color: colors.$text_hint !important;
+}
+.rights {
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+
+/* identical to box height */
+
+/* text-primary-contrast */
+color: #E1E1FC;
+
+opacity: 0.5;
+}

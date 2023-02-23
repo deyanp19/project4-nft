@@ -10,13 +10,15 @@ import User from "../src/components/user/User";
  
 export default function Index() {
   return (
+    <div>
+
   <Container >
     <Header >
     </Header>
     <Auctions />
     <Footer />
-    {/* <Trending /> */}
-  {/* <Example></Example> */}
+  
   </Container>
+    </div>
   );
 }
