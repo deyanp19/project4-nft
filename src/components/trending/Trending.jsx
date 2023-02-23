@@ -16,7 +16,8 @@ const element={"cards":[
                                     },
                                     "mediaUrl":"images/nft.jpg",
                                     "price":1,
-                                    "currency":"ETH"
+                                    "currency":"ETH",
+                                    "likes":300
                                 },
                                 {
                                     "name":"Judie",
@@ -57,35 +58,25 @@ const element={"cards":[
                                 ]
                         }
                        
- export default function Trending( {cards=[element.cards]} ) {
-     console.log(cards);
+ export default function Trending( {cards=[...element.cards]} ) {
     return (
         <Grid className={classNames(styles.container)}  >
             <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >
 
-                <Grid item lg={3} >
+                <Grid item   >
                     <Typography variant='h1' component='h4' >Trending  </Typography>
                 </Grid>
-                <Grid item  lg={3}>
+                <Grid item   >
                     <FormControl  sx={{ m: 1}} size="small" >
                         <Select 
+                        value="" //needs to be here because without value throws Error
                         color='secondary'
-                        placeholder='This week'
+                        label='This week'
                         className={classNames(styles.selectBox)} 
-                            label='This week'
-                            renderValue={()=>(<Box sx={{display:'flex', flexWrap:'wrap',gap:0.5}}>
-                                <Chip
-                                 key="asde" 
-                                 label="This weeksd"
-                                 position="end"
-                                 icon={<KeyboardArrowDownIcon />}
-                                 variant='outlined'
-                                 />
-                            </Box>)}
                         >
-                            <MenuItem value={'this_week'}>This week</MenuItem>
-                            <MenuItem value={'last_week'}>Last week</MenuItem>
-                            <MenuItem value={'last_month'}>Last month</MenuItem>
+                            <MenuItem key={'this_week'}  value={'this_week'}>This week</MenuItem>
+                            <MenuItem key={'last_week'} value={'last_week'}>Last week</MenuItem>
+                            <MenuItem key={'last_month'} value={'last_month'}>Last month</MenuItem>
 
                         
                         {/* </TextField> */}
@@ -96,8 +87,7 @@ const element={"cards":[
             </Grid>
             <Grid container wrap='nowrap' spacing={1} >
             {cards.map(x=>{
-                console.log(x);
-               return <Grid item lg={3} ><Card key={x.name} mediaUrl={x.mediaUrl}  title={x.name}  likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} /></Grid>
+               return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  title={x.name}  likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} /></Grid>
             })}            
             </Grid>
         </Grid>

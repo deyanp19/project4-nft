@@ -10,8 +10,8 @@ export default function Index() {
   return (
   <Container >
     <Header >
-
     </Header>
+
     <Trending />
   {/* <Example></Example> */}
   </Container>
