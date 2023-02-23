@@ -56,7 +56,7 @@ const element={"cards":[
 export default function Auctions({cards=[],}) {
     console.log(cards);
     return (
-        <div>
+         
         <Container className={classNames(styles.container)}  >
             <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >
 
@@ -92,6 +92,6 @@ export default function Auctions({cards=[],}) {
            
             </Grid>
          </Container> 
-        </div>
+       
     );
 }
