@@ -83,12 +83,12 @@ export default function Auctions({cards=[],}) {
                 </Grid>
             </Grid>
         
-            <Grid container wrap='nowrap' direction="row-reverse" spacing={1} >
+            <Grid container wrap='nowrap'  spacing={1} >
                 
 
                     {[...cards].map((x,i)=>{
                         console.log(x.name,i);
-                        return <Grid item lg={3} key={x.mediaUrl+i} ><Card key={x.mediaUrl} {...x} verified={true} timeLeft={5555}/></Grid>
+                        return <Grid item lg={3} key={x.mediaUrl+i} ><Card key={x.mediaUrl} title={x.name} {...x} verified={true} timeLeft={5555}/></Grid>
                     })}            
            
             </Grid>

@@ -12,7 +12,7 @@ import classNames from "classnames";
 import Countdown from 'react-countdown';
 import Circle from '@mui/icons-material/Circle'
 
-export default function Card({mediaUrl="/images/nft.jpg",name="Clock",likes=0,user={avatar:'images/avatar.png',verified:bool,},price='123',currency="ETH",timeLeft=0}){
+export default function Card({mediaUrl="/images/nft.jpg",name="Clock", title='Clock2',likes=0,user={avatar:'images/avatar.png',verified:bool,},price='123',currency="ETH",timeLeft=0}){
     console.log(name);
     if (timeLeft!=0) {
             console.log('live',timeLeft,mediaUrl,user.avatar);
