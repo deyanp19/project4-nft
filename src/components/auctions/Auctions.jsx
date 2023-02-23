@@ -53,7 +53,7 @@ const element={"cards":[
 }
 
 
-export default function Auctions({cards=[]}) {
+export default function Auctions({cards=element.cards,}) {
     console.log(cards);
     return (
         <div>
@@ -83,13 +83,13 @@ export default function Auctions({cards=[]}) {
             </Grid>
         </Container>  
             <Grid container wrap='nowrap' spacing={1} >
-                <ImageList cols={4} >
+               
 
                     {[...cards].slice(0,4).map((x,i)=>{
                         console.log(x.name,i);
-                        return <ImageListItem  lg={3} key={x.mediaUrl+i} ><Card key={x.mediaUrl} {...x} verified={true} timeLeft={5555}/></ImageListItem>
+                        return <Grid item lg={3} key={x.mediaUrl+i} ><Card key={x.mediaUrl} {...x} verified={true} timeLeft={5555}/></Grid>
                     })}            
-            </ImageList>
+            
             </Grid>
         
         </div>
