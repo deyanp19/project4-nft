@@ -14,7 +14,7 @@ import Circle from '@mui/icons-material/Circle'
 
 export default function Card({mediaUrl="/images/nft.jpg",name="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH",timeLeft=0}){
     if (timeLeft!=0) {
-            console.log('live',timeLeft);
+            console.log('live',timeLeft,mediaUrl);
             // Random component
             const Completionist = ({ hours="00", minutes="00", seconds="00", completed="00" }) => <span>{hours}:{minutes}:{seconds}</span>;
 
@@ -36,7 +36,7 @@ export default function Card({mediaUrl="/images/nft.jpg",name="Clock",likes=0,us
                 <CardOrigin className={classNames(styles.card)} sx={{maxWidth:339}}>
                    <CardHeader 
                    avatar={
-                       <Avatar size={33} url={user.avatar.url} verified={user.avatar.verified}></Avatar>
+                       <Avatar size={33} url={user.avatar} verified={user.verified}></Avatar>
                    }
                    />
                    <div className={classNames(styles.badge)}>
