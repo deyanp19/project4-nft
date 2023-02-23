@@ -1,8 +1,7 @@
-import { CardHeader, CardMedia, Grid, TextField, Typography } from '@mui/material';
+import { CardHeader, CardMedia, Grid, Typography } from '@mui/material';
 import   {default as CardOrigin}  from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import { bool, number } from 'prop-types';
+import { bool } from 'prop-types';
 import Avatar from '../avatar/Avatar';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
@@ -10,9 +9,28 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import millify from 'millify';
 import styles from './Card.module.scss';
 import classNames from "classnames";
+import Countdown from 'react-countdown';
+import Circle from '@mui/icons-material/Circle'
 
 export default function Card({mediaUrl="/images/nft.jpg",title="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH",timeLeft=0}){
-        if (timeLeft!=0) {
+    if (timeLeft!=0) {
+            console.log('live',timeLeft);
+            // Random component
+            const Completionist = ({ hours="00", minutes="00", seconds="00", completed="00" }) => <span>{hours}:{minutes}:{seconds}</span>;
+
+            const renderer = ({ hours, minutes, seconds, completed }) => {
+                if (completed) {
+                  // Render a complete state
+                  return <Completionist />;
+                } else {
+                  // Render a countdown
+                  return (
+                    <span>
+                      {hours}:{minutes}:{seconds}
+                    </span>
+                  );
+                }
+              };
             return (
 
                 <CardOrigin className={classNames(styles.card)} sx={{maxWidth:339}}>
@@ -21,13 +39,27 @@ export default function Card({mediaUrl="/images/nft.jpg",title="Clock",likes=0,u
                        <Avatar size={33} url={user.avatar.url} verified={user.avatar.verified}></Avatar>
                    }
                    />
-                   <CardMedia className={classNames(styles.media)}
+                   <div className={classNames(styles.badge)}>
+                        <div className={classNames(styles.liveText)}>
+                            <Circle fontSize='11' className={classNames(styles.circle)} />   
+                            <p>LIVE</p>
+                        </div>
+                        <div className={classNames(styles.counterRibon)}>
+                            <Countdown
+                            date={Date.now() + timeLeft}
+                             controlled={true}
+                            renderer={renderer}
+                            />
+                        </div>
+                   
+                   <CardMedia className={classNames(styles.mediaBadge)}
                         component="img"
                         height="286"
                         sx={{borderRadius:1}}
                         image={mediaUrl}
                         alt="image of BUM"
-                   />
+                        />
+                      </div>
                     <CardContent >
                         <Grid container sx={{justifyContent:'space-between', alignItems:'center'}} wrap='nowrap' >
                             <Grid item>

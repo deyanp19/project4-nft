@@ -17,7 +17,8 @@ const element={"cards":[
                                     "mediaUrl":"images/nft.jpg",
                                     "price":1,
                                     "currency":"ETH",
-                                    "likes":300
+                                    "likes":300,
+                                    "timeLeft":20
                                 },
                                 {
                                     "name":"Judie",
@@ -29,7 +30,8 @@ const element={"cards":[
                                     },
                                     "mediaUrl":"images/nft.jpg",
                                     "price":2.3,
-                                    "currency":"ETH"
+                                    "currency":"ETH",
+                                    "timeLeft":200
                                 },
                                 {
                                     "name":"Juniper",
@@ -41,7 +43,8 @@ const element={"cards":[
                                     },
                                     "mediaUrl":"images/nft.jpg",
                                     "price":5,
-                                    "currency":"ETH"
+                                    "currency":"ETH",
+                                    "timeLeft":440
                                 },
                                 {
                                     "name":"Maple",
@@ -88,7 +91,7 @@ const element={"cards":[
             </Grid>
             <Grid container wrap='nowrap' spacing={1} >
             {cards.map(x=>{
-               return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  title={x.name}  likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} /></Grid>
+               return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  title={x.name}  likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} timeLeft={x.timeLeft} /></Grid>
             })}            
             </Grid>
         </Container>
