@@ -5,10 +5,10 @@ import Card from '../card/Card';
 
 const element={"cards":[
     {
-        "name": String,
+        "name": 'Clock',
         "user": {
            "avatar": '/images/nft.jpg',
-           "verified": Boolean
+           "verified": true
         },
         "mediaUrl": '/images/nft.jpg',
         "price": String,
@@ -16,10 +16,10 @@ const element={"cards":[
         "timeLeft": Number
        },
        {
-        "name": String,
+        "name": 'Dodge',
         "user": {
-           "avatar": String,
-           "verified": Boolean
+           "avatar": "/images/nft.jpg",
+           "verified": true
         },
         "mediaUrl": String,
         "price": String,
@@ -27,10 +27,10 @@ const element={"cards":[
         "timeLeft": Number
        },
        {
-        "name": String,
+        "name": 'BTC',
         "user": {
-           "avatar": String,
-           "verified": Boolean
+           "avatar": "/images/logo.svg",
+           "verified": false
         },
         "mediaUrl": String,
         "price": String,
@@ -38,10 +38,10 @@ const element={"cards":[
         "timeLeft": Number
        },
        {
-        "name": String,
+        "name": 'Litecoin',
         "user": {
            "avatar": String,
-           "verified": Boolean
+           "verified": true
         },
         "mediaUrl": String,
         "price": String,
@@ -83,7 +83,7 @@ export default function Auctions({cards=element.cards,}) {
             </Grid>
             <Grid container wrap='nowrap' spacing={1} >
             {[...cards].map((x,i)=>{
-                console.log(x,i);
+                console.log(x.name,i);
                return <Grid item lg={3} key={x.i} ><Card {...x} verified={true} timeLeft={5555}/></Grid>
             })}            
             </Grid>
