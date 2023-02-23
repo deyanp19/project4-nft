@@ -60,7 +60,8 @@ const element={"cards":[
                        
  export default function Trending( {cards=[...element.cards]} ) {
     return (
-        <Grid className={classNames(styles.container)}  >
+        <div>
+        <Container className={classNames(styles.container)}  >
             <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >
 
                 <Grid item   >
@@ -90,7 +91,7 @@ const element={"cards":[
                return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  title={x.name}  likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} /></Grid>
             })}            
             </Grid>
-        </Grid>
-      
+        </Container>
+        </div>
     );
 }
