@@ -1,13 +1,13 @@
 @use '../../styles/colors';
 
 
-.footerWrapper {
+.wrapper {
     
     background-color: colors.$primary_main;
     width: 100%;
 }
 
-.footerContainer {
+.container {
     
     
     display:flex !important;
