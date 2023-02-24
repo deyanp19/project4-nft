@@ -8,11 +8,11 @@ import styles from './Footer.module.scss';
 export default function Footer() {
     return (
         <div className={classNames(styles.footerWrapper)}>
-            <Container >
+            <Container className={classNames(styles.footerContainer)} component="footer" maxWidth="xl">
                 <Grid 
                 container 
-                className={classNames(styles.footerContainer)}
-                maxWidth="xl"
+                spacing={2}
+                
                 >
                     <Grid item xs={4} >
                         <Logo type="muted"/>
@@ -21,8 +21,8 @@ export default function Footer() {
                         <Typography className={styles.rights} variant='p'> Bum All Rights Reserved 2021</Typography>
                     </Grid>
                     <Grid item xs={4} >
-                        <Link href='/' className={classNames(styles.policy)}>Privacy Policy</Link>
-                        <Link href='/' className={classNames(styles.policy)}>Cookie Policy</Link>
+                        <Button  variant="text"  className={classNames(styles.policy)}>Privacy Policy</Button>
+                        <Button variant="text"  className={classNames(styles.policy)}>Cookie Policy</Button>
                     </Grid>
                 </Grid>
             </Container>
