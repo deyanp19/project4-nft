@@ -8,12 +8,10 @@ import styles from './Footer.module.scss';
 export default function Footer() {
     return (
         <div className={classNames(styles.wrapper)}>
-            <Container className={classNames(styles.container)} component="footer" maxWidth="xl">
+            <Container >
                 <Grid 
                 container 
-                spacing={2}
-                
-                >
+                className={classNames(styles.container)} component="footer" maxWidth="xl" spacing={2}>
                     <Grid item xs={4} >
                         <Logo type="muted"/>
                     </Grid>
