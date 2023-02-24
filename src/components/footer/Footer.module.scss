@@ -2,7 +2,8 @@
 
 
 .footerWrapper {
-    background-color: colors.$background_paper;
+    
+   
     width: 100%;
 }
 
@@ -13,8 +14,9 @@
 
     align-items: center;
     justify-content: center;
-
+ background-color: colors.$background_paper;
     height: 98px;
+    margin:auto;
     /* base-primary */
 
 }
