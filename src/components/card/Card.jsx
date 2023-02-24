@@ -12,10 +12,9 @@ import classNames from "classnames";
 import Countdown from 'react-countdown';
 import Circle from '@mui/icons-material/Circle'
 
-export default function Card({mediaUrl="/images/nft.jpg",name="Clock", title='Clock2',likes=0,user={avatar:'images/avatar.png',verified:bool,},price='123',currency="ETH",timeLeft=0}){
-    console.log(name);
+export default function Card({mediaUrl="/images/nft.jpg",title="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH",timeLeft=0}){
     if (timeLeft!=0) {
-            console.log('live',timeLeft,mediaUrl,user.avatar);
+            console.log('live',timeLeft);
             // Random component
             const Completionist = ({ hours="00", minutes="00", seconds="00", completed="00" }) => <span>{hours}:{minutes}:{seconds}</span>;
 
@@ -37,7 +36,7 @@ export default function Card({mediaUrl="/images/nft.jpg",name="Clock", title='Cl
                 <CardOrigin className={classNames(styles.card)} sx={{maxWidth:339}}>
                    <CardHeader 
                    avatar={
-                       <Avatar size={33} url={user.avatar} verified={user.verified}></Avatar>
+                       <Avatar size={33} url={user.avatar.url} verified={user.avatar.verified}></Avatar>
                    }
                    />
                    <div className={classNames(styles.badge)}>
@@ -58,17 +57,17 @@ export default function Card({mediaUrl="/images/nft.jpg",name="Clock", title='Cl
                         height="286"
                         sx={{borderRadius:1}}
                         image={mediaUrl}
-                        alt={mediaUrl}
+                        alt="image of BUM"
                         />
                       </div>
                     <CardContent >
                         <Grid container sx={{justifyContent:'space-between', alignItems:'center'}} wrap='nowrap' >
                             <Grid item>
-                                <h2 className={classNames(styles.name)}>{name} </h2>
-                                <p className={classNames(styles.price)}>~{price} {currency}</p>
+                                <Typography className={styles.title}>{title} </Typography>
+                                <Typography className={styles.price}>~{price} {currency}</Typography>
                             </Grid>
                             <Grid item>
-                        {/* <Stack  direction="row" spacing={1}> */}
+                        <Stack  direction="row" spacing={1}>
                             <Chip className={classNames(styles.likes)}
                                 color='secondary'
                                 icon={<FavoriteIcon />} 
@@ -77,7 +76,7 @@ export default function Card({mediaUrl="/images/nft.jpg",name="Clock", title='Cl
                                     
                                     variant="outlined" 
                                     />
-                        {/* </Stack> */}
+                        </Stack>
                                     </Grid>
                         </Grid>
                     </CardContent>
@@ -102,7 +101,7 @@ export default function Card({mediaUrl="/images/nft.jpg",name="Clock", title='Cl
             <CardContent >
                 <Grid container sx={{justifyContent:'space-between', alignItems:'center'}} wrap='nowrap' >
                     <Grid item>
-                        <Typography className={styles.name}>{name} </Typography>
+                        <Typography className={styles.title}>{title} </Typography>
                         <Typography className={styles.price}>~{price} {currency}</Typography>
                     </Grid>
                     <Grid item>

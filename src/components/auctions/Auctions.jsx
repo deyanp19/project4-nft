@@ -9,9 +9,7 @@ const element={"cards":[
                                 {
                                     "name":"Ivy",
                                     "user":{
-                                        "avatar":{
-                                            "url":"images/avatar.png"
-                                        },
+                                        "avatar":"images/avatar.png",
                                         "verified":true
                                     },
                                     "mediaUrl":"images/nft.jpg",
@@ -23,9 +21,7 @@ const element={"cards":[
                                 {
                                     "name":"Judie",
                                     "user":{
-                                        "avatar":{
-                                            "url":"images/avatar.png"
-                                        },
+                                        "avatar":"images/avatar.png",
                                         "verified":true
                                     },
                                     "mediaUrl":"images/nft.jpg",
@@ -36,9 +32,7 @@ const element={"cards":[
                                 {
                                     "name":"Juniper",
                                     "user":{
-                                        "avatar":{
-                                            "url":"images/avatar.png"
-                                        },
+                                        "avatar":"images/avatar.png",
                                         "verified":true
                                     },
                                     "mediaUrl":"images/nft.jpg",
@@ -49,26 +43,25 @@ const element={"cards":[
                                 {
                                     "name":"Maple",
                                     "user":{
-                                        "avatar":{
-                                            "url":"images/avatar.png"
-                                        },
+                                        "avatar":"images/avatar.png",
                                         "verified":true
                                     },
                                     "mediaUrl":"images/nft.jpg",
                                     "price":10,
-                                    "currency":"ETH"
+                                    "currency":"ETH",
+                                    "timeLeft":440
                                 }
                                 ]
                         }
                        
- export default function Trending( {cards=[]} ) {
+ export default function Trending( {cards=element.cards} ) {
     return (
         <div>
         <Container className={classNames(styles.container)}  >
             <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >
 
                 <Grid item   >
-                    <Typography variant='h1' component='h4' >Trending  </Typography>
+                    <Typography variant='h1' component='h4' >Live Auction </Typography>
                 </Grid>
                 <Grid item   >
                     <FormControl  sx={{ m: 1}} size="small" >
