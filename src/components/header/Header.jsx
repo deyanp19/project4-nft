@@ -9,6 +9,7 @@ import {Search} from '@mui/icons-material';
 import { InputAdornment } from '@mui/material';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import Link from "../link/Link";
  
 
 export default function Header() {
@@ -16,13 +17,13 @@ export default function Header() {
     return( 
       <div className={classNames(styles.wrapper)}>
           <Container >
-                <Grid  container className={classNames(styles.container)} maxWidth="xl">
+                <Grid  
+                container 
+                className={classNames(styles.container)} maxWidth="xl">
                     <Grid item xs={4}>
-
                         <Logo />
                     </Grid>
                     <Grid item xs={4}>
-                       
                         <form >
                             <TextField
                             InputProps={{
@@ -40,13 +41,13 @@ export default function Header() {
                              placeholder='Find items, users and activities' color='secondary'  />
                         </form>
                     </Grid>
-                    <Grid className={classNames(styles.navLinks)} item xs={4}>
+                    <Grid  item xs={4}>
                         <Stack direction='row' spacing={2} >
 
-                    <Button   >Home</Button>
-                    <Button >Activity</Button> 
-                    <Button href='/' variant="contained" >Explore</Button>
-                        </Stack>
+                            <Link className={classNames(styles.navLinks)} href="/"  >Home</Link>
+                            <Link className={classNames(styles.navLinks)} href="/" >Activity</Link> 
+                            <Button href='/' variant="contained" >Explore</Button>
+                         </Stack>
                     </Grid>
                 </Grid>
             </Container>

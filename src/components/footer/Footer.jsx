@@ -6,7 +6,7 @@ import styles from './Footer.module.scss';
 
 export default function Footer() {
     return (
-        <div>
+        <div className={classNames(styles.footerWrapper)}>
             <Container >
                 <Grid 
                 container 
@@ -14,7 +14,8 @@ export default function Footer() {
                 direction='row'
                 justifyContent='space-between'
                 alignItems='center'
-                columns={{md:12}}
+               
+                maxWidth="xl"
                 >
                     <Grid item xs={4} >
                         <Logo type="muted"/>
