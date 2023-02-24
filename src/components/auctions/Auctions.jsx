@@ -1,68 +1,74 @@
-import {   FormControl, Grid, ImageList, ImageListItem, MenuItem, Select, Typography } from '@mui/material';
-import classNames from 'classnames';
+import { Box, Chip,  FormControl, Grid,  MenuItem, Typography } from '@mui/material';
 import { Container } from "@mui/material";
-import styles from './Auctions.module.scss';
 import Card from '../card/Card';
-
+import styles from './Auctions.module.scss';
+import classNames from 'classnames';
+import Select from '@mui/material/Select';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const element={"cards":[
-    {
-        "name": 'Clock',
-        "user": {
-           "avatar": '/images/nft.jpg',
-           "verified": true
-        },
-        "mediaUrl": '/images/nft.jpg',
-        "price": "String",
-        "currency": "String",
-        "timeLeft": "Number"
-       },
-       {
-        "name": 'Dodge',
-        "user": {
-           "avatar": "/images/nft.jpg",
-           "verified": true
-        },
-        "mediaUrl": "/images/nft.jpg",
-        "price": "String",
-        "currency": "String",
-        "timeLeft": "Number"
-       },
-       {
-        "name": 'BTC',
-        "user": {
-           "avatar": "/images/logo.svg",
-           "verified": false
-        },
-        "mediaUrl": "/images/logo.svg",
-        "price": "String",
-        "currency": "String",
-        "timeLeft": "Number"
-       },
-       {
-        "name": 'Litecoin',
-        "user": {
-           "avatar": "/images/logo.svg",
-           "verified": true
-        },
-        "mediaUrl": "/images/logo.svg",
-        "price": "String",
-        "currency": "String",
-        "timeLeft": "Number"
-       }
-    ]
-}
-
-
-export default function Auctions({cards=[],}) {
-    console.log(cards);
+                                {
+                                    "name":"Ivy",
+                                    "user":{
+                                        "avatar":{
+                                            "url":"images/avatar.png"
+                                        },
+                                        "verified":true
+                                    },
+                                    "mediaUrl":"images/nft.jpg",
+                                    "price":1,
+                                    "currency":"ETH",
+                                    "likes":300,
+                                    "timeLeft":2000
+                                },
+                                {
+                                    "name":"Judie",
+                                    "user":{
+                                        "avatar":{
+                                            "url":"images/avatar.png"
+                                        },
+                                        "verified":true
+                                    },
+                                    "mediaUrl":"images/nft.jpg",
+                                    "price":2.3,
+                                    "currency":"ETH",
+                                    "timeLeft":20055
+                                },
+                                {
+                                    "name":"Juniper",
+                                    "user":{
+                                        "avatar":{
+                                            "url":"images/avatar.png"
+                                        },
+                                        "verified":true
+                                    },
+                                    "mediaUrl":"images/nft.jpg",
+                                    "price":5,
+                                    "currency":"ETH",
+                                    "timeLeft":440
+                                },
+                                {
+                                    "name":"Maple",
+                                    "user":{
+                                        "avatar":{
+                                            "url":"images/avatar.png"
+                                        },
+                                        "verified":true
+                                    },
+                                    "mediaUrl":"images/nft.jpg",
+                                    "price":10,
+                                    "currency":"ETH"
+                                }
+                                ]
+                        }
+                       
+ export default function Trending( {cards=[]} ) {
     return (
-         <div>
-
+        <div>
         <Container className={classNames(styles.container)}  >
             <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >
 
                 <Grid item   >
-                    <Typography variant='h1' component='h4' >Live Auctions  </Typography>
+                    <Typography variant='h1' component='h4' >Trending  </Typography>
                 </Grid>
                 <Grid item   >
                     <FormControl  sx={{ m: 1}} size="small" >
@@ -80,20 +86,15 @@ export default function Auctions({cards=[],}) {
                         {/* </TextField> */}
                         </Select>
                     </FormControl>
+                
                 </Grid>
             </Grid>
-        
-            <Grid container wrap='nowrap'  spacing={1} >
-                
-
-                    {[...cards].map((x,i)=>{
-                        console.log(x.name,i);
-                        return <Grid item lg={3} key={x.mediaUrl+i} ><Card key={x.mediaUrl} title={x.name} {...x} verified={true} timeLeft={5555}/></Grid>
-                    })}            
-           
+            <Grid container wrap='nowrap' spacing={1} >
+            {cards.map(x=>{
+               return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  name={x.name}  likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} timeLeft={x.timeLeft} /></Grid>
+            })}            
             </Grid>
-         </Container> 
-                    </div>
-       
+        </Container>
+        </div>
     );
 }
