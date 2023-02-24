@@ -1,4 +1,5 @@
 import { Button, Container, Grid, Typography } from '@mui/material';
+import theme from "../../theme";
 import classNames from 'classnames';
 import Link from '../link/Link';
 import Logo from '../logo/Logo';
@@ -10,11 +11,7 @@ export default function Footer() {
             <Container >
                 <Grid 
                 container 
-                className={classNames(styles.footerContainer)} maxWidth="xl"
-                direction='row'
-                justifyContent='space-between'
-                alignItems='center'
-               
+                className={classNames(styles.footerContainer)}
                 maxWidth="xl"
                 >
                     <Grid item xs={4} >
@@ -28,7 +25,6 @@ export default function Footer() {
                         <Link href='/' className={classNames(styles.policy)}>Cookie Policy</Link>
                     </Grid>
                 </Grid>
-
             </Container>
         </div>
     );
