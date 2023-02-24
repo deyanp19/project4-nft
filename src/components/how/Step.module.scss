@@ -19,8 +19,8 @@
 
     /* text-primary */
     color: #FFFFFF;
-    background-color: colors.$primary_main;
-    opacity: 0.1;
+    
+    background-color: rgba(colors.$primary_main, 10%);
     padding: 50px;
     overflow: visible;
 }

@@ -4,19 +4,9 @@ import styles from './How.module.scss';
 import Step from './Step';
 import theme from './../../theme';
 
-const propInfo={
-    "description":"String",
-    "title":"String",
-    "items":[
-       {
-          "title":"String",
-          "description":"String"
-       }
-    ],
-    "link":"String"
-   }
+const propInfo=[{title:'digital currency',description:'You can get ETH, the ditital crrency that fuels transactrios on the Ethereum blockchain, from a digital currency exchange'},{title:'crypto wallet',description:'Acrypto wallet,such as MetaMask, stores your ETH and processes transacrions on the Ethereum lockchain.'},{title:'BUM',description:'Let\'s connect your wallet to BUM,edit your profile, and begin interacting in the space.'}]
 
-export default function How({description="",title="", items=[{title:'digital currency',description:'You can get ETH, the ditital crrency that fuels transactrios on the Ethereum blockchain, from a digital currency exchange'},{title:'crypto wallet',description:'Acrypto wallet,such as MetaMask, stores your ETH and processes transacrions on the Ethereum lockchain.'},{title:'BUM',description:'Let\'s connect your wallet to BUM,edit your profile, and begin interacting in the space.'}],link="/about"}) {
+export default function How({description="",title="", items=[],link="/about"}) {
     return (
         <div className={classNames(styles.wrapper)}>
             <Container >
