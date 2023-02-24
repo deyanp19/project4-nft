@@ -54,7 +54,7 @@ const element={"cards":[
                                 ]
                         }
                        
- export default function Trending( {cards=element.cards} ) {
+ export default function Trending( {cards=[]} ) {
     return (
         <div>
         <Container className={classNames(styles.container)}  >
@@ -84,7 +84,7 @@ const element={"cards":[
             </Grid>
             <Grid container wrap='nowrap' spacing={1} >
             {cards.map(x=>{
-               return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  name={x.name}  likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} timeLeft={x.timeLeft} /></Grid>
+               return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  name={x.name} title={x.name} likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} timeLeft={x.timeLeft} /></Grid>
             })}            
             </Grid>
         </Container>
