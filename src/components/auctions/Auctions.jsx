@@ -54,7 +54,7 @@ const element={"cards":[
                                 ]
                         }
                        
- export default function Trending( {cards=[]} ) {
+ export default function Trending( {cards=element.cards} ) {
     return (
         <div>
         <Container className={classNames(styles.container)}  >

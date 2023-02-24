@@ -1,0 +1,37 @@
+@use "../../styles/colors";
+
+.cardWrapper {
+    margin: 15px;
+    padding: 20px;
+    width: 100%;
+
+}
+
+.number {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100.333px;
+    line-height: 215px;
+
+    /* identical to box height, or 214% */
+    text-align: center;
+
+    /* text-primary */
+    color: #FFFFFF;
+    background-color: colors.$primary_main;
+    opacity: 0.1;
+    padding: 50px;
+    overflow: visible;
+}
+.number>h1 {
+     opacity: .9;
+     z-index: 3000;
+}
+
+.containerText {
+     
+   padding: 0;
+    
+  
+}

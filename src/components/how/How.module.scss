@@ -1,0 +1,40 @@
+@use "../../styles/colors.scss";
+
+.wrapper {
+    
+    background-color:colors.$primary_main;
+}
+
+.container {
+    
+}
+
+.btn {
+    /* button-fill-rounded */
+
+/* Auto layout */
+ 
+align-items: center;
+padding: 20px 38px;
+gap: 10px;
+ 
+/* base-secondary */
+background: #FFFFFF;
+border-radius: 30px;
+width: 97px;
+height: 19px;
+
+font-family: 'Laca';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+
+/* identical to box height */
+text-align: center;
+
+/* accent-primary */
+color: #4E24F2;
+
+
+}

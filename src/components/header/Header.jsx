@@ -43,9 +43,11 @@ export default function Header() {
                     </Grid>
                     <Grid  item xs={4}>
                         <Stack direction='row' spacing={2} >
+                            <Grid container justifyContent="space-around"  alignContent="center">
 
-                            <Link className={classNames(styles.navLinks)} href="/"  >Home</Link>
+                            <Link  className={classNames(styles.navLinks)} href="/"  >Home</Link>
                             <Link className={classNames(styles.navLinks)} href="/" >Activity</Link> 
+                            </Grid>
                             <Button href='/' variant="contained" >Explore</Button>
                          </Stack>
                     </Grid>

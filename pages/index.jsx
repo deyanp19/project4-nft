@@ -4,6 +4,7 @@ import Card from "../src/components/card/Card";
  import Example from '../src/components/example/Example'
 import Footer from "../src/components/footer/Footer";
 import Header from "../src/components/header/Header";
+import How from "../src/components/how/How";
 import Trending from "../src/components/trending/Trending";
 import User from "../src/components/user/User";
  
@@ -15,7 +16,10 @@ export default function Index() {
   <Container >
     <Header >
     </Header>
+    <Trending />
+    <How ></How>
     <Auctions />
+
     <Footer />
   
   </Container>

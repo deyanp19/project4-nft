@@ -1,14 +1,15 @@
 @use "../../styles/colors";
 .wrapper {
-    background-color: colors.$primary_main;
+    background-color: colors.$background_paper;
     width: 100%;
+    margin-top:102px;
 }
 
 .container {
     display:flex !important;
     align-items: center;
     justify-content: center;
- background-color: colors.$background_paper;
+
     height: 98px;
     margin:auto;
     /* base-primary */
@@ -22,6 +23,7 @@
     line-height: 17px;
     text-decoration: none !important;
     padding: 10px;
+    
     /* identical to box height */
 
     /* text-primary-contrast */

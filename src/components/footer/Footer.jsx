@@ -11,16 +11,16 @@ export default function Footer() {
             <Container >
                 <Grid 
                 container 
-                className={classNames(styles.container)} component="footer" maxWidth="xl" spacing={2}>
+                className={classNames(styles.container)} component="footer" maxWidth="xl" spacing={2}  alignIems="center">
                     <Grid item xs={4} >
                         <Logo type="muted"/>
                     </Grid>
                     <Grid item xs={4} >
                         <p className={classNames(styles.policy)}> Bum All Rights Reserved 2021</p>
                     </Grid>
-                    <Grid item xs={4} >
-                        <Button  variant="text"  className={styles.policy}>Privacy Policy</Button>
-                        <Button variant="text"  className={styles.policy}>Cookie Policy</Button>
+                    <Grid container justifyContent="flex-end" item xs={4} >
+                        <Link   href='/' variant="text"  className={styles.policy}>Privacy Policy</Link>
+                        <Link href='/' variant="text"  className={styles.policy}>Cookie Policy</Link>
                     </Grid>
                 </Grid>
             </Container>
