@@ -24,7 +24,7 @@ const images=[
       title: "Camera",
       href: "/about",
     }];
-export default function Featured({items=images}) {
+export default function Featured({items=[]}) {
 
     const router = useRouter();
     const currentPathname = router.pathname;
