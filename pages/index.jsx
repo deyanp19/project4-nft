@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
 import Auctions from "../src/components/auctions/Auctions";
 import Card from "../src/components/card/Card";
+import CollectorsColumn from "../src/components/collectors/CollectorsColumn";
  import Example from '../src/components/example/Example'
 import Featured from "../src/components/featured/Featured";
 import Footer from "../src/components/footer/Footer";
@@ -19,6 +20,7 @@ export default function Index() {
     </Header>
     <Featured />
     <Trending />
+    <CollectorsColumn />
     <How ></How>
     <Auctions />
 
