@@ -44,7 +44,7 @@ export default function Index() {
 
   <Container >
     <Header />
-   <ProductInfoTitle  text='opa'/>
+   <ProductInfoTitle  />
     <Footer />
   
   </Container>
