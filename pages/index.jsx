@@ -22,6 +22,7 @@ import Trending from "../src/components/trending/Trending";
  import dataUsers from '../data/users.json';
 import { useEffect, useState } from "react";
 import ProductImage from "../src/components/product/ProductImage";
+import ProductInfoTitle from "../src/components/product/ProductInfoTitle";
  
 export default function Index() {
 
@@ -43,7 +44,7 @@ export default function Index() {
 
   <Container >
     <Header />
-   <ProductImage  />
+   <ProductInfoTitle text='zombo' />
     <Footer />
   
   </Container>
