@@ -7,36 +7,36 @@ import styles from './CollectorColumn.module.scss';
 
 export default function CollectorColumn({items=[]}) {
 
-  items= [
-      {
-        "name": 'jhon',
-        "nftsCount": "Number 3",
-        "avatar": "/images/nft.jpg",
-        "verified": Boolean,
-        "id": 33
-      },
-      {
-        "name": 'jhon',
-        "nftsCount": "Number 3",
-        "avatar": "/images/nft.jpg",
-        "verified": Boolean,
-        "id": 33
-      },
-      {
-        "name": 'jhon',
-        "nftsCount": "Number sdf",
-        "avatar": "/images/nft.jpg",
-        "verified": Boolean,
-        "id": 33
-      },
-      {
-        "name": 'jhon',
-        "nftsCount": "Number 3",
-        "avatar": "/images/nft.jpg",
-        "verified": Boolean,
-        "id": 33
-      }
-    ]
+  // items= [
+  //     {
+  //       "name": 'jhon',
+  //       "nftsCount": "Number 3",
+  //       "avatar": "/images/nft.jpg",
+  //       "verified": Boolean,
+  //       "id": 33
+  //     },
+  //     {
+  //       "name": 'jhon',
+  //       "nftsCount": "Number 3",
+  //       "avatar": "/images/nft.jpg",
+  //       "verified": Boolean,
+  //       "id": 33
+  //     },
+  //     {
+  //       "name": 'jhon',
+  //       "nftsCount": "Number sdf",
+  //       "avatar": "/images/nft.jpg",
+  //       "verified": Boolean,
+  //       "id": 33
+  //     },
+  //     {
+  //       "name": 'jhon',
+  //       "nftsCount": "Number 3",
+  //       "avatar": "/images/nft.jpg",
+  //       "verified": Boolean,
+  //       "id": 33
+  //     }
+  //   ]
 
 console.log({items});
 
@@ -62,7 +62,7 @@ console.log({items});
                     {i+1}
                   </Grid>
                   <Grid item  className={styles.collectors} xs={3}>
-                    <Collector name={item.name} type={type}/>
+                    <Collector {...item} type={type}/>
                   </Grid>
                 </Grid>
              
