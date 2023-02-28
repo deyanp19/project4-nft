@@ -3,7 +3,7 @@
 .userWrapper {
   display: grid;
   grid-template-columns: auto auto;
-  
+
 
 }
 
@@ -11,6 +11,15 @@
 
   background-color: rgba(colors.$primary_main,0.9);
   grid-row: 1 / span 2;
+  width: fit-content;
+  padding:0 10px;
+  .name, .info{
+    font-size:1rem;
+    
+  }
+  >div {
+    display:inline-block;
+  }
 
 }
 
@@ -30,6 +39,7 @@
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
-
+  display: inline-block;
   line-height: 20px;
+  padding:0 40px;
 }

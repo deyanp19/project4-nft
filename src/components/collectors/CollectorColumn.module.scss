@@ -21,13 +21,13 @@
 
 .lighter {
     .collector {
-        background-color: rgba(colors.$background_number, 10%);
+        background-color: rgba(colors.$background_number, 30%);
 
     }
 
     .collectors,
     .userWrapper {
-        background-color: rgba(colors.$background_user, 10%);
+        background-color: rgba(colors.$background_user, 30%);
     }
 }
 

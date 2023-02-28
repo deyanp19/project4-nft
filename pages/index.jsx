@@ -21,6 +21,7 @@ export default function Index() {
     <Featured />
     <Trending />
     <CollectorColumn />
+    <User />
     <How ></How>
     <Auctions />
 

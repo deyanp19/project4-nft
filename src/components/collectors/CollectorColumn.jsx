@@ -21,6 +21,20 @@ export default function CollectorColumn({items=[]}) {
         "avatar": "/images/nft.jpg",
         "verified": Boolean,
         "id": 33
+      },
+      {
+        "name": 'jhon',
+        "nftsCount": "Number sdf",
+        "avatar": "/images/nft.jpg",
+        "verified": Boolean,
+        "id": 33
+      },
+      {
+        "name": 'jhon',
+        "nftsCount": "Number 3",
+        "avatar": "/images/nft.jpg",
+        "verified": Boolean,
+        "id": 33
       }
     ]
 
