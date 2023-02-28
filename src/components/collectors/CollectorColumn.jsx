@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import classNames from 'classnames';
 import Collector from './Collector';
 import styles from './CollectorColumn.module.scss';
@@ -57,14 +57,17 @@ console.log({items});
 
           return (
             <div className={light}>
-              <Grid key={i+item.name} className={styles.collectors} container spacing={2}>
-                <Grid item className={classNames(styles.collector)} xs={1}>
-                  {i+1}
+              <Container >
+
+                <Grid key={i+item.name} className={styles.collectors} container spacing={2}>
+                  <Grid item className={classNames(styles.collector)} xs={1}>
+                    {i+1}
+                  </Grid>
+                  <Grid item  className={styles.collectors} xs={3}>
+                    <Collector {...item} type={type}></Collector>
+                  </Grid>
                 </Grid>
-                <Grid item  className={styles.collectors} xs={3}>
-                  <Collector {...item} type={type}></Collector>
-                </Grid>
-              </Grid>
+              </Container>
             </div>
 
           );
