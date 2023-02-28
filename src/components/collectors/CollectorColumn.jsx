@@ -57,17 +57,15 @@ console.log({items});
 
           return (
             <div className={light}>
-              <Container >
-
                 <Grid key={i+item.name} className={styles.collectors} container spacing={2}>
                   <Grid item className={classNames(styles.collector)} xs={1}>
                     {i+1}
                   </Grid>
                   <Grid item  className={styles.collectors} xs={3}>
-                    <Collector {...item} type={type}></Collector>
+                    <Collector name={item.name} type={type}></Collector>
                   </Grid>
                 </Grid>
-              </Container>
+             
             </div>
 
           );
