@@ -6,14 +6,9 @@ import styles from './ProductImage.module.scss';
 export default function ProductImage({url}) {
     console.log(url);
     return (
-        <div  className=" product-image" >
+        <div  className="product-image" >
             
-                <img
-        src= {url} 
-         className=" image"
-        alt={url}
-        loading="lazy"
-      />
+                <img src= {url} className="image" alt={url}  />
               
         </div>
     );
