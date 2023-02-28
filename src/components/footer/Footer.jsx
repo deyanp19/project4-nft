@@ -11,7 +11,7 @@ export default function Footer() {
             <Container >
                 <Grid 
                 container 
-                className={classNames(styles.container)} component="footer" maxWidth="xl" spacing={2}  alignIems="center">
+                className={classNames(styles.container)} component="footer" maxWidth="xl" spacing={2}  alignItems="center">
                     <Grid item xs={4} >
                         <Logo type="muted"/>
                     </Grid>
