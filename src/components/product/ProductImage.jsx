@@ -5,13 +5,13 @@ import styles from './ProductImage.module.scss';
 
 export default function ProductImage({url}) {
     return (
-        <div  className={classNames(styles.product-image)} >
+        <div  className="product-image" >
             <ImageList >
-                <ImageListItem className={classNames(styles.image)}>
+                <ImageListItem >
                 <img
         src= {url} 
-         
-        alt={item.title}
+         className="image"
+        alt={url}
         loading="lazy"
       />
                 </ImageListItem>
