@@ -3,12 +3,13 @@
 .userWrapper {
   display: grid;
   grid-template-columns: auto auto;
+  
 
 }
 
 .user {
 
-  background-color: colors.$primary_main;
+  background-color: rgba(colors.$primary_main,0.9);
   grid-row: 1 / span 2;
 
 }
