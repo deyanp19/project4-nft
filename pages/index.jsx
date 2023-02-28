@@ -27,11 +27,14 @@ export default function Index() {
   const [featuredCards, setFeaturedCards]=useState([]);
   const [trending,setTrending]=useState([]);
   const [auctions,setAuctions]=useState([]);
+  const [dataProfile,setTopProfile] = useState([]);
   console.log(dataNfts);
   useEffect(()=>{
     setFeaturedCards(dataFeatured);
     setTrending(dataTrending);
-    setAuctions(dataNfts)
+    setAuctions(dataNfts);
+    
+    setTopProfile(dataProfile)
   },[])
 
   return (
@@ -39,11 +42,11 @@ export default function Index() {
 
   <Container >
     <Header />
-    <Featured items={dataFeatured} />
-    <Trending  items={dataTrending}/>
-    <TopCollectors />
+    <Featured items={featuredCards} />
+    <Trending  cards={trending}/>
+    <TopCollectors collectors={dataProfile} />
     <How />
-    <Auctions  />
+    <Auctions cards={auctions} />
     <Footer />
   
   </Container>

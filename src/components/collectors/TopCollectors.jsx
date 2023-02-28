@@ -5,92 +5,65 @@ import classNames from 'classnames';
 import CollectorColumn from './CollectorColumn';
 
 export default function TopCollectors({collectors=[]}) {
-    collectors= [
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 1",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 1
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 2",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 2
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 3",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 3
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 4",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 4
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 2",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 5
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 3",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 6
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 4",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 7
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 3",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 8
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 4",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 9
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 2",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 10
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 3",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 11
-        },
-        {
-          "name": 'jhon',
-          "nftsCount": "Number 4",
-          "avatar": "/images/nft.jpg",
-          "verified": Boolean,
-          "id": 12
-        }
-      ]
+    // collectors= [
+    //     {
+    //       "name": 'jhon',
+    //       "nftsCount": "Number 1",
+    //       "avatar": "/images/nft.jpg",
+    //       "verified": Boolean,
+    //       "id": 1
+    //     },
+    //     {
+    //       "name": 'jhon',
+    //       "nftsCount": "Number 2",
+    //       "avatar": "/images/nft.jpg",
+    //       "verified": Boolean,
+    //       "id": 2
+    //     },
+    //     {
+    //       "name": 'jhon',
+    //       "nftsCount": "Number 3",
+    //       "avatar": "/images/nft.jpg",
+    //       "verified": Boolean,
+    //       "id": 3
+    //     },
+    //     {
+    //       "name": 'jhon',
+    //       "nftsCount": "Number 4",
+    //       "avatar": "/images/nft.jpg",
+    //       "verified": Boolean,
+    //       "id": 4
+    //     },
+    //     {
+    //       "name": 'jhon',
+    //       "nftsCount": "Number 2",
+    //       "avatar": "/images/nft.jpg",
+    //       "verified": Boolean,
+    //       "id": 5
+    //     },
+    //     {
+    //       "name": 'jhon',
+    //       "nftsCount": "Number 3",
+    //       "avatar": "/images/nft.jpg",
+    //       "verified": Boolean,
+    //       "id": 6
+    //     },
+    //     {
+    //       "name": 'jhon',
+    //       "nftsCount": "Number 4",
+    //       "avatar": "/images/nft.jpg",
+    //       "verified": Boolean,
+    //       "id": 7
+    //     },
+    //     {
+    //       "name": 'jhon',
+    //       "nftsCount": "Number 3",
+    //       "avatar": "/images/nft.jpg",
+    //       "verified": Boolean,
+    //       "id": 8
+    //     },
+  
+    //   ]
 
 return (
     <Container className={classNames(styles.container)}  >
