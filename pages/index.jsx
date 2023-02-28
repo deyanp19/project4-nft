@@ -21,6 +21,7 @@ import Trending from "../src/components/trending/Trending";
  import dataTrending from '../data/trending.json';
  import dataUsers from '../data/users.json';
 import { useEffect, useState } from "react";
+import ProductImage from "../src/components/productimage/ProductImage";
  
 export default function Index() {
 
@@ -42,11 +43,7 @@ export default function Index() {
 
   <Container >
     <Header />
-    <Featured items={featuredCards} />
-    <Trending  cards={trending}/>
-    <TopCollectors collectors={dataProfile} />
-    <How />
-    <Auctions cards={auctions} />
+   <ProductImage />
     <Footer />
   
   </Container>
