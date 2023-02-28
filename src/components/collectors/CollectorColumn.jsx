@@ -62,7 +62,7 @@ console.log({items});
                     {i+1}
                   </Grid>
                   <Grid item  className={styles.collectors} xs={3}>
-                    <Collector name={item.name} type={type}></Collector>
+                    <Collector name={item.name} type={type}/>
                   </Grid>
                 </Grid>
              
