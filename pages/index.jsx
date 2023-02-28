@@ -44,7 +44,7 @@ export default function Index() {
 
   <Container >
     <Header />
-   <ProductInfoTitle text='zombo' />
+   <ProductInfoTitle  />
     <Footer />
   
   </Container>
