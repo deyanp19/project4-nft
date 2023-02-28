@@ -11,31 +11,87 @@ export default function TopCollectors({collectors=[]}) {
           "nftsCount": "Number 1",
           "avatar": "/images/nft.jpg",
           "verified": Boolean,
-          "id": 330
+          "id": 1
         },
         {
           "name": 'jhon',
           "nftsCount": "Number 2",
           "avatar": "/images/nft.jpg",
           "verified": Boolean,
-          "id": 331
+          "id": 2
         },
         {
           "name": 'jhon',
           "nftsCount": "Number 3",
           "avatar": "/images/nft.jpg",
           "verified": Boolean,
-          "id": 332
+          "id": 3
         },
         {
           "name": 'jhon',
           "nftsCount": "Number 4",
           "avatar": "/images/nft.jpg",
           "verified": Boolean,
-          "id": 333
+          "id": 4
+        },
+        {
+          "name": 'jhon',
+          "nftsCount": "Number 2",
+          "avatar": "/images/nft.jpg",
+          "verified": Boolean,
+          "id": 5
+        },
+        {
+          "name": 'jhon',
+          "nftsCount": "Number 3",
+          "avatar": "/images/nft.jpg",
+          "verified": Boolean,
+          "id": 6
+        },
+        {
+          "name": 'jhon',
+          "nftsCount": "Number 4",
+          "avatar": "/images/nft.jpg",
+          "verified": Boolean,
+          "id": 7
+        },
+        {
+          "name": 'jhon',
+          "nftsCount": "Number 3",
+          "avatar": "/images/nft.jpg",
+          "verified": Boolean,
+          "id": 8
+        },
+        {
+          "name": 'jhon',
+          "nftsCount": "Number 4",
+          "avatar": "/images/nft.jpg",
+          "verified": Boolean,
+          "id": 9
+        },
+        {
+          "name": 'jhon',
+          "nftsCount": "Number 2",
+          "avatar": "/images/nft.jpg",
+          "verified": Boolean,
+          "id": 10
+        },
+        {
+          "name": 'jhon',
+          "nftsCount": "Number 3",
+          "avatar": "/images/nft.jpg",
+          "verified": Boolean,
+          "id": 11
+        },
+        {
+          "name": 'jhon',
+          "nftsCount": "Number 4",
+          "avatar": "/images/nft.jpg",
+          "verified": Boolean,
+          "id": 12
         }
       ]
-      
+
 return (
     <Container className={classNames(styles.container)}  >
     <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >

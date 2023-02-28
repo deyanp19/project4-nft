@@ -25,7 +25,7 @@ const images=[
       href: "/about",
     }];
 export default function Featured({items=[]}) {
-
+console.log(items, 'from featured');
     const router = useRouter();
     const currentPathname = router.pathname;
     const handleClick=(href,e)=>{

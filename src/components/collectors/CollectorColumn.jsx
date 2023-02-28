@@ -28,7 +28,7 @@ console.log(key);
             <div className={light}>
                 <Grid  className={styles.collectors} container spacing={2}>
                   <Grid item className={classNames(styles.collector)} xs={1}>
-                    {key}
+                    {item.id}
                   </Grid>
                   <Grid item  className={styles.collectors} xs={3}>
                     <Collector key={i+item.name} {...item} type={type}/>
