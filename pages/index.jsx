@@ -29,7 +29,7 @@ export default function Index() {
   const [trending,setTrending]=useState([]);
   const [auctions,setAuctions]=useState([]);
   const [dataProfile,setTopProfile] = useState([]);
-  console.log(dataNfts);
+ 
   useEffect(()=>{
     setFeaturedCards(dataFeatured);
     setTrending(dataTrending);
@@ -43,7 +43,7 @@ export default function Index() {
 
   <Container >
     <Header />
-   <ProductImage url='/images/nft.jpg' />
+   <ProductImage  />
     <Footer />
   
   </Container>
