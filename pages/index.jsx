@@ -43,7 +43,7 @@ export default function Index() {
 
   <Container >
     <Header />
-   <ProductImage />
+   <ProductImage url='/images/nft.jpg' />
     <Footer />
   
   </Container>
