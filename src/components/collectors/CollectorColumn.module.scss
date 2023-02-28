@@ -1,0 +1,29 @@
+@use "../../styles/colors";
+
+.collectors {
+    width: 27%;
+    >div {
+        display: inline-block;
+    }
+}
+
+.collectorNumber {
+    background-color: colors.$background_number;
+    padding: 0 25px;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.collectorsList {
+    background-color: colors.$background_user;
+}
+.lighter {
+    .collectorNumber {
+        background-color: rgba(colors.$background_number, 10%);
+        
+    }
+    
+    .collectorsList, .user {
+        background-color: rgba(colors.$background_user, 10%);
+    }
+}
