@@ -21,7 +21,7 @@ import Trending from "../src/components/trending/Trending";
  import dataTrending from '../data/trending.json';
  import dataUsers from '../data/users.json';
 import { useEffect, useState } from "react";
-import ProductImage from "../src/components/productimage/ProductImage";
+import ProductImage from "../src/components/product/ProductImage";
  
 export default function Index() {
 
