@@ -2,12 +2,13 @@
 
 .collectors {
     width: 27%;
+
     >div {
         display: inline-block;
     }
 }
 
-.collectorNumber {
+.collector {
     background-color: colors.$background_number;
     padding: 0 25px;
     font-size: 3rem;
@@ -17,13 +18,27 @@
 .collectorsList {
     background-color: colors.$background_user;
 }
+
 .lighter {
-    .collectorNumber {
+    .collector {
         background-color: rgba(colors.$background_number, 10%);
-        
+
     }
-    
-    .collectorsList, .user {
+
+    .collectors,
+    .userWrapper {
         background-color: rgba(colors.$background_user, 10%);
+    }
+}
+
+.darker {
+    .collector {
+        background-color: rgba(colors.$background_number, 90%);
+
+    }
+
+    .collectors,
+    .userWrapper {
+        background-color: rgba(colors.$background_user, 90%);
     }
 }
