@@ -1,8 +1,5 @@
 import styles from './Avatar.module.scss';
 export default function Avatar({size=90, url='/images/avatar.png',verified=true}) {
-    console.log(verified);
-    //    avatarSize.height=size;
-    //    avatarSize.width=size;
     let verifiedBadge = {
         display: "none"
     }

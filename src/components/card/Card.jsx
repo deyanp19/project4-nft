@@ -14,7 +14,6 @@ import Circle from '@mui/icons-material/Circle'
 
 export default function Card({mediaUrl="/images/nft.jpg",title="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH",timeLeft=0}){
     if (timeLeft!=0) {
-            console.log('live',timeLeft);
             // Random component
             const Completionist = ({ hours="00", minutes="00", seconds="00", completed="00" }) => <span>{hours}:{minutes}:{seconds}</span>;
 

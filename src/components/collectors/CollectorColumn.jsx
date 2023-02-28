@@ -3,10 +3,9 @@ import styles from './Collector.module.scss';
 
   
 
-export default function CollectorsColumn({itms=[]}) {
+export default function CollectorColumn({itms=[]}) {
 
-const items={
-    "items": [
+const items= [
       {
         "name": 'jhon',
         "nftsCount": "Number 3",
@@ -15,11 +14,11 @@ const items={
         "id": 33
       }
     ]
-  }
+
 console.log({items});
     return (
         <div>
-          {items.items.map(()=> <Collector />) }
+          {items.map(()=> <Collector />) }
         </div>
     );
 }
