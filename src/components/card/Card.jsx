@@ -12,6 +12,7 @@ import classNames from "classnames";
 import Countdown from 'react-countdown';
 import Circle from '@mui/icons-material/Circle'
 
+
 export default function Card({mediaUrl="/images/nft.jpg",title="Clock",likes=0,user={avatar:{url:'images/avatar.png'},verified:bool,},price='123',currency="ETH",timeLeft=0}){
     if (timeLeft!=0) {
             // Random component
