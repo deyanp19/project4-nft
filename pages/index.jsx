@@ -24,7 +24,8 @@ import { useEffect, useState } from "react";
 import ProductImage from "../src/components/product/ProductImage";
 import ProductInfoTitle from "../src/components/product/ProductInfoTitle";
 import ProductionInfoLikes from "../src/components/product/ProductInfoLikes";
-import ProductInfoCreator from '../src/components/product/ProductInfoCrator';
+import ProductInfoCreator from '../src/components/product/ProductInfoCreator';
+import ProductInfoStatus from "../src/components/product/ProductInfoStatus";
  
 export default function Index() {
 
@@ -49,6 +50,7 @@ export default function Index() {
    {/* <ProductInfoTitle  /> */}
    {/* <ProductionInfoLikes /> */}
    <ProductInfoCreator />
+   <ProductInfoStatus />
     <Footer />
   
   </Container>
