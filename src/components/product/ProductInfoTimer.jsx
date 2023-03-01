@@ -26,7 +26,9 @@ console.log(typeof timeEnd);
              <Typography sx= {{display:'none' }}  className={classNames(styles.title)} variant='overline' 
               sx={{fontWeight:"600",fontStyle:'normal'}}
               display='block'>ends in</Typography>
-
+              <div className={classNames(styles.timer)}>
+                        <Countdown date={Date.now()  } controlled={true}  renderer={renderer} onComplete={onTimeEnd} />
+              </div>
           </div>
       ) 
    :(<div className={classNames(styles["product-info-timer"])} >
@@ -34,7 +36,7 @@ console.log(typeof timeEnd);
                 sx={{fontWeight:"600",fontStyle:'normal'}}
                 display='block'>ends in</Typography>
                 <div className={classNames(styles.timer)}>
-                        <Countdown date={Date.now()  } controlled={true}  renderer={renderer} onComplete={onTimeEnd} />
+                        <Countdown date={timeEnd } controlled={true}  renderer={renderer} onComplete={onTimeEnd} />
                 </div>
             </div>) 
     
