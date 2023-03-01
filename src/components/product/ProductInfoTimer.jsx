@@ -8,28 +8,19 @@ export default function ProductInfoTimer({timeEnd=10000,onTimeEnd}) {
       // Random component
       const Completionist = () => onTimeEnd;
 
-      const renderer = ({ hours, minutes, seconds, completed }) => {
+      const renderer = ({ hours, minutes, seconds }) => {
            
-          if (completed) {
-            // Render a complete state
-            return <Completionist />;
-          } else {
+        
             // Render a countdown
             return (
               <span>
                 {hours}:{minutes}:{seconds}
               </span>
             );
-          }
-        };
-console.log(typeof timeEnd);
+          
+        }; 
+
  return    (typeof timeEnd=="undefined" ||timeEnd==null) ?(<div className={ `${styles["product-info-timer"]} ${styles.active}`} >
-             {/* <Typography sx= {{display:'none' }}  className={classNames(styles.title)} variant='overline' 
-              sx={{fontWeight:"600",fontStyle:'normal'}}
-              display='block'>ends in</Typography>
-              <div className={classNames(styles.timer)}>
-                        <Countdown   controlled={true}  renderer={renderer} onComplete={onTimeEnd} />
-              </div> */}
           </div>
       ) 
    :(<div className={classNames(styles["product-info-timer"])} >
