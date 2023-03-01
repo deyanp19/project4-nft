@@ -3,7 +3,7 @@ import styles from './ProductInfoTimer.module.scss';
 import Countdown from 'react-countdown';
 import { Typography } from '@mui/material';
 
-export default function ProductInfoTimer({timeEnd=0,onTimeEnd}) {
+export default function ProductInfoTimer({timeEnd=1,onTimeEnd}) {
       // Random component
       const Completionist = () => onTimeEnd();
 
