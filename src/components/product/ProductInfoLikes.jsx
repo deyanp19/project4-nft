@@ -9,7 +9,7 @@ export default function ProductInfoLikes({amount=0}) {
     return (
         <div className={classNames(styles["product-info-likes"])}>
                  
-                <Stack  direction="row" spacing={1}>
+                 
                     <Chip className={classNames(styles.likes)}
                         sx={{ borderRadius: "7px"}}
                         color='secondary'
@@ -19,7 +19,7 @@ export default function ProductInfoLikes({amount=0}) {
                             
                             variant="outlined" 
                             />
-                </Stack>
+                 
         </div>
     );    
 }
