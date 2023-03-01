@@ -3,7 +3,7 @@ import styles from './ProductInfoTimer.module.scss';
 import Countdown from 'react-countdown';
 import { Typography } from '@mui/material';
 
-export default function ProductInfoTimer({timeEnd=0,onTimeEnd}) {
+export default function ProductInfoTimer({timeEnd,onTimeEnd}) {
       // Random component
       const Completionist = () => onTimeEnd();
 
@@ -22,27 +22,20 @@ export default function ProductInfoTimer({timeEnd=0,onTimeEnd}) {
           }
         };
 console.log(typeof timeEnd);
-    if (typeof timeEnd=="undefined" ||timeEnd==false) {
-       
-   
-      return (
-          <div className={classNames(styles["product-info-timer"])} style={{visibility:"hidden"}}>
+ return    (typeof timeEnd=="undefined" ||timeEnd==null) ?(<div className={classNames(styles["product-info-timer"])} style={{visibility:"hidden"}}>
              <Typography sx= {{display:'none' }}  className={classNames(styles.title)} variant='overline' 
               sx={{fontWeight:"600",fontStyle:'normal'}}
               display='block'>ends in</Typography>
 
           </div>
-      );
-    } else {
-      return ( 
-          <div className={classNames(styles["product-info-timer"])} >
+      ) 
+   :(<div className={classNames(styles["product-info-timer"])} >
                 <Typography className={classNames(styles.title)} variant='overline' 
                 sx={{fontWeight:"600",fontStyle:'normal'}}
                 display='block'>ends in</Typography>
                 <div className={classNames(styles.timer)}>
                         <Countdown date={Date.now()  } controlled={true}  renderer={renderer} onComplete={onTimeEnd} />
                 </div>
-            </div>
-                        );
-    }
+            </div>) 
+    
 }
