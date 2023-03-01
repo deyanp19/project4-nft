@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import styles from './ProductInfoTimer.module.scss';
 import Countdown from 'react-countdown';
-import { Typography } from '@mui/material';
+import { colors, Typography } from '@mui/material';
+ 
 
-export default function ProductInfoTimer({timeEnd,onTimeEnd}) {
+export default function ProductInfoTimer({timeEnd=4455,onTimeEnd}) {
       // Random component
       const Completionist = () => onTimeEnd;
 
@@ -27,7 +28,7 @@ console.log(typeof timeEnd);
               sx={{fontWeight:"600",fontStyle:'normal'}}
               display='block'>ends in</Typography>
               <div className={classNames(styles.timer)}>
-                        <Countdown date={Date.now()  } controlled={true}  renderer={renderer} onComplete={onTimeEnd} />
+                        <Countdown date={timeEnd  } controlled={true}  renderer={renderer} onComplete={onTimeEnd} />
               </div>
           </div>
       ) 
@@ -35,7 +36,7 @@ console.log(typeof timeEnd);
                 <Typography className={classNames(styles.title)} variant='overline' 
                 sx={{fontWeight:"600",fontStyle:'normal'}}
                 display='block'>ends in</Typography>
-                <div className={classNames(styles.timer)}>
+                <div className={classNames(styles.timer)} style={{backgroundColor:colors.$secondary_main}} >
                         <Countdown date={timeEnd } controlled={true}  renderer={renderer} onComplete={onTimeEnd} />
                 </div>
             </div>) 

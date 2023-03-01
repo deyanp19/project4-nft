@@ -20,7 +20,7 @@
 }
 .timer {
     box-sizing: border-box;
-    background-color: colors.$secondary_main;
+    // background-color: colors.$secondary_main;
     border-radius: 15px;
     text-align: center;
     padding:26px;
@@ -30,7 +30,7 @@
 
 
 .title {
-    background-color: rgba(colors.$secondary_main, 0.10);
+    background-color: rgba(colors.$background_default, 0.10);
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
