@@ -12,7 +12,7 @@ export default function ProductInfo({title="Shallow Son",creator={name:"",avatar
     
     return (
         <div className={styles["product-info"]}>
-            <Grid container direction='column' rowSpacing={60} >
+            <Grid container direction='column' rowSpacing={60}  >
                 <Grid item md={12}>
                     <ProductInfoTitle text={title}/>
                 </Grid>
@@ -29,7 +29,7 @@ export default function ProductInfo({title="Shallow Son",creator={name:"",avatar
                     </Grid>
 
                 </Grid>
-                <Grid container    justifyContent="space-between" spacing={2}>
+                <Grid container    justifyContent="space-between" spacing={2} alignItems="flex-end">
                     <Grid item xs={7}>
                         <ProductInfoCreator {...creator} />
                     </Grid>
