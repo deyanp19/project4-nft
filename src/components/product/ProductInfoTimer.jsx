@@ -21,9 +21,20 @@ export default function ProductInfoTimer({timeEnd=0,onTimeEnd}) {
             );
           }
         };
+console.log(typeof timeEnd);
+    if (typeof timeEnd=="undefined" ||timeEnd==false) {
+       
+   
+      return (
+          <div className={classNames(styles["product-info-timer"])}>
+             <Typography sx= {{display:'none' }}  className={classNames(styles.title)} variant='overline' 
+              sx={{fontWeight:"600",fontStyle:'normal'}}
+              display='block'>ends in</Typography>
 
-    if (timeEnd) {
-        return ( 
+          </div>
+      );
+    } else {
+      return ( 
             <div className={classNames(styles["product-info-timer"])}>
                 <Typography className={classNames(styles.title)} variant='overline' 
                 sx={{fontWeight:"600",fontStyle:'normal'}}
@@ -33,16 +44,5 @@ export default function ProductInfoTimer({timeEnd=0,onTimeEnd}) {
                 </div>
             </div>
                         );
-    } else {
-     let display=  (timeEnd==false)&& {visibility: "hidden"}
-   
-        return (
-            <div className={classNames(styles["product-info-timer"])}>
-               <Typography sx= {{display }}  className={classNames(styles.title)} variant='overline' 
-                sx={{fontWeight:"600",fontStyle:'normal'}}
-                display='block'>ends in</Typography>
- 
-            </div>
-        );
     }
 }
