@@ -23,11 +23,11 @@ export default function ProductInfoTimer({timeEnd=10000,onTimeEnd}) {
  return    (typeof timeEnd=="undefined" ||timeEnd==null) ?(<div className={classNames(styles["product-info-timer"])} >
           </div>
       ) 
-   :(<div className={ `${styles["product-info-timer"]} ${styles.active}`} >
+   :(<div className={ classNames(styles['product-info-timer'])} >
                 <Typography className={classNames(styles.title)} variant='overline' 
                 sx={{fontWeight:"600",fontStyle:'normal'}}
                 display='block'>ends in</Typography>
-                <div className={classNames(styles.timer)} style={{backgroundColor:colors.$secondary_main}} >
+                <div className={`${styles["timer"]} ${styles.active}`}  >
                         <Countdown date={timeEnd } controlled={true}  renderer={renderer} onComplete={onTimeEnd} />
                 </div>
             </div>) 
