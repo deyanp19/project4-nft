@@ -1,4 +1,5 @@
 import { Grid, Stack } from '@mui/material';
+import classNames from 'classnames';
 import styles from './ProductInfo.module.scss';
 import ProductInfoCreator from './ProductInfoCreator';
 import ProductInfoLikes from './ProductInfoLikes';
@@ -12,7 +13,7 @@ export default function ProductInfo({title="Shallow Son",creator={name:"",avatar
     
     return (
         <div className={styles["product-info"]}>
-            <Grid container direction='column' rowSpacing={60}  >
+            <Grid container direction='column'    >
                 <Grid item md={12}>
                     <ProductInfoTitle text={title}/>
                 </Grid>
@@ -22,7 +23,7 @@ export default function ProductInfo({title="Shallow Son",creator={name:"",avatar
                         <ProductInfoPrice amount={price} currency={currency}/>
                     </Grid>
                     <Grid item>
-                        <Stack direction="row" spacing={1} >
+                        <Stack className={classNames(styles.stats)} direction="row" spacing={1} >
                            {isLive && <ProductInfoStatus />}
                             <ProductInfoLikes amount={234200} />
                         </Stack>
