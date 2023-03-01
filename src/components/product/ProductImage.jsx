@@ -4,7 +4,6 @@ import styles from './ProductImage.module.scss';
 
 
 export default function ProductImage({url}) {
-    console.log(url);
     return (
         <div  className={classNames(styles["product-image"])} >
             

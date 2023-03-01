@@ -7,10 +7,10 @@ import classNames from 'classnames';
 
 export default function ProductInfoLikes({amount=0}) {
     return (
-        <div className={classNames(styles["product-info-likes"])}>
+        <div className="product-info-likes" >
                  
                  
-                    <Chip className={classNames(styles.likes)}
+                    <Chip className="likes"
                         sx={{ borderRadius: "7px"}}
                         color='secondary'
                         icon={<FavoriteIcon fontSize='0.8125rem' />} 
