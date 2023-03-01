@@ -20,10 +20,10 @@ export default function ProductInfoTimer({timeEnd=10000,onTimeEnd}) {
           
         }; 
 
- return    (typeof timeEnd=="undefined" ||timeEnd==null) ?(<div className={ `${styles["product-info-timer"]} ${styles.active}`} >
+ return    (typeof timeEnd=="undefined" ||timeEnd==null) ?(<div className={classNames(styles["product-info-timer"])} >
           </div>
       ) 
-   :(<div className={classNames(styles["product-info-timer"])} >
+   :(<div className={ `${styles["product-info-timer"]} ${styles.active}`} >
                 <Typography className={classNames(styles.title)} variant='overline' 
                 sx={{fontWeight:"600",fontStyle:'normal'}}
                 display='block'>ends in</Typography>
