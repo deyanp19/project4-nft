@@ -1,0 +1,41 @@
+.timer {
+    box-sizing: border-box;
+    background: #24F25E;
+    border-radius: 15px;
+    text-align: center;
+    padding:26px;
+    font-family: 'Montserrat';
+}
+
+.product-info-timer {
+    background: #24F25E;
+    border-radius: 15px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30.6761px;
+    line-height: 37px;
+    max-width: 218px;
+    max-height: 118px;
+    /* identical to box height */
+
+    /* base-primary */
+    color: #181828;
+
+}
+
+.title {
+    background: rgba(#0C0C14, 0.20);
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 22px;
+
+    /* identical to box height, or 183% */
+
+    /* text-secondary */
+    color: #000000;
+    text-align: center;
+    padding:8px;
+}
