@@ -34,7 +34,7 @@ export default function ProductInfoTimer({timeEnd=0,onTimeEnd}) {
             </div>
                         );
     } else {
-    //  let display=  (timeEnd==false)&& {visibility: "hidden"}
+     let display=  (timeEnd==false)&& {visibility: "hidden"}
    
         return (
             <div className={classNames(styles["product-info-timer"])}>
