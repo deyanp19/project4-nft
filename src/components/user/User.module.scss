@@ -6,10 +6,13 @@
 
 
 }
+.active {
+  background-color: colors.$secondary_main;
+}
 
 .user {
 
-  background-color: rgba(colors.$primary_main,0.9);
+  background-color: rgba(colors.$background_user,0.9);
   grid-row: 1 / span 2;
   width: fit-content;
   padding:0 10px;
