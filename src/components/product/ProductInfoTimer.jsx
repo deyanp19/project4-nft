@@ -3,7 +3,7 @@ import styles from './ProductInfoTimer.module.scss';
 import Countdown from 'react-countdown';
 import { Typography } from '@mui/material';
 
-export default function ProductInfoTimer({timeEnd=1,onTimeEnd}) {
+export default function ProductInfoTimer({timeEnd=0,onTimeEnd}) {
       // Random component
       const Completionist = () => onTimeEnd();
 
@@ -26,7 +26,7 @@ console.log(typeof timeEnd);
        
    
       return (
-          <div className={classNames(styles["product-info-timer"])}>
+          <div className={classNames(styles["product-info-timer"])} style={{visibility:"hidden"}}>
              <Typography sx= {{display:'none' }}  className={classNames(styles.title)} variant='overline' 
               sx={{fontWeight:"600",fontStyle:'normal'}}
               display='block'>ends in</Typography>
@@ -35,7 +35,7 @@ console.log(typeof timeEnd);
       );
     } else {
       return ( 
-            <div className={classNames(styles["product-info-timer"])}>
+          <div className={classNames(styles["product-info-timer"])} >
                 <Typography className={classNames(styles.title)} variant='overline' 
                 sx={{fontWeight:"600",fontStyle:'normal'}}
                 display='block'>ends in</Typography>

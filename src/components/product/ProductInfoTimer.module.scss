@@ -1,15 +1,8 @@
 @use "../../styles/colors.scss";
 
-.timer {
-    box-sizing: border-box;
-    background-color: colors.$secondary_main;
-    border-radius: 15px;
-    text-align: center;
-    padding:26px;
-    font-family: 'Montserrat';
-}
 
 .product-info-timer {
+    
     background-color: colors.$secondary_main;
     border-radius: 15px;
     font-family: 'Montserrat';
@@ -25,6 +18,16 @@
     color: #181828;
 
 }
+.timer {
+    box-sizing: border-box;
+    background-color: colors.$secondary_main;
+    border-radius: 15px;
+    text-align: center;
+    padding:26px;
+    font-family: 'Montserrat';
+}
+
+
 
 .title {
     background-color: rgba(colors.$background_default, 0.10);
