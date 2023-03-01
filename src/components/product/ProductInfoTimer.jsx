@@ -5,7 +5,7 @@ import { Typography } from '@mui/material';
 
 export default function ProductInfoTimer({timeEnd,onTimeEnd}) {
       // Random component
-      const Completionist = () => onTimeEnd();
+      const Completionist = () => onTimeEnd;
 
       const renderer = ({ hours, minutes, seconds, completed }) => {
            
@@ -22,7 +22,7 @@ export default function ProductInfoTimer({timeEnd,onTimeEnd}) {
           }
         };
 console.log(typeof timeEnd);
- return    (typeof timeEnd=="undefined" ||timeEnd==null) ?(<div className={classNames(styles["product-info-timer"])} style={{visibility:"hidden"}}>
+ return    (typeof timeEnd=="undefined" ||timeEnd==null) ?(<div className={classNames(styles["product-info-timer"])} style={{display:"none"}}>
              <Typography sx= {{display:'none' }}  className={classNames(styles.title)} variant='overline' 
               sx={{fontWeight:"600",fontStyle:'normal'}}
               display='block'>ends in</Typography>
