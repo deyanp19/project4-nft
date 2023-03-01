@@ -27,6 +27,7 @@ import ProductionInfoLikes from "../src/components/product/ProductInfoLikes";
 import ProductInfoCreator from '../src/components/product/ProductInfoCreator';
 import ProductInfoStatus from "../src/components/product/ProductInfoStatus";
 import ProductInfoTimer from "../src/components/product/ProductInfoTimer";
+import ProductInfo from "../src/components/product/ProductInfo";
  
 export default function Index() {
 
@@ -48,11 +49,7 @@ export default function Index() {
 
   <Container >
     <Header />
-   {/* <ProductInfoTitle  /> */}
-   {/* <ProductionInfoLikes /> */}
-    <ProductInfoCreator />
-    <ProductInfoStatus />  
-   <ProductInfoTimer />
+  <ProductInfo />
     <Footer />
   
   </Container>

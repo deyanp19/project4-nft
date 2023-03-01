@@ -10,7 +10,7 @@
     font-weight: 700;
     font-size: 30.6761px;
     line-height: 37px;
-    max-width: 218px;
+    // max-width: 218px;
     max-height: 118px;
     /* identical to box height */
 
@@ -20,10 +20,10 @@
 }
 .timer {
     box-sizing: border-box;
-    background-color: colors.$secondary_main;
+    
     border-radius: 15px;
     text-align: center;
-    padding:26px;
+    padding:12px;
     font-family: 'Montserrat';
 }
 
@@ -42,5 +42,5 @@
     /* text-secondary */
     color: #000000;
     text-align: center;
-    padding:8px;
+    
 }
