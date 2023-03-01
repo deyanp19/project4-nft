@@ -5,7 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import classNames from 'classnames';
 
 
-export default function ProductionInfoLikes({amout=0}) {
+export default function ProductInfoLikes({amount=0}) {
     return (
         <div className={classNames(styles["product-info-likes"])}>
                  
@@ -15,7 +15,7 @@ export default function ProductionInfoLikes({amout=0}) {
                         color='secondary'
                         icon={<FavoriteIcon fontSize='0.8125rem' />} 
                         label={
-                            amout>0 ? (millify(likes,{ units: ["", "KB", "MB", "GB", "TB"]})):0} 
+                            amount>0 ? (millify(likes,{ units: ["", "KB", "MB", "GB", "TB"]})):0} 
                             
                             variant="outlined" 
                             />
