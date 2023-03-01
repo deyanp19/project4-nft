@@ -1,6 +1,15 @@
+@use "../../styles/colors";
+
+.user-container {
+    box-sizing: border-box;
+    background: colors.$background_user;
+    border-radius: 15px;
+    max-width: 340px;
+}
+
 .product-info-creator {
     /* base-primary */
-    background: #181828;
+
     border-radius: 15px;
 }
 
@@ -10,12 +19,12 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 22px;
-    padding-left:27px;
+    padding-left: 27px;
 
     /* identical to box height, or 183% */
 
     /* text-primary-contrast */
     color: #E1E1FC;
-    background:rgba(  #4E24F2,  0.20);
- 
+    background: rgba(colors.$primary_main, 0.20);
+
 }

@@ -50,8 +50,8 @@ export default function Index() {
     <Header />
    {/* <ProductInfoTitle  /> */}
    {/* <ProductionInfoLikes /> */}
-   {/* <ProductInfoCreator />
-   <ProductInfoStatus /> */}
+    <ProductInfoCreator />
+   {/* <ProductInfoStatus />  */}
    <ProductInfoTimer />
     <Footer />
   
