@@ -24,6 +24,7 @@ import { useEffect, useState } from "react";
 import ProductImage from "../src/components/product/ProductImage";
 import ProductInfoTitle from "../src/components/product/ProductInfoTitle";
 import ProductionInfoLikes from "../src/components/product/ProductInfoLikes";
+import ProductInfoCreator from '../src/components/product/ProductInfoCrator';
  
 export default function Index() {
 
@@ -45,8 +46,9 @@ export default function Index() {
 
   <Container >
     <Header />
-   <ProductInfoTitle  />
-   <ProductionInfoLikes />
+   {/* <ProductInfoTitle  /> */}
+   {/* <ProductionInfoLikes /> */}
+   <ProductInfoCreator />
     <Footer />
   
   </Container>
