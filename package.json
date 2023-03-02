@@ -9,7 +9,7 @@
     "@emotion/styled": "11.3.0",
     "@mui/icons-material": "^5.0.3",
     "@mui/lab": "*",
-    "@mui/material": "5.0.3",
+    "@mui/material": "latest",
     "classnames": "^2.2.6",
     "clsx": "^1.1.1",
     "lodash": "^4.17.21",

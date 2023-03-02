@@ -28,6 +28,7 @@ import ProductInfoCreator from '../src/components/product/ProductInfoCreator';
 import ProductInfoStatus from "../src/components/product/ProductInfoStatus";
 import ProductInfoTimer from "../src/components/product/ProductInfoTimer";
 import ProductInfo from "../src/components/product/ProductInfo";
+import ProductTabs from "../src/components/product/ProductTabs";
  
 export default function Index() {
 
@@ -46,10 +47,10 @@ export default function Index() {
 
   return (
     <div>
-
   <Container >
     <Header />
-  <ProductInfo />
+    <ProductTabs />
+  {/* <ProductInfo /> */}
     <Footer />
   
   </Container>
