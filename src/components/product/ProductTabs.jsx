@@ -28,8 +28,8 @@ export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg"
    }
    const StyledTableRow = styled(TableRow)(({ theme }) => ({
     '&:nth-of-type(odd)': {
-      backgroundColor:'#4E24F2',
-      opacity:0.3,
+      backgroundColor: 'rgba(78, 36, 242, 0.1)',
+      
     },
     // hide last border
     ' td,  th': {
