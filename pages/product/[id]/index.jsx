@@ -8,7 +8,8 @@ import ProductContainer from "../../../src/components/product/ProductContainer";
 import Header from "../../../src/components/header/Header";
 import Footer from "../../../src/components/footer/Footer";
 import dataNtfs from "../../../data/nfts.json";
-import useRouter from 'next/router';
+import { useRouter } from 'next/router';
+
 
 
 
