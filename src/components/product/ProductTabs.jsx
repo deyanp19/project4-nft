@@ -20,10 +20,6 @@ import { format, formatDistance,parseISO, formatRelative, subDays } from 'date-f
 
 export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg" ,name:"rock",verified:false},amount:3,date:"+02023101"},{user:{avatar:"/images/avatar.png",name:"rock",verified:false},amount:3,date:"+02014101"},{user:{avatar:"/images/nft.jpg",name:"rock",verified:true},amount:3,date:"+02014101"},{user:{ name:"rock",verified:true},amount:3,date:"+02014101"}]}) {
   const [tab,setTab]=useState('bids');
-
-
-  console.log(bids);
-
   const handleChangeTab=(e,newVal)=>{
        console.log(newVal);
        setTab(newVal);
@@ -61,7 +57,7 @@ export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg"
                   </Tab>
               </TabList>
               <TabPanel value="details">
-                  i will see
+                  {text}
               </TabPanel>
               <TabPanel value="bids">
                    <TableContainer compnent={Paper}>
@@ -72,11 +68,11 @@ export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg"
                                         <TableCell component="th" scope="row">
                                             <User name={bid.user.name} size={34}  avatar={bid.user.avatar} verified={bid.user.verified} /> 
                                         </TableCell>
-                                         <TableCell align="right" >{bid.amount}</TableCell>
-                                         <TableCell align="right" >{   
-                                         formatDistance(new Date()-3, new Date(parseISO(bid.date, { additionalDigits: 1 })), {includeSeconds: true,
-                                          addSuffix: true})
-                                         }</TableCell>
+                                        <TableCell align="right" >{bid.amount}</TableCell>
+                                        <TableCell align="right" >{   
+                                            formatDistance(new Date()-3, new Date(parseISO(bid.date, { additionalDigits: 1 })), {includeSeconds: true,
+                                            addSuffix: true})}
+                                        </TableCell>
                                      </StyledTableRow>
                                  ))}
                              </TableBody>

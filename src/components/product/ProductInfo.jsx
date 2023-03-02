@@ -9,7 +9,7 @@ import ProductInfoTimer from './ProductInfoTimer';
 import ProductInfoTitle from './ProductInfoTitle';
 
 
-export default function ProductInfo({title="Shallow Son",creator={name:"",avatar:"",verified:""},price=5,currency="ETH",likes=0,onTimeEnd,timeEnd,isLive=false}) {
+export default function ProductInfo({title="Shallow Son",creator={name:"",avatar:"",verified:""},price=5,currency="ETH",likes=1120,onTimeEnd,timeEnd,isLive=false}) {
     
     return (
         <div className={styles["product-info"]}>
@@ -17,7 +17,7 @@ export default function ProductInfo({title="Shallow Son",creator={name:"",avatar
                 <Grid item md={12}>
                     <ProductInfoTitle text={title}/>
                 </Grid>
-                <Grid container                                  justifyContent="space-between" >
+                <Grid container  justifyContent="space-between" >
                     <Grid item >
 
                         <ProductInfoPrice amount={price} currency={currency}/>
@@ -25,7 +25,7 @@ export default function ProductInfo({title="Shallow Son",creator={name:"",avatar
                     <Grid item>
                         <Stack className={classNames(styles.stats)} direction="row" spacing={1} >
                            {isLive && <ProductInfoStatus />}
-                            <ProductInfoLikes amount={234200} />
+                            <ProductInfoLikes amount={likes} />
                         </Stack>
                     </Grid>
 
