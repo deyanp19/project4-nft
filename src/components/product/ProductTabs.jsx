@@ -14,10 +14,12 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { useState } from 'react';
-import Avatar from '../avatar/Avatar';
-import theme from '../../theme';
+import User from '../user/User';
+import { format, formatDistance,parseISO, formatRelative, subDays } from 'date-fns';
 
-export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg" ,name:"rock",verified:false},amount:3,date:"2-3-23"},{user:{avatar:"/images/avatar.png",name:"rock",verified:false},amount:3,date:"2-3-23"},{user:{avatar:"/images/nft.jpg",name:"rock",verified:true},amount:3,date:"2-3-23"},{user:{ name:"rock",verified:true},amount:3,date:"2-3-23"}]}) {
+console.log();
+
+export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg" ,name:"rock",verified:false},amount:3,date:"+02023101"},{user:{avatar:"/images/avatar.png",name:"rock",verified:false},amount:3,date:"+02014101"},{user:{avatar:"/images/nft.jpg",name:"rock",verified:true},amount:3,date:"+02014101"},{user:{ name:"rock",verified:true},amount:3,date:"+02014101"}]}) {
     const [tab,setTab]=useState('bids');
 
 
@@ -53,8 +55,8 @@ export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg"
           <div className={styles["product-tabs"]}>
               
               <TabList onChange={handleChangeTab} aria-label="product-tab">
-                  <Tab label="details" value="details"></Tab>
-                  <Tab label="bids" value="bids">
+                  <Tab className={styles["tab-details"]} label="details" value="details"></Tab>
+                  <Tab className={styles["tab-bids"]} label="bids" value="bids">
                    
                   </Tab>
               </TabList>
@@ -67,9 +69,14 @@ export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg"
                              <TableBody>
                                  {bids.map((bid,i)=>(
                                      <StyledTableRow key={bid.user.name} className={[`table-row-${i}`]}>
-                                         <StyledTableCell component="th" scope="row"><Avatar size={34} url={bid.user.avatar} verified={bid.user.verified} ></Avatar>{bid.user.name}</StyledTableCell>
+                                        <StyledTableCell component="th" scope="row">
+                                            <User name={bid.user.name} size={34}  avatar={bid.user.avatar} verified={bid.user.verified} /> 
+                                        </StyledTableCell>
                                          <StyledTableCell align="right" >{bid.amount}</StyledTableCell>
-                                         <StyledTableCell align="right" >{bid.date}</StyledTableCell>
+                                         <StyledTableCell align="right" >{   
+                                         formatDistance(new Date(), new Date(parseISO(bid.date, { additionalDigits: 1 })), {includeSeconds: true,
+                                          addSuffix: true})
+                                         }</StyledTableCell>
                                      </StyledTableRow>
                                  ))}
                              </TableBody>
