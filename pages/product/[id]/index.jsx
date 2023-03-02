@@ -10,6 +10,7 @@ import Footer from "../../../src/components/footer/Footer";
 import dataNtfs from "../../../data/nfts.json";
 import { useRouter } from 'next/router';
 import Hero from "../../../src/components/hero/Hero";
+import Description from "../../../src/components/description/Description";
 
 
 
@@ -30,8 +31,7 @@ export default function Product(props) {
       <Header />
      
       <ProductContainer />
-      <Hero text='opals'/>
-    
+       
       <Footer />
     </Container>
       </div>
