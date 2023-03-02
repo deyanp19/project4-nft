@@ -36,18 +36,19 @@ const data={
     ]
     }
 
-export default function ProductContainer(
-    ) {
+export default function ProductContainer({
+    name,owner,price,currency,likes,auction_end,details,source,bids
+}) {
     return (
         <div className={styles["product-container"]}>
             <Grid container direction="row" spacing={2} >
                 <Grid item xs={6}>
-                    <ProductImage />
+                    <ProductImage url={owner.avatar.url} />
                 </Grid>
                 <Grid container direction="column" xs={5}>
-                    <ProductInfo />
+                    <ProductInfo title={name} creator={owner.username} price={price} currency={currency} likes={likes} timeEnd={auction_end} isLive onTimeEnd/>
                     <ProductTabs />
-                    <ProductActions />
+                    <ProductActions text={details} bids={bids} isLive currency={currency} buyAmount bidAmount={bids.amount} onBid onBuy  />
                 </Grid>
             </Grid>
         </div>
