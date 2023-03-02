@@ -48,7 +48,7 @@ export default function ProductContainer({
                 <Grid container direction="column" xs={5}>
                     <ProductInfo title={name} creator={owner.username} price={price} currency={currency} likes={likes} timeEnd={auction_end} isLive onTimeEnd/>
                     <ProductTabs />
-                    <ProductActions text={details} bids={bids} isLive currency={currency} buyAmount bidAmount={bids.amount} onBid onBuy  />
+                    <ProductActions text  bids isLive currency={currency} buyAmount bidAmount={bids.amount} onBid onBuy  />
                 </Grid>
             </Grid>
         </div>
