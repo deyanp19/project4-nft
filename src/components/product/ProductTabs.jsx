@@ -17,14 +17,14 @@ import { useState } from 'react';
 import User from '../user/User';
 import { format, formatDistance,parseISO, formatRelative, subDays } from 'date-fns';
 
-console.log();
 
 export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg" ,name:"rock",verified:false},amount:3,date:"+02023101"},{user:{avatar:"/images/avatar.png",name:"rock",verified:false},amount:3,date:"+02014101"},{user:{avatar:"/images/nft.jpg",name:"rock",verified:true},amount:3,date:"+02014101"},{user:{ name:"rock",verified:true},amount:3,date:"+02014101"}]}) {
-    const [tab,setTab]=useState('bids');
+  const [tab,setTab]=useState('bids');
 
 
+  console.log(bids);
 
-   const handleChangeTab=(e,newVal)=>{
+  const handleChangeTab=(e,newVal)=>{
        console.log(newVal);
        setTab(newVal);
    }
@@ -67,7 +67,7 @@ export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg"
                    <TableContainer compnent={Paper}>
                         <Table sx={{minWidth:400}} aria-label="table">
                              <TableBody>
-                                 {bids.map((bid,i)=>(
+                                 {bids&&bids.map((bid,i)=>(
                                      <StyledTableRow key={bid.user.name+i} className={[`table-row-${i}`]}>
                                         <TableCell component="th" scope="row">
                                             <User name={bid.user.name} size={34}  avatar={bid.user.avatar} verified={bid.user.verified} /> 

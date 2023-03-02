@@ -22,23 +22,24 @@ const data={
     "source":{
        "url": "String"
     },
-    "bids":[
-       {
-          "user":{
-             "info": "Number",
-             "name": "String",
-             "verified": "Boolean",
-             "avatar": "String"
-          },
-          "date": "String",
-          "amount": "Number"
-       }
+    "bids":[{user:{avatar:"/images/logo.svg" ,name:"rock",verified:false},amount:3,date:"+02023101"},{user:{avatar:"/images/avatar.png",name:"rock",verified:false},amount:3,date:"+02014101"},{user:{avatar:"/images/nft.jpg",name:"rock",verified:true},amount:3,date:"+02014101"},{user:{ name:"rock",verified:true},amount:3,date:"+02014101"},
+    //    {
+    //       "user":{
+    //          "info": "Number",
+    //          "name": "String",
+    //          "verified": "Boolean",
+    //          "avatar": "String"
+    //       },
+    //       "date": "String",
+    //       "amount": "Number"
+    //    }
     ]
     }
 
-export default function ProductContainer({
-    name,owner,price,currency,likes,auction_end,details,source,bids
-}) {
+    export default function ProductContainer({
+        name,owner,price,currency,likes,auction_end,details,source,bids
+    }) {
+    // console.log(bids,bids.map(x=>console.log(x)));
     return (
         <div className={styles["product-container"]}>
             <Grid container direction="row" spacing={2} >
@@ -47,8 +48,8 @@ export default function ProductContainer({
                 </Grid>
                 <Grid container direction="column" xs={5}>
                     <ProductInfo title={name} creator={owner?.username} price={price} currency={currency} likes={likes} timeEnd={auction_end} isLive onTimeEnd/>
-                    <ProductTabs text  bids/>
-                    <ProductActions  isLive currency={currency} buyAmount bidAmount={bids?.amount} onBid onBuy  />
+                    <ProductTabs text bids={bids}  />
+                    <ProductActions text  isLive currency={currency} buyAmount bidAmount={bids?.amount} onBid onBuy  />
                 </Grid>
             </Grid>
         </div>
