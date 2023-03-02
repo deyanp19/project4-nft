@@ -51,8 +51,8 @@ export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg"
   }));
   
     return (
-      <TabContext value={tab} >
           <div className={styles["product-tabs"]}>
+      <TabContext value={tab} >
               
               <TabList onChange={handleChangeTab} aria-label="product-tab">
                   <Tab className={styles["tab-details"]} label="details" value="details"></Tab>
@@ -68,22 +68,22 @@ export default function ProductTabs({text,bids=[{user:{avatar:"/images/logo.svg"
                         <Table sx={{minWidth:400}} aria-label="table">
                              <TableBody>
                                  {bids.map((bid,i)=>(
-                                     <StyledTableRow key={bid.user.name} className={[`table-row-${i}`]}>
-                                        <StyledTableCell component="th" scope="row">
+                                     <StyledTableRow key={bid.user.name+i} className={[`table-row-${i}`]}>
+                                        <TableCell component="th" scope="row">
                                             <User name={bid.user.name} size={34}  avatar={bid.user.avatar} verified={bid.user.verified} /> 
-                                        </StyledTableCell>
-                                         <StyledTableCell align="right" >{bid.amount}</StyledTableCell>
-                                         <StyledTableCell align="right" >{   
-                                         formatDistance(new Date(), new Date(parseISO(bid.date, { additionalDigits: 1 })), {includeSeconds: true,
+                                        </TableCell>
+                                         <TableCell align="right" >{bid.amount}</TableCell>
+                                         <TableCell align="right" >{   
+                                         formatDistance(new Date()-3, new Date(parseISO(bid.date, { additionalDigits: 1 })), {includeSeconds: true,
                                           addSuffix: true})
-                                         }</StyledTableCell>
+                                         }</TableCell>
                                      </StyledTableRow>
                                  ))}
                              </TableBody>
                         </Table>
                     </TableContainer>
               </TabPanel>
-          </div>
       </TabContext>
+          </div>
     );
 }
