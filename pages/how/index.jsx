@@ -30,10 +30,10 @@ export default function How(props) {
     <Container >
       <Header />
       <ProfileHero />
-      <ProfileUser >
+      <ProfileUser name='aladin' info='malko teksj' verified={false} />
         <Hero text='fredrikd+a' />
         <Description text="What are they they are the broken promise and to do is out of reach. Hand oer the candy notes food is so expensive to the Cashier." />
-    </ProfileUser>
+    
        
       <Footer />
     </Container>
