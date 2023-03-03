@@ -24,17 +24,15 @@ export default function ProfileCollectionFilters({filters={
     }}) {
     console.log(filters);
     return (
-        <div className={classNames(styles["profile-colleciton-filters"])}>
+        <div className={styles["profile-colleciton-filters"]}>
             <Grid container direction="row" sx={12} justifyContent="space-between" alignItems="center">
                 <Grid item >
                     <Typography variant='h3' inputProps={{textTransform:'uppercase'}}>Collection</Typography>
                 </Grid>
                 <Grid item >
-                    <Grid container justifyContent="flex-end" spacing={2} >
-                        <Grid item >
-                            <FormControl >
-                                <InputLabel id="sort-order">Sort by</InputLabel>
-
+                    <Grid container direction='row' wrap='nowrap' justifyContent="flex-end" spacing={2} >
+                        
+                            <FormControl fullWidth sx={{ m: 1}} size="small" >
                                 <Select 
                                 labelId="sort-order"
                                 id="sort-order"
@@ -44,7 +42,7 @@ export default function ProfileCollectionFilters({filters={
                                     {filters.sort.map((pumba)=><MenuItem value={pumba.value}>{pumba.label}</MenuItem>)}
                                 </Select>
                             </FormControl>
-                            <FormControl  sx={{ m: 1}} size="small" >
+                            <FormControl  sx={{ m: 1}} size="small" fullwidth>
                                 <Select 
                                 value="" //needs to be here because without value throws Error
                                 color='secondary'
@@ -56,7 +54,7 @@ export default function ProfileCollectionFilters({filters={
                                 
                                 {/* </TextField> */}
                                 </Select>
-                    </FormControl>
+                        </FormControl>
                             <FormControl >
                                 <TextField
                                 InputProps={{
@@ -73,7 +71,7 @@ export default function ProfileCollectionFilters({filters={
                                 variant="standard" 
                                 color='secondary'  />
                             </FormControl>
-                        </Grid>
+                         
                     </Grid>
                 </Grid>
             </Grid>
