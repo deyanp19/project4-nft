@@ -22,16 +22,9 @@ export default function ProfileCollectionFilters({filters={
       },
     ],
     }}) {
-    console.log(filters);
     return (
-        <div className={styles["profile-colleciton-filters"]}>
-            <Grid container direction="row" sx={12} justifyContent="space-between" alignItems="center">
-                <Grid item >
-                    <Typography variant='h3' inputProps={{textTransform:'uppercase'}}>Collection</Typography>
-                </Grid>
-                <Grid item >
-                    <Grid container direction='row' wrap='nowrap' justifyContent="flex-end" spacing={2} >
-                        
+        <div className={styles["profile-collection-filters"]}>
+            <Grid container direction="row"  wrap='nowrap' spacing={2} justifyContent="space-between" justifyContent="flex-end"  alignItems="center">
                             <FormControl fullWidth sx={{ m: 1}} size="small" >
                                 <Select 
                                 labelId="sort-order"
@@ -44,6 +37,8 @@ export default function ProfileCollectionFilters({filters={
                             </FormControl>
                             <FormControl  sx={{ m: 1}} size="small" fullwidth>
                                 <Select 
+                                labelId="price"
+                                id="price"
                                 value="" //needs to be here because without value throws Error
                                 color='secondary'
                                 label='This week'
@@ -54,7 +49,7 @@ export default function ProfileCollectionFilters({filters={
                                 
                                 {/* </TextField> */}
                                 </Select>
-                        </FormControl>
+                            </FormControl>
                             <FormControl >
                                 <TextField
                                 InputProps={{
@@ -71,9 +66,8 @@ export default function ProfileCollectionFilters({filters={
                                 variant="standard" 
                                 color='secondary'  />
                             </FormControl>
-                         
-                    </Grid>
-                </Grid>
+                        
+                 
             </Grid>
         </div>
     );
