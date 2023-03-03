@@ -6,7 +6,7 @@ import ProfileUser from "../../src/components/profile/ProfileUser";
 import ProfileCollection from "../../src/components/profile/ProfileCollection";
 import dataProfile from '../../data/profile.json';
 import { useEffect, useState } from "react";
-import Activity from "../../src/components/activity/Activity";
+import Activity from "../../src/components/activity/ActivityFilters";
 
 
 export default function Profile() {
