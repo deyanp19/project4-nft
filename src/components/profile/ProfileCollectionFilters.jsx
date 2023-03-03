@@ -50,7 +50,7 @@ export default function ProfileCollectionFilters({filters={
                                 {/* </TextField> */}
                                 </Select>
                             </FormControl>
-                            <FormControl >
+                            <FormControl sx={{padding:"4"}} >
                                 <TextField
                                 InputProps={{
                                     startAdornment: (
