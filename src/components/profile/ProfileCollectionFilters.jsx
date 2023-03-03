@@ -24,8 +24,8 @@ export default function ProfileCollectionFilters({filters={
     }}) {
     return (
         <div className={styles["profile-collection-filters"]}>
-            <Grid container direction="row"  wrap='nowrap' spacing={2} justifyContent="space-between" justifyContent="flex-end"  alignItems="center">
-                            <FormControl fullWidth sx={{ m: 1}} size="small" >
+            <Grid container direction="row"  wrap='nowrap' spacing={2} justifyContent="space-between"    alignItems="center">
+                            <FormControl sx={{ m: 1}} size="small" fullWidth>
                                 <Select 
                                 labelId="sort-order"
                                 id="sort-order"
@@ -35,7 +35,7 @@ export default function ProfileCollectionFilters({filters={
                                     {filters.sort.map((pumba)=><MenuItem value={pumba.value}>{pumba.label}</MenuItem>)}
                                 </Select>
                             </FormControl>
-                            <FormControl  sx={{ m: 1}} size="small" fullwidth>
+                            <FormControl  sx={{ m: 1}} size="small" fullWidth >
                                 <Select 
                                 labelId="price"
                                 id="price"

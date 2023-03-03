@@ -12,6 +12,8 @@ import Description from "../../src/components/description/Description";
 import ProfileHero from "../../src/components/profile/ProfileHero";
 import ProfileUser from "../../src/components/profile/ProfileUser";
 import ProfileCollectionFilters from "../../src/components/profile/ProfileCollectionFilters";
+import ProfileCollection from "../../src/components/profile/ProfileCollection";
+ 
 
 
 
@@ -34,7 +36,7 @@ export default function How(props) {
       <ProfileUser name='aladin' info='malko teksj' verified={false} />
         <Hero text='fredrikd+a' />
         <Description text="What are they they are the broken promise and to do is out of reach. Hand oer the candy notes food is so expensive to the Cashier." />
-        <ProfileCollectionFilters ></ProfileCollectionFilters>
+        <ProfileCollection/>
        
       <Footer />
     </Container>
