@@ -3,7 +3,7 @@ import Card from '../card/Card';
 import styles from './ProfileCollection.module.scss'
 import ProfileCollectionFilters from './ProfileCollectionFilters'
 
-export default function ProfileCollection({user,filters,items}){
+export default function ProfileCollection({user,filters,items=[]}){
     return (
         <div className={styles["profile-collection"]}>
             <Container>
