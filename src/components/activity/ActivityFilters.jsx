@@ -57,8 +57,7 @@ export default function ActivityFilters({filters={
                                </Select>
                               </FormControl>
                               <FormControl sx={{padding:"4"}} >  
-                                <TextField
-                                variant="standard"
+                                <TextField variant="standard"
                                 inputprops={{
                                     startAdornment: (
                                         <InputAdornment position='start' >
