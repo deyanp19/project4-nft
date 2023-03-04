@@ -1,9 +1,11 @@
 import { Container } from '.pnpm/@mui+system@5.11.11_emc6qr3qmuqskibkvjebpluxve/node_modules/@mui/system';
-import { Grid } from '@mui/material';
-import { formatDistance, parseISO } from 'date-fns/esm';
+import { Grid, Typography,InputAdornment,Stack,Select, TextField, FormControl, InputLabel, MenuItem } from '@mui/material';
+import classNames from 'classnames';
+import { formatDistance, parseISO } from 'date-fns';
 import Avatar from '../avatar/Avatar';
 import Link from '../link/Link';
-import styles from './Activity.module.scss';
+import styles from './ActivityFilters.module.scss';
+import {Search} from '@mui/icons-material';
 
 export default function ActivityFilters({filters={
     sort: [
@@ -28,40 +30,40 @@ export default function ActivityFilters({filters={
 
             <Grid container direction="column" >
                 <Grid item >
-                <Typography variant='h3' inputProps={{textTransform:'uppercase'}}>Collection</Typography>
+                <Typography variant='h3' >Collection</Typography>
                 </Grid>
                 <Grid item >
                 <FormControl sx={{ m: 1}} size="small" fullWidth>
                                 <Select 
-                                color="promary"
+                                color="primary"
                                 labelId="sort-order"
                                 id="sort-order"
                                 variant="outlined"
-                                value={filters?.sort}
+                                value={1}
                                 label={filters.sort.label}
                                 >
-                                    {filters.sort.map((pumba)=><MenuItem value={pumba.value}>{pumba.label}</MenuItem>)}
+                                    {filters.sort.map((pumba)=><MenuItem key={pumba.value} value={pumba.value}>{pumba.label}</MenuItem>)}
                                 </Select>
                             </FormControl>
-                            <FormControl  sx={{ m: 1}} size="small" fullWidth >
+                             <FormControl  sx={{ m: 1}} size="small" fullWidth >
                                 <Select 
                                 labelId="price"
                                 id="price"
-                                value="" //needs to be here because without value throws Error
+                                value={3} //needs to be here because without value throws Error
                                 color='secondary'
                                 label='This week'
                                 className={classNames(styles.selectBox)} 
                                 >
-                                   {filters.price.map((timon)=><MenuItem value={timon.value}>{timon.label}</MenuItem>)}
+                                   {filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}  
 
                                 
-                                {/* </TextField> */}
-                                </Select>
-                            </FormControl>
-                            <FormControl sx={{padding:"4"}} >
+                               {/* </TextField> */}
+                               </Select>
+                              </FormControl>
+                              <FormControl sx={{padding:"4"}} >  
                                 <TextField
                                 variant="standard"
-                                InputProps={{
+                                inputprops={{
                                     startAdornment: (
                                         <InputAdornment position='start' >
 
@@ -74,7 +76,7 @@ export default function ActivityFilters({filters={
                                 fullWidth 
                                 variant="standard" 
                                 color='secondary'  />
-                            </FormControl>
+                            </FormControl>  
                         
                 </Grid>
             

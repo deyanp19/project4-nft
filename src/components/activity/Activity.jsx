@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-// import { formatDistance, parseISO } from 'date-fns/esm';
+// import { formatDistance, parseISO } from 'date-fns';
 import Avatar from '../avatar/Avatar';
 import Link from '../link/Link';
 import styles from './Activity.module.scss';

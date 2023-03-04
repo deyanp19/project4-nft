@@ -29,22 +29,22 @@ export default function ProfileCollectionFilters({filters={
                                 <Select 
                                 labelId="sort-order"
                                 id="sort-order"
-                                value={filters?.sort}
+                                value={1}
                                 label={filters.sort.label}
                                 >
-                                    {filters.sort.map((pumba)=><MenuItem value={pumba.value}>{pumba.label}</MenuItem>)}
+                                    {filters.sort.map((pumba)=><MenuItem key={pumba.value} value={pumba.value}>{pumba.label}</MenuItem>)}
                                 </Select>
                             </FormControl>
                             <FormControl  sx={{ m: 1}} size="small" fullWidth >
                                 <Select 
                                 labelId="price"
                                 id="price"
-                                value="" //needs to be here because without value throws Error
+                                value={3} //needs to be here because without value throws Error
                                 color='secondary'
                                 label='This week'
                                 className={classNames(styles.selectBox)} 
                                 >
-                                   {filters.price.map((timon)=><MenuItem value={timon.value}>{timon.label}</MenuItem>)}
+                                   {filters.price.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}
 
                                 
                                 {/* </TextField> */}
