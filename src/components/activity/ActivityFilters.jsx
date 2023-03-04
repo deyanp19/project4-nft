@@ -70,7 +70,6 @@ export default function ActivityFilters({filters={
                                 }}
                                 className={classNames(styles.backgroundInputSearch)} 
                                 fullWidth 
-                                variant="standard" 
                                 color='secondary'  />
                             </FormControl>  
                         
