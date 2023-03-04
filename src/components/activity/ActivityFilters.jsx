@@ -1,5 +1,5 @@
-import { Container } from '.pnpm/@mui+system@5.11.11_emc6qr3qmuqskibkvjebpluxve/node_modules/@mui/system';
-import { Grid, Typography,InputAdornment,Stack,Select, TextField, FormControl, InputLabel, MenuItem } from '@mui/material';
+
+import { Grid,Container, Typography,InputAdornment,Stack,Select, TextField, FormControl, InputLabel, MenuItem } from '@mui/material';
 import classNames from 'classnames';
 import { formatDistance, parseISO } from 'date-fns';
 import Avatar from '../avatar/Avatar';
@@ -20,17 +20,13 @@ export default function ActivityFilters({filters={
       },
     ],
     }}) {
-   
-    
     return (
-
-        
         <div className={styles["activity-filters"]} >
             <Container >
 
             <Grid container direction="column" >
                 <Grid item >
-                <Typography variant='h3' >Collection</Typography>
+                <Typography variant='h3' >Activity</Typography>
                 </Grid>
                 <Grid item >
                 <FormControl sx={{ m: 1}} size="small" fullWidth>
