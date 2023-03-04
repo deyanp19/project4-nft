@@ -17,10 +17,10 @@ export default function ActivityListItem({user='', created_at='',nft='',type="li
                     <Avatar  />
                 </Grid>
                 <Grid item >
-                  {nft} {type}  {user}
+                  {nft} {type}  <Link href='/' >{user}</Link>> 
                 </Grid>
             
-            <Link href='/' />
+           
             { formatDistance(new Date()-3, new Date(parseISO(created_at, { additionalDigits: 1 })), {includeSeconds: true,addSuffix: true})}
             </Grid>
         </div>
