@@ -1,3 +1,4 @@
+import { Container } from '.pnpm/@mui+system@5.11.11_emc6qr3qmuqskibkvjebpluxve/node_modules/@mui/system';
 import { Grid } from '@mui/material';
 import { formatDistance, parseISO } from 'date-fns/esm';
 import Avatar from '../avatar/Avatar';
@@ -23,6 +24,8 @@ export default function ActivityFilters({filters={
 
         
         <div className={styles["activity-filters"]} >
+            <Container >
+
             <Grid container direction="column" >
                 <Grid item >
                 <Typography variant='h3' inputProps={{textTransform:'uppercase'}}>Collection</Typography>
@@ -30,8 +33,10 @@ export default function ActivityFilters({filters={
                 <Grid item >
                 <FormControl sx={{ m: 1}} size="small" fullWidth>
                                 <Select 
+                                color="promary"
                                 labelId="sort-order"
                                 id="sort-order"
+                                variant="outlined"
                                 value={filters?.sort}
                                 label={filters.sort.label}
                                 >
@@ -55,6 +60,7 @@ export default function ActivityFilters({filters={
                             </FormControl>
                             <FormControl sx={{padding:"4"}} >
                                 <TextField
+                                variant="standard"
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position='start' >
@@ -74,6 +80,7 @@ export default function ActivityFilters({filters={
             
              
             </Grid>
+                                </Container>
         </div>
     );
 }
