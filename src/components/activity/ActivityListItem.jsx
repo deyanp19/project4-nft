@@ -2,9 +2,10 @@ import { Grid } from '@mui/material';
 // import { formatDistance, parseISO } from 'date-fns';
 import Avatar from '../avatar/Avatar';
 import Link from '../link/Link';
-import styles from './Activity.module.scss';
+import styles from './ActivityListItem.module.scss';
+import { format, formatDistance,parseISO, formatRelative, subDays } from 'date-fns';
 
-export default function Activity({user='', crated_at='',nft='',type="like"}) {
+export default function ActivityListItem({user='', created_at='',nft='',type="like"}) {
    
     
     return (
@@ -16,10 +17,11 @@ export default function Activity({user='', crated_at='',nft='',type="like"}) {
                     <Avatar  />
                 </Grid>
                 <Grid item >
-                    
+                  {nft} {type}  {user}
                 </Grid>
             
             <Link href='/' />
+            { formatDistance(new Date()-3, new Date(parseISO(created_at, { additionalDigits: 1 })), {includeSeconds: true,addSuffix: true})}
             </Grid>
         </div>
     );
