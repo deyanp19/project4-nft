@@ -3,18 +3,19 @@ import styles from './ActivityList.module.scss';
 import ActivityListItem from './ActivityListItem';
 import classNames from 'classnames';
 
-export default function ActivityList({items}){
-    console.log(items.map(x=>console.log(x)));
+export default function ActivityList({items=[]}){
     return (
-        <div className={classNames(styles["activity-list"])}>
-            <Stack spacing={3} >
-            {items.map((item)=> <ActivityListItem {...item} /> )}
+        <div className={styles["activity-list"]}>
+            <Stack spacing={2} alignItems='center' direction="column" >
+            {items.map((item)=> <ActivityListItem key={item.name+item.created_at} {...item} /> )}
             </Stack>
         </div>
     );
 }
 
-// =[{ user:{
+
+
+// [{ user:{
 //     "avatar": {
 //         "url": '/images/avatar.png'
 //      },
