@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 export default function About() {
 
-    const [activity,setActivity] =useState()
+    const [activity,setActivity] =useState([])
 
     useEffect(()=>{
         setActivity(dataActivity);
@@ -23,7 +23,7 @@ export default function About() {
 <Container>
       <Header/>
         <Hero />
-        <ActivityList />
+        <ActivityList items={activity} />
         
         <Footer />
 
@@ -32,3 +32,4 @@ export default function About() {
     
   );
 }
+
