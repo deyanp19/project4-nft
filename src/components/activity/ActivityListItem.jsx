@@ -37,13 +37,16 @@ export default function ActivityListItem({user ,created_at ,nft ,type="like"}) {
   
   
    const timeDistanceCalc=formatDistance(currentDate,dateInTime,{addSuffix:true,includeSeconds:true})
-    return (< div > 
-               <Stack direction="row">
+    return (
+               <div> 
+               <Stack className={styles["list-item-stack"]} direction="row" spacing={2}>
 
-               <Avatar url={user} />
-               <Stack direction="column"> 
-                     <p> {user} {type=='like'?"liked":(type=="buy"?"bought":null)}  <Link variant="text"  href='/' >{user}</Link> by  <Link variant="text" href='/'>{nft}</Link></p>  
-                     <p> { timeDistanceCalc}</p>
+               <Avatar url={user.avatar.url} verified={user.verified} />
+
+               <Stack className={styles["info-stack"]} direction="column"> 
+
+                     <p className={styles["info-par"]}> {user} {type=='like'?"liked":(type=="buy"?"bought":null)}  <Link variant="text"  href='/' >{user}</Link> by  <Link variant="text" href='/'>{nft}</Link></p>  
+                     <p className={styles["info-par"]}> { formatDistance(currentDate,dateInTime,{addSuffix:true,includeSeconds:true}) }</p>
                </Stack>
                </Stack>
         </div>
