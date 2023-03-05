@@ -10,11 +10,11 @@ import Stack from "@mui/material/Stack";
 
  
 export default function ActivityListItem({
-   user,
-   created_at,
-   nft,
-   type = "like"
- }) {
+  user,
+  created_at,
+  nft,
+  type = "like"
+}) {
    console.log(user.verified);
   const action = () => {
     if (type === "like") {
@@ -30,7 +30,7 @@ export default function ActivityListItem({
   return (
     <div>
        <Stack className={styles["activity-list-item"]} direction="row" spacing={2}>
-        <Avatar  url={user.avatar.url} verified={user.verified} />
+        <Avatar url={user.avatar.url} verified={user.verified} />
         <Stack className={styles["info-stack"]} direction="column">
           <p className={styles["info-par"]}>
             {`${user.name} ${action()}`}{" "}
@@ -59,18 +59,17 @@ export default function ActivityListItem({
 // import parseISO from 'date-fns/parseISO'
  
 
-// const bandera= 
-// {
-//    user={
-//        avatar: {
-//           "url": '/images/avatar.png'
+// const bandera={
+//    user:{
+//        "avatar": {
+//           "url": '/images/profilePic.jpg'
 //        },
 //        "verified": false,
 //        "name":'Cupcat nft'
     
 //    },
-//    created_at="+02023065",
-//    nft={
+//    created_at:"+02023065",
+//    nft:{
 //     "name": 'dog bone',
 //     "owner": {
 //        "username": "antonio banderas",
@@ -80,9 +79,8 @@ export default function ActivityListItem({
 //        "verified": false
 //     }
 //  },
-//    type="like",
+//    type : "like",
 //  }
-
    
 //   let currentDate=new Date();
  
