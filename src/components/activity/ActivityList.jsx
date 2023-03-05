@@ -6,7 +6,7 @@ export default function ActivityList({items}){
     return (
         <div className={styles["activity-list"]}>
             <Stack spacing={3} >
-            {items.map((item)=><Item><ActivityListItem /> </Item>)}
+            {items.map((item)=><Item><ActivityListItem {...item} /> </Item>)}
             </Stack>
         </div>
     );

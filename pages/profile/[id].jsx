@@ -28,7 +28,7 @@ export default function Profile() {
             <ProfileUser/>
            
             <ProfileCollection /> */}
-            <ActivityFilters />
+            {/* <ActivityFilters /> */}
             <ActivityListItem />
            
           <Footer />
