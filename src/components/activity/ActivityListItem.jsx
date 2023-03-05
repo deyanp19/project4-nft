@@ -33,13 +33,14 @@ export default function ActivityListItem({user='flava', created_at='+02023065',n
     let dateInTime=parseISO(created_at, { additionalDigits: 1 })
     let currentDate=new Date()
    console.log()
+   const timeDistanceCalc=formatDistance(currentDate,dateInTime,{addSuffix:true,includeSeconds:true})
     
-    return (<div  >
+    return (<  >
             <Avatar url={user} />
             <p> {user} {type=='like'?"liked":(type=="buy"?"bought":null)}  <Link variant="text"  href='/' >{user}</Link> by  <Link variant="text" href='/'>{nft}</Link></p>  
-            <p> { formatDistance(currentDate,dateInTime,{addSuffix:true,includeSeconds:true})}</p>
+            <p> { timeDistanceCalc}</p>
          
-        </div>
+        </>
     );
 }
 
