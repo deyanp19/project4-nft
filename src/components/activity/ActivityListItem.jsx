@@ -29,9 +29,9 @@ export default function ActivityListItem({
   console.log(dateInTime);
   return (
     <div>
-       <Stack className={styles["activity-list-item"]} direction="row" spacing={2}>
+       <div className={styles["activity-list-item"]}  spacing={2}>
         <Avatar url={user.avatar.url} verified={user.verified} />
-        <Stack className={styles["info-stack"]} direction="column">
+        <div className={styles["info-stack"]}>
           <p className={styles["info-par"]}>
             {`${user.name} ${action()}`}{" "}
             <Link href={nft.owner.avatar.url}>"{nft.name}"</Link> by{" "}
@@ -42,8 +42,8 @@ export default function ActivityListItem({
               addSuffix: true,
             })}
           </p>
-        </Stack>
-      </Stack>  
+        </div>
+      </div>  
     </div>
   );
 }
