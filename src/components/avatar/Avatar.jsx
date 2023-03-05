@@ -1,5 +1,5 @@
 import styles from './Avatar.module.scss';
-export default function Avatar({size=90, url='/images/avatar.png',verified=true}) {
+export default function Avatar({size=90, url='/images/avatar.png',verified=false}) {
     let verifiedBadge = {
         display: "none"
     }
