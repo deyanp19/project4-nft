@@ -15,7 +15,6 @@ export default function ActivityListItem({
   nft,
   type = "like"
 }) {
-   console.log(user.verified);
   const action = () => {
     if (type === "like") {
       return "liked";
@@ -29,9 +28,9 @@ export default function ActivityListItem({
   console.log(dateInTime);
   return (
     <div>
-       <div className={styles["activity-list-item"]}  spacing={2}>
+       <Stack className={styles["activity-list-item"]} direction="row"  spacing={1}>
         <Avatar url={user.avatar.url} verified={user.verified} />
-        <div className={styles["info-stack"]}>
+        <Stack direction="column" spacing={1} className={styles["info-stack"]}>
           <p className={styles["info-par"]}>
             {`${user.name} ${action()}`}{" "}
             <Link href={nft.owner.avatar.url}>"{nft.name}"</Link> by{" "}
@@ -42,8 +41,8 @@ export default function ActivityListItem({
               addSuffix: true,
             })}
           </p>
-        </div>
-      </div>  
+        </Stack>
+      </Stack>  
     </div>
   );
 }

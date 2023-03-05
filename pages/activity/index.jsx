@@ -19,12 +19,16 @@ export default function About() {
     },[]);
 
   return (
-    <Container maxWidth="sm">
+    <div>
+<Container>
       <Header/>
         <Hero />
         <ActivityList />
         
         <Footer />
-    </Container>
+
+        </Container>
+    </div>
+    
   );
 }
