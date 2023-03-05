@@ -22,7 +22,7 @@ export default function ActivityListItem({user='flava', created_at='+02014101',n
                 {/* </Grid> */}
             
            
-                <Typography> { formatDistance(new Date()-3, new Date(parseISO('+02014101', { additionalDigits: 1 })), {includeSeconds: true,addSuffix: true})}</Typography>
+                <p> { formatDistance(new Date()-3, new Date(parseISO('+02014101', { additionalDigits: 1 })), {includeSeconds: true,addSuffix: true})}</p>
             {/* </Grid> */}
             {/* </Grid> */}
         </div>
