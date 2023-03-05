@@ -1,10 +1,11 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography ,Container} from '@mui/material';
 // import { formatDistance, parseISO } from 'date-fns';
 import Avatar from '../avatar/Avatar';
 import Link from '../link/Link';
 import styles from './ActivityListItem.module.scss';
 import formatDistance from 'date-fns/formatDistance'
 import parseISO from 'date-fns/parseISO'
+ 
 
 const bandera={
     "created_at": Date,
@@ -28,19 +29,21 @@ const bandera={
     "type": "buy"
    }
    
-
-export default function ActivityListItem({user='flava', created_at='+02023065',nft='dicksmart',type="like"}) {
+  let currentDate=new Date();
+ 
+export default function ActivityListItem({user ,created_at ,nft ,type="like"}) {
+     created_at='+02023065';
     let dateInTime=parseISO(created_at, { additionalDigits: 1 })
-    let currentDate=new Date()
-   console.log()
+  
+  
    const timeDistanceCalc=formatDistance(currentDate,dateInTime,{addSuffix:true,includeSeconds:true})
+    return (< div > 
     
-    return (<  >
             <Avatar url={user} />
             <p> {user} {type=='like'?"liked":(type=="buy"?"bought":null)}  <Link variant="text"  href='/' >{user}</Link> by  <Link variant="text" href='/'>{nft}</Link></p>  
             <p> { timeDistanceCalc}</p>
-         
-        </>
+          
+        </div>
     );
 }
 
