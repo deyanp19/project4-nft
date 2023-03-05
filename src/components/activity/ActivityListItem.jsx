@@ -1,12 +1,10 @@
-import { Grid, Typography ,Container} from '@mui/material';
+import { Grid, Typography ,Container, Stack} from '@mui/material';
 // import { formatDistance, parseISO } from 'date-fns';
 import Avatar from '../avatar/Avatar';
 import Link from '../link/Link';
 import styles from './ActivityListItem.module.scss';
 import formatDistance from 'date-fns/formatDistance'
 import parseISO from 'date-fns/parseISO'
-import classNames from "classnames";
-
  
 
 const bandera={
@@ -39,40 +37,29 @@ export default function ActivityListItem({user ,created_at ,nft ,type="like"}) {
   
   
    const timeDistanceCalc=formatDistance(currentDate,dateInTime,{addSuffix:true,includeSeconds:true})
-   return (
-      <div className={classNames(styles["activity-list-item"])}>
-        <div className={classNames(styles.wrapper)}>
-          <Avatar verified={user.verified} url={user.avatar.url}></Avatar>
-          <div>{user.name}</div>
-          {type == "like" ? <p>liked</p> : <p>bought</p>}
-          <Link href="/">{nft.name} </Link>
-          <p>by </p>
-          <Link href="/"> {nft.owner.username}</Link>
+    return (< div > 
+               <Stack direction="row">
+
+               <Avatar url={user} />
+               <Stack direction="column"> 
+                     <p> {user} {type=='like'?"liked":(type=="buy"?"bought":null)}  <Link variant="text"  href='/' >{user}</Link> by  <Link variant="text" href='/'>{nft}</Link></p>  
+                     <p> { timeDistanceCalc}</p>
+               </Stack>
+               </Stack>
         </div>
-        <div>{formatDistance(parseISO(created_at), new Date())} ago</div>
-      </div>
     );
-  }
-   
-   {/* <Grid container wrap="nowrap"  alignItems="center" justifyContent="flex-start" > */}
+}
+
+
+ {/* <Grid container wrap="nowrap"  alignItems="center" justifyContent="flex-start" > */}
    {/* <Grid item > */}
+     {/* </Grid> */}
+            {/* <Grid container direction="column"> */}
+
+     {/* <Grid item > */}
+  {/* </Grid> */}
    {/* </Grid> */}
-   {/* <Grid container direction="column"> */}
-   
-   {/* <Grid item > */}
-   {/* </Grid> */}
-   {/* </Grid> */}
-   {/* </Grid> */}
-   
-   
-   
-   //     return (
-   //       <div className={classNames(styles["activity-list-item"])}>
-   //       <div className={classNames(styles.wrapper)}>
-   //             <Avatar />
-   //             <p> {user} {type=='like'?"liked":(type=="buy"?"bought":null)}  <Link variant="text"  href='/' >{user}</Link> by  <Link variant="text" href='/'>{nft}</Link></p>  
-   //             <p> { timeDistanceCalc}</p>
-   //             </div>
-   //           </div>
-   //     );
-   // }
+            {/* </Grid> */}
+
+
+
