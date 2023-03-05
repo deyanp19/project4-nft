@@ -11,7 +11,7 @@ export default function ActivityListItem({user='flava', created_at='+02014101',n
     return (
 
         
-        <div className={styles.activity} >
+        <div  >
             {/* <Grid container wrap="nowrap"  alignItems="center" justifyContent="flex-start" > */}
                 {/* <Grid item > */}
                     <Avatar size={56} />
