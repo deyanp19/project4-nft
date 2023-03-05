@@ -8,6 +8,7 @@ import dataProfile from '../../data/profile.json';
 import { useEffect, useState } from "react";
 import ActivityFilters from "../../src/components/activity/ActivityFilters";
 import ActivityListItem from "../../src/components/activity/ActivityListItem";
+import ActivityList from "../../src/components/activity/ActivityList";
  
 
 
@@ -29,7 +30,7 @@ export default function Profile() {
            
             <ProfileCollection /> */}
             {/* <ActivityFilters /> */}
-            <ActivityListItem />
+            <ActivityList />
            
           <Footer />
         </Container>
