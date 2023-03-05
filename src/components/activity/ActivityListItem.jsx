@@ -10,26 +10,10 @@ import Stack from "@mui/material/Stack";
 
  
 export default function ActivityListItem({
-   user={
-       avatar: {
-          "url": '/images/avatar.png'
-       },
-       "verified": false,
-       "name":'Cupcat nft'
-    
-   },
-   created_at="+02023065",
-   nft={
-    "name": 'dog bone',
-    "owner": {
-       "username": "antonio banderas",
-        "avatar": {
-           "url": '/images/avatar.png'
-        },
-       "verified": false
-    }
- },
-   type="like",
+   user,
+   created_at,
+   nft,
+   type = "like"
  }) {
    console.log(user.verified);
   const action = () => {
@@ -77,11 +61,28 @@ export default function ActivityListItem({
 
 // const bandera= 
 // {
-//    user,
-//    created_at,
-//    nft,
-//    type = "like",
+//    user={
+//        avatar: {
+//           "url": '/images/avatar.png'
+//        },
+//        "verified": false,
+//        "name":'Cupcat nft'
+    
+//    },
+//    created_at="+02023065",
+//    nft={
+//     "name": 'dog bone',
+//     "owner": {
+//        "username": "antonio banderas",
+//         "avatar": {
+//            "url": '/images/avatar.png'
+//         },
+//        "verified": false
+//     }
+//  },
+//    type="like",
 //  }
+
    
 //   let currentDate=new Date();
  
