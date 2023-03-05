@@ -40,13 +40,13 @@ export default function ActivityListItem({user ,created_at ,nft ,type="like"}) {
   
    const timeDistanceCalc=formatDistance(currentDate,dateInTime,{addSuffix:true,includeSeconds:true})
     return (
-    <div className={classNames(styles.container)}> 
+    <Container>
       
             <Avatar />
             <p> {user} {type=='like'?"liked":(type=="buy"?"bought":null)}  <Link variant="text"  href='/' >{user}</Link> by  <Link variant="text" href='/'>{nft}</Link></p>  
             <p> { timeDistanceCalc}</p>
             
-        </div>
+            </Container>
     );
 }
 
