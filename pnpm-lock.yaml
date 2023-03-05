@@ -10,7 +10,6 @@ specifiers:
   '@mui/material': latest
   classnames: ^2.2.6
   clsx: ^1.1.1
-  date-fns: ^2.29.3
   lodash: ^4.17.21
   millify: ^5.0.1
   next: 11.1.2
@@ -30,7 +29,6 @@ dependencies:
   '@mui/material': 5.11.11_hvfpp223q2vbfwiar6leyzz3ou
   classnames: 2.3.2
   clsx: 1.2.1
-  date-fns: 2.29.3
   lodash: 4.17.21
   millify: 5.0.1
   next: 11.1.2_pguw3yx7fjfkt4ktsfoo2p6w7u
@@ -1068,11 +1066,6 @@ packages:
   /data-uri-to-buffer/3.0.1:
     resolution: {integrity: sha512-WboRycPNsVw3B3TL559F7kuBUM4d8CgMEvk6xEJlOp7OBPjt6G7z8WMWlD2rOFZLk6OYfFIUGsCOWzcQH9K2og==}
     engines: {node: '>= 6'}
-    dev: false
-
-  /date-fns/2.29.3:
-    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
-    engines: {node: '>=0.11'}
     dev: false
 
   /debug/2.6.9:
