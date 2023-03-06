@@ -22,8 +22,8 @@ export default function About() {
     <div>
 
       <Header/>
-        <Hero />
-        <ActivityList items={activity} />
+        <Hero text={"Activity"}/>
+       { activity && <ActivityList items={activity} />}
         
         <Footer />
 

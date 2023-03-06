@@ -32,7 +32,7 @@ export default function ActivityListItem({
           </Link>
           <span> by </span>
           <Link href={"#"} className={styles.link}>
-            {nft.user.name}
+            {nft.name}
           </Link>
         </div>
         <div className={styles.elapsed}>
