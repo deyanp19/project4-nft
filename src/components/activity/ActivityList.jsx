@@ -1,5 +1,5 @@
 
-import Stack from '@mui/material/Stack';
+import { Container, Stack } from "@mui/material";
 import ActivityListItem from "./ActivityListItem";
 import styles from "./ActivityList.module.scss";
 import classNames from "classnames";
