@@ -1,51 +1,103 @@
+
 import styles from "./ActivityListItem.module.scss";
- 
-import { formatDistance, parseISO } from "date-fns";
- 
+import { parseISO, formatDistance } from "date-fns";
 import Avatar from "../avatar/Avatar";
 import Link from "../link/Link";
-import Stack from "@mui/material/Stack";
 
-
-
- 
 export default function ActivityListItem({
   user,
   created_at,
   nft,
-  type = "like"
+  type = "like",
 }) {
-  const action = () => {
-    if (type === "like") {
-      return "liked";
-    } else if (type === "buy") {
-      return "bought";
-    }
-  };
+  let activity;
 
-  let currentDate=new Date();
-  let dateInTime=parseISO(created_at, { additionalDigits: 1 })
-  console.log(dateInTime);
+  switch (type) {
+    case "like":
+      activity = "liked";
+      break;
+    case "buy":
+      activity = "bought";
+      break;
+  }
+
   return (
-    <div>
-       <Stack className={styles["activity-list-item"]} direction="row"  spacing={1}>
-        <Avatar url={user.avatar.url} verified={user.verified} />
-        <Stack direction="column" spacing={1} className={styles["info-stack"]}>
-          <p className={styles["info-par"]}>
-            {`${user.name} ${action()}`}{" "}
-            <Link href={nft.owner.avatar.url}>"{nft.name}"</Link> by{" "}
-            <Link href={user.avatar.url}>{nft.owner.username}</Link>
-          </p>
-          <p className={styles["info-par"]}>
-            {formatDistance(currentDate,dateInTime, {
-              addSuffix: true,
-            })}
-          </p>
-        </Stack>
-      </Stack>  
+    <div className={styles["activity-list-item"]}>
+      <Avatar size={56} url={user.avatar.url} verified={user.verified} />
+      <div className={styles["activity-info"]}>
+        <div className={styles.text}>
+          <span className={styles.name}>{user.name}</span>
+          <span> {activity} </span>
+          <Link
+            className={styles.link}
+            href={`/product/${nft.id}`}
+          >{`\"
+${nft.name}\"`}</Link>
+          <span> by </span>
+          <Link className={styles.link} href={`/profile/${nft.owner.id}`}>
+            {nft.owner.username}
+          </Link>
+        </div>
+        <div className={styles.elapsed}>
+          {formatDistance(Date.now(), parseISO(created_at))}
+        </div>
+      </div>
     </div>
   );
 }
+
+
+
+
+
+// import styles from "./ActivityListItem.module.scss";
+ 
+// import { formatDistance, parseISO } from "date-fns";
+ 
+// import Avatar from "../avatar/Avatar";
+// import Link from "../link/Link";
+// import Stack from "@mui/material/Stack";
+
+
+
+ 
+// export default function ActivityListItem({
+//   user,
+//   created_at,
+//   nft,
+//   type = "like"
+// }) {
+//   const action = () => {
+//     if (type === "like") {
+//       return "liked";
+//     } else if (type === "buy") {
+//       return "bought";
+//     }
+//   };
+
+//   let currentDate=new Date();
+//   let dateInTime=parseISO(created_at, { additionalDigits: 1 })
+//   console.log(dateInTime);
+//   return (
+//     <div>
+//        <Stack className={styles["activity-list-item"]} direction="row"  spacing={1}>
+//         <Avatar url={user.avatar.url} verified={user.verified} />
+//         <Stack direction="column" spacing={1} className={styles["info-stack"]}>
+//           <p className={styles["info-par"]}>
+//             {`${user.name} ${action()}`}{" "}
+//             <Link href={nft.owner.avatar.url}>"{nft.name}"</Link> by{" "}
+//             <Link href={user.avatar.url}>{nft.owner.username}</Link>
+//           </p>
+//           <p className={styles["info-par"]}>
+//             {formatDistance(currentDate,dateInTime, {
+//               addSuffix: true,
+//             })}
+//           </p>
+//         </Stack>
+//       </Stack>  
+//     </div>
+//   );
+// }
 
 
 
