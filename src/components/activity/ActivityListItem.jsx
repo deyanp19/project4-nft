@@ -1,4 +1,3 @@
-
 import styles from "./ActivityListItem.module.scss";
 import { parseISO, formatDistance } from "date-fns";
 import Avatar from "../avatar/Avatar";
@@ -23,19 +22,17 @@ export default function ActivityListItem({
 
   return (
     <div className={styles["activity-list-item"]}>
-      <Avatar size={56} url={user.avatar.url} verified={user.verified} />
+      <Avatar size={56} url={user.avatarUrl} verified={user.verified} />
       <div className={styles["activity-info"]}>
         <div className={styles.text}>
           <span className={styles.name}>{user.name}</span>
           <span> {activity} </span>
-          <Link
-            className={styles.link}
-            href={`/product/${nft.id}`}
-          >{`\"
-${nft.name}\"`}</Link>
+          <Link href={"#"} className={styles.link}>
+            {nft.name}
+          </Link>
           <span> by </span>
-          <Link className={styles.link} href={`/profile/${nft.owner.id}`}>
-            {nft.owner.username}
+          <Link href={"#"} className={styles.link}>
+            {nft.user.name}
           </Link>
         </div>
         <div className={styles.elapsed}>

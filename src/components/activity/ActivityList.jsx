@@ -1,28 +1,20 @@
-
-import { Container, Stack } from "@mui/material";
-import ActivityListItem from "./ActivityListItem";
 import styles from "./ActivityList.module.scss";
-import classNames from "classnames";
+import ActivityListItem from "./ActivityListItem";
+import { Container, Stack } from "@mui/material";
 
- 
-  export default function ActivityList({ items = [] }) {
-    return (
-      <div className={styles["activity-list"]}>
-          <Stack direction={"column"} spacing={2} alignItems='center'>
-              {items.map((item,index)=>{
-                  return <ActivityListItem 
-                  key={index}
-                  user={item.user} 
-                  created_at={item.created_at} 
-                  nft={item.nft} 
-                  type={item.type}
-                  />
-              })}
-          </Stack>
-      </div>
-    );
-  }
-  
+export default function ActivityList({ items = [] }) {
+  return (
+    <div className={styles["activity-list"]}>
+      <Container>
+        <Stack direction={"column"} spacing={2}>
+          {items.map((item, i) => {
+            return <ActivityListItem key={i} {...item} />;
+          })}
+        </Stack>
+      </Container>
+    </div>
+  );
+}
  
 
 
