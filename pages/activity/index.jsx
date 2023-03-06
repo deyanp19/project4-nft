@@ -20,14 +20,13 @@ export default function About() {
 
   return (
     <div>
-<Container>
+
       <Header/>
         <Hero />
         <ActivityList items={activity} />
         
         <Footer />
 
-        </Container>
     </div>
     
   );
