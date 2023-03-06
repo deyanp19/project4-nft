@@ -13,7 +13,7 @@ import classNames from "classnames";
                   return <ActivityListItem 
                   key={index}
                   user={item.user} 
-                  created_at={item.published_at} 
+                  created_at={item.created_at} 
                   nft={item.nft} 
                   type={item.type}
                   />
