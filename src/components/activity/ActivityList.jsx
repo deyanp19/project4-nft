@@ -6,8 +6,8 @@ import classNames from "classnames";
 
 export default function ActivityList({ items = [] }) {
   return (
-    <div className="activity-list">
-      <Stack direction="column" spacing={1}>
+    <div className={styles["activity-list"]}>
+      <Stack direction={"column"} spacing={1}>
         {items.map((item, idx) => {return ( <ActivityListItem key={idx} user={item.user}   nft={item.nft}  created_at={item.created_at} type={item.type} />  ); })}
       </Stack>
     </div>
