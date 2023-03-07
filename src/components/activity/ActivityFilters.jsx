@@ -46,8 +46,8 @@ export default function ActivityFilters({filters={
                                 labelId="price"
                                 id="price"
                                 value={3} //needs to be here because without value throws Error
-                                color='secondary'
-                                label='This week'
+                                color='primary'
+                                label={filtes.type.label }
                                 className={classNames(styles.selectBox)} 
                                 >
                                    {filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}  
