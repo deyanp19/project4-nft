@@ -13,7 +13,7 @@ import ActivityFilters from "../../src/components/activity/ActivityFilters";
 
 export default function About() {
 
-    const [activity,setActivity] =useState([])
+    const [activity,setActivity] =useState([]);
 
     useEffect(()=>{
         setActivity(dataActivity);
@@ -24,7 +24,7 @@ export default function About() {
 
       <Header/>
         <Hero text={"Activity"}/>
-    <ActivityFilter />
+    <ActivityFilters />
        { activity && <ActivityList items={activity} />}
         
         <Footer />
