@@ -9,6 +9,7 @@ import Hero from "../../src/components/hero/Hero"
 import ActivityList from "../../src/components/activity/ActivityList";
 import dataActivity from "../../data/activity.json"
 import { useEffect, useState } from "react";
+import ActivityFilters from "../../src/components/activity/ActivityFilters";
 
 export default function About() {
 
@@ -23,6 +24,7 @@ export default function About() {
 
       <Header/>
         <Hero text={"Activity"}/>
+    <ActivityFilter
        { activity && <ActivityList items={activity} />}
         
         <Footer />
