@@ -24,7 +24,7 @@ export default function About() {
 
       <Header/>
         <Hero text={"Activity"}/>
-    <ActivityFilter
+    <ActivityFilter />
        { activity && <ActivityList items={activity} />}
         
         <Footer />
