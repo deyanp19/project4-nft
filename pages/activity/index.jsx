@@ -11,6 +11,7 @@ import dataActivity from "../../data/activity.json"
 import { useEffect, useState } from "react";
 import ActivityFilters from "../../src/components/activity/ActivityFilters";
 import dataActivityFilters from "../../data/filtersActivity.json";
+import ExploreTitle from "../../src/components/explore/ExploreTitle";
 export default function About() {
 
     const [activity,setActivity] =useState([]);
@@ -27,6 +28,8 @@ export default function About() {
     <div>
 
       <Header/>
+      <ExploreTitle text='opas' />
+
         <Hero text={"Activity"}/>
         {filters && <ActivityFilters filters={filters}/>}
         {activity && <ActivityList items={activity} />}
