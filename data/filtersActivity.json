@@ -9,9 +9,6 @@
   ],
   "type": [
     { "label": "Liked", "value": 7 },
-    {
-      "label": "Bought",
-      "value": 8
-    }
+    {"label": "Bought","value": 8}
   ]
 }

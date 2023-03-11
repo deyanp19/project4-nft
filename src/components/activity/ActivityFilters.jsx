@@ -20,6 +20,7 @@ export default function ActivityFilters({filters={
       },
     ],
     }}) {
+      console.log(filters);
     return (
         <div className={styles["activity-filters"]} >
             <Container >
@@ -38,21 +39,22 @@ export default function ActivityFilters({filters={
                                 value={1}
                                 label={filters.sort.label}
                                 >
-                                    {filters.sort.map((pumba)=><MenuItem key={pumba.value} value={pumba.value}>{pumba.label}</MenuItem>)}
+                                    {/* {console.log(filters)} */}
+                                     {/* {filters&&filters.sort.map((pumba)=><MenuItem key={pumba.value} value={pumba.value}>{pumba.label}</MenuItem>)} */}
                                 </Select>
-                            </FormControl>
-                             <FormControl  sx={{ m: 1}} size="small" fullWidth >
+                           </FormControl>
+                               <FormControl  sx={{ m: 1}} size="small" fullWidth >
                                 <Select 
                                 labelId="price"
                                 id="price"
                                 value={3} //needs to be here because without value throws Error
                                 color='primary'
-                                label={filtes.type.label }
+                                label={filters?  'sdf' :'none' }
                                 className={classNames(styles.selectBox)} 
                                 >
-                                   {filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}  
+                                   {/* {filters && filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}  */}
                                </Select>
-                              </FormControl>
+                              </FormControl> 
                               <FormControl sx={{padding:"4"}} >  
                                 <TextField variant="standard" InputProps={{  startAdornment: (  <InputAdornment position='start' > <Search sx={{color:'white'}}  /> </InputAdornment> ),   disableUnderline:true}} className={classNames(styles.backgroundInputSearch)}  fullWidth    color='secondary'  />
                             </FormControl>  

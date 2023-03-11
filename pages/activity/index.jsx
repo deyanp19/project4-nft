@@ -10,22 +10,26 @@ import ActivityList from "../../src/components/activity/ActivityList";
 import dataActivity from "../../data/activity.json"
 import { useEffect, useState } from "react";
 import ActivityFilters from "../../src/components/activity/ActivityFilters";
-
+import dataActivityFilters from "../../data/filtersActivity.json";
 export default function About() {
 
     const [activity,setActivity] =useState([]);
+    const [filters, setFilters] = useState([]);
 
     useEffect(()=>{
         setActivity(dataActivity);
+        setFilters(dataActivityFilters)
     },[]);
+    // console.log(activity);
+    console.log(filters);
 
   return (
     <div>
 
       <Header/>
         <Hero text={"Activity"}/>
-    <ActivityFilters />
-       { activity && <ActivityList items={activity} />}
+        {filters && <ActivityFilters filters={filters}/>}
+        {activity && <ActivityList items={activity} />}
         
         <Footer />
 
