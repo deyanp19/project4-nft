@@ -8,6 +8,7 @@ import Footer from "../../src/components/footer/Footer";
 import Hero from "../../src/components/hero/Hero"
 import ActivityList from "../../src/components/activity/ActivityList";
 import dataActivity from "../../data/activity.json"
+import dataExploreFilters from "../../data/filtersActivity.json";
 import { useEffect, useState } from "react";
 import ExploreTitle from "../../src/components/explore/ExploreTitle";
 import ExploreFilters from "../../src/components/explore/ExploreFilters";
@@ -15,9 +16,11 @@ import ExploreFilters from "../../src/components/explore/ExploreFilters";
 export default function About() {
 
     const [activity,setActivity] =useState([])
+    const [filters,setFilters] =useState([])
 
     useEffect(()=>{
         setActivity(dataActivity);
+        setFilters(dataExploreFilters)
 
     },[]);
 
@@ -25,9 +28,10 @@ export default function About() {
     <div >
 
       <Header/>
-    <ExploreTitle text={"text"}/>
+    <ExploreTitle text={"explore"}/>
     
-    
+    <ExploreFilters filters={filters}/>
+
         <Footer />
 
     </div>
