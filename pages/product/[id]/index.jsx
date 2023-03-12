@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import Hero from "../../../src/components/hero/Hero";
 import Description from "../../../src/components/description/Description";
 import ExploreTitle from "../../../src/components/explore/ExploreTitle";
+import ExploreFilters from "../../../src/components/explore/ExploreFilters";
 
 
 
@@ -31,6 +32,7 @@ export default function Product(props) {
     <Container >
       <Header />
      <ExploreTitle text='oops'/>
+     <ExploreFilters  />
       <ProductContainer />
        
       <Footer />

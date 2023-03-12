@@ -1,4 +1,4 @@
-import { Container, FormControl, InputAdornment, MenuItem, TextField, Typography } from '@mui/material';
+import { Container, FormControl, InputAdornment, MenuItem, TextField, Typography,Grid,Select } from '@mui/material';
 import classNames from 'classnames';
 import styles from './ExploreFilters.module.scss';
 import {Search} from '@mui/icons-material';
@@ -10,11 +10,13 @@ export default function ExploreFilters({filters}) {
                 <Grid container direction="column" >
                      <FormControl sx={{m:1}} size="small" fullWidth>
                          <Select color="primary" labelId="sort-order" id="sort-order" variant="outlined" value={1} label={filters.sort.label}>
-                             {filters.sort.map((x)=><MenuItem key{x.value} value={x.value}>{x.label}</MenuItem>)}
+                             {/* {filters.sort.map((x)=><MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)} */}
                          </Select>
                      </FormControl>
                      <FormControl sx={{m:1}} size="small" fullWidth>
-                         <Select labelId="price" id="price" value={3} color="primary" label={filters.price.label} className={classNames(styles.selectBox)}>{filters.type.map(x=><MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)}</Select>
+                        <Select labelId="price" id="price" value={3} color="primary" label={filters.price.label} className={classNames(styles.selectBox)}> {/* {filters.type.map(x=><MenuItem key={x.value} value={x.value}>{x.label} 
+                         </MenuItem>)}*/}
+                         </Select>
                      </FormControl>
                      <FormControl sx={{padding:"4"}}>
                          <TextField variant="standard" InputProps={{

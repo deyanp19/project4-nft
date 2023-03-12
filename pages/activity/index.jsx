@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import ActivityFilters from "../../src/components/activity/ActivityFilters";
 import dataActivityFilters from "../../data/filtersActivity.json";
 import ExploreTitle from "../../src/components/explore/ExploreTitle";
+import ExploreFilters from "../../src/components/explore/ExploreFilters";
 export default function About() {
 
     const [activity,setActivity] =useState([]);
@@ -31,6 +32,7 @@ export default function About() {
       
 
         <Hero text={"Activity"}/>
+        {/* <ExploreFilters filters={filters}/> */}
         {filters && <ActivityFilters filters={filters}/>}
         {activity && <ActivityList items={activity} />}
         

@@ -18,14 +18,16 @@ export default function About() {
 
     useEffect(()=>{
         setActivity(dataActivity);
+
     },[]);
 
   return (
-    <div>
+    <div >
 
       <Header/>
-    <ExploreTitle />
-    <ExploreFilters />
+    <ExploreTitle text={"text"}/>
+    
+    
         <Footer />
 
     </div>
