@@ -11,6 +11,7 @@ import dataNtfs from "../../../data/nfts.json";
 import { useRouter } from 'next/router';
 import Hero from "../../../src/components/hero/Hero";
 import Description from "../../../src/components/description/Description";
+import ExploreTitle from "../../../src/components/explore/ExploreTitle";
 
 
 
@@ -29,7 +30,7 @@ export default function Product(props) {
     <div>
     <Container >
       <Header />
-     
+     <ExploreTitle text='oops'/>
       <ProductContainer />
        
       <Footer />

@@ -28,7 +28,7 @@ export default function About() {
     <div>
 
       <Header/>
-      <ExploreTitle text='opas' />
+      
 
         <Hero text={"Activity"}/>
         {filters && <ActivityFilters filters={filters}/>}
