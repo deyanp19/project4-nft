@@ -8,13 +8,14 @@ export default function ExploreFilters({filters}) {
         <div className={styles["explore-filters"]}>
             <Container>
                 <Grid container direction="column" >
-                    <Stack >
 
                      <FormControl sx={{m:1}} size="small" fullWidth>
                      <InputLabel shrink htmlFor="price">Price range</InputLabel>
 
                          <Select color="primary" labelId="sort-order" id="sort-order" variant="outlined" value={1} label={filters?  'sdf' :'none' }>
+                    <Stack >
                               {filters.sort.map((x)=><MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)}  
+                     </Stack>
                          </Select>
                      </FormControl>
                      <FormControl sx={{m:1}} size="small" fullWidth>
@@ -34,7 +35,6 @@ export default function ExploreFilters({filters}) {
 
                                 <TextField variant="standard" InputProps={{  startAdornment: (  <InputAdornment position='start' > <Search sx={{color:'white'}}  /> </InputAdornment> ),   disableUnderline:true}} className={classNames(styles.backgroundInputSearch)}  fullWidth    color='secondary'  />
                             </FormControl>  
-                                    </Stack>
                 </Grid>
             </Container>
         </div>
