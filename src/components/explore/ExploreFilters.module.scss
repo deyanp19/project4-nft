@@ -1,7 +1,7 @@
 @use "../../styles/colors.scss";
 
 .explore-filters {
-    background: #181828;
+    background: colors.$background_default;
 border-radius: 15px;
 padding:10px;
 margin:15px;
@@ -20,4 +20,5 @@ margin:15px;
 
 .search-icon {
     color:colors.$text_primary;
+    padding:2px;
 }
