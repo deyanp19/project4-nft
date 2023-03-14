@@ -1,11 +1,12 @@
 
-import { Grid,Container, Typography,InputAdornment,Stack,Select, TextField, FormControl, InputLabel, MenuItem } from '@mui/material';
+import { Grid,Container, Typography,Stack,Select, TextField, FormControl, InputLabel, MenuItem } from '@mui/material';
 import classNames from 'classnames';
 import { formatDistance, parseISO } from 'date-fns';
 import Avatar from '../avatar/Avatar';
 import Link from '../link/Link';
 import styles from './ActivityFilters.module.scss';
 import {Search} from '@mui/icons-material';
+import { InputAdornment } from '@mui/material';
 
 export default function ActivityFilters({filters={
     sort: [
