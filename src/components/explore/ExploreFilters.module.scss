@@ -1,24 +1,19 @@
 @use "../../styles/colors.scss";
 
 .explore-filters {
-    background: colors.$background_default;
-border-radius: 15px;
-padding:10px;
-margin:15px;
-}
-
-.backgroundInputSearch {
-
-    background-color: colors.$background_paper;
-    border-radius: 32px;
-    text-decoration: none;
-     
 
 
-
-}
-
-.search-icon {
-    color:colors.$text_primary;
-    padding:2px;
+  .search-icon {
+    color: colors.$text_primary !important;
+    margin-left: 0.5rem !important;
+    padding: 2px !important;
+  }
+  .search {
+    background-color: colors.$background_paper !important;
+    padding: 0.625rem !important;
+    border-radius: 30px;
+  }
+  svg {
+    color: colors.$text_primary !important;
+  }
 }

@@ -10,39 +10,132 @@ import {
 } from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
 
-export default function ExploreFilters({filters}) {
-    console.log(filters);
-    return (
-        <div className={styles["explore-filters"]}>
-            {/* <Container> */}
-                
-                <Stack direction={"row"} spacing={2} justifyContent={"flex-end"}  >
+/*
+export default function ExploreFilters({ filters }) {
+  const [sortBy, setSortBy] = useState("");
+  const [priceRange, setPriceRange] = useState("");
+  return (
+    <div className={styles["explore-filters"]}>
+      <Stack direction={"row"} spacing={2} justifyContent={"flex-end"}>
+        <FormControl>
+          <InputLabel id="sort-by-label">Sort by</InputLabel>
+          <Select
+            labelId="sort-by-label"
+            value={sortBy}
+            sx={{ width: "220px" }}
+            color={"primary"}
+            onChange={(e) => setSortBy(e.target.value)}
+          >
+            {filters.sort.map((filter) => {
+              return (
+                <MenuItem key={filter.label} value={filter.value}>
+                  {filter.label}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+        <FormControl>
+          <InputLabel id="price-range-label">Price range</InputLabel>
+          <Select
+            labelId="price-range-label"
+            value={priceRange}
+            sx={{ minWidth: "220px" }}
+            color={"primary"}
+            onChange={(e) => setPriceRange(e.target.value)}
+          >
+            {filters.price.map((filter) => {
+              return (
+                <MenuItem key={filter.label} value={filter.value}>
+                  {filter.label}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+        <TextField
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon className={styles["search-icon"]} />
+              </InputAdornment>
+            ),
+            className: styles.search,
+            disableUnderline: true,
+            sx: { width: "340px" },
+          }}
+          variant="standard"
+        />
+      </Stack>
+    </div>
+  );
+}
+*/
 
-                     <FormControl sx={{m:1}} size="small" fullWidth>
-                     <InputLabel shrink htmlFor="price">Price range</InputLabel>
-
-                         <Select color="primary" labelId="sort-order" id="sort-order" variant="outlined" value={1}  >
-                             <Stack direction="column" spacing={2}> 
-                               { filters.sort.map((x)=>{
-                                  return (<MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)})}    
-                             </Stack> 
-                         </Select>
-                     </FormControl>
-                     <FormControl sx={{m:1}} size="small" fullWidth>
-                     <InputLabel htmlFor="price">Sort by</InputLabel>
-                     <Select labelId="price" id="price" value={3}  color='primary' className={ styles.selectBox}  >
-                                    {/* <Stack direction="column" spacing={2}> */}
-
-                                    {/* {filters.price.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}     */}
-                                    {/* </Stack> */}
-                               </Select>
-                     </FormControl>
-                      <TextField  InputProps={{  startAdornment: (  <InputAdornment position='start' > <SearchIcon className={styles["search-icon"]}  /> </InputAdornment> ),   disableUnderline:true, sx:{ width:"340px"}}} className={styles.backgroundInputSearch}       variant="standard" placeholder='' />
-                              
-                </Stack>
-             
-            {/* </Container> */}
-        </div>
-    );
+export default function ExploreFilters({
+  filters,
+  sortValue,
+  priceValue,
+  onSortChange,
+  onPriceChange,
+  onTextFieldChange,
+}) {
+  return (
+    <div className={styles["explore-filters"]}>
+      <Stack direction={"row"} spacing={2} justifyContent={"flex-end"}>
+        <FormControl>
+          <InputLabel id="sort-by-label">Sort by</InputLabel>
+          <Select
+            labelId="sort-by-label"
+            sx={{ width: "220px" }}
+            color={"primary"}
+            onChange={onSortChange}
+            value={sortValue}
+          >
+            {filters.sort.map((filter) => {
+              return (
+                <MenuItem key={filter.label} value={filter.value}>
+                  {filter.label}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+        <FormControl>
+          <InputLabel id="price-range-label">Price range</InputLabel>
+          <Select
+            labelId="price-range-label"
+            sx={{ minWidth: "220px" }}
+            color={"primary"}
+            onChange={onPriceChange}
+            value={priceValue}
+          >
+            {filters.price.map((filter) => {
+              return (
+                <MenuItem key={filter.label} value={filter.value}>
+                  {filter.label}
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
+        <TextField
+          onChange={onTextFieldChange}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon className={styles["search-icon"]} />
+              </InputAdornment>
+            ),
+            className: styles.search,
+            disableUnderline: true,
+            sx: { width: "340px" },
+          }}
+          variant="standard"
+        />
+      </Stack>
+    </div>
+  );
 }
