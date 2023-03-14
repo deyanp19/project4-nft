@@ -18,6 +18,7 @@ export default function ExploreFilters({ filters }) {
 
   return (
     <div className={styles["explore-filters"]}>
+        <Container>
       <Stack direction={"row"} spacing={2} justifyContent={"flex-end"}>
         <FormControl>
           <InputLabel id="sort-by-label">Sort by</InputLabel>
@@ -74,6 +75,7 @@ export default function ExploreFilters({ filters }) {
           variant="standard"
         />
       </Stack>
+      </Container>
     </div>
   );
 }
