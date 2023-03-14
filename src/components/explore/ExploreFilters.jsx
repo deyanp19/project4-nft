@@ -23,14 +23,7 @@ export default function ExploreFilters({filters}) {
                      </FormControl>
                      <FormControl sx={{m:1}} size="small" fullWidth>
                      <InputLabel htmlFor="price">Sort by</InputLabel>
-                     <Select 
-                                labelId="price"
-                                id="price"
-                                value={3} //needs to be here because without value throws Error
-                                color='primary'
-                                 
-                                className={classNames(styles.selectBox)} 
-                                >
+                     <Select labelId="price" id="price" value={3}  color='primary' className={classNames(styles.selectBox)}  >
                                     {/* <Stack direction="column" spacing={2}> */}
 
                                     {filters.price.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}    
