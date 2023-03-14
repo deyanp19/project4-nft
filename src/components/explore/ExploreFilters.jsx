@@ -35,9 +35,7 @@ export default function ExploreFilters({filters}) {
                                     {/* </Stack> */}
                                </Select>
                      </FormControl>
-                     <FormControl sx={{padding:"4"}} >  
-
-                                <TextField variant="standard" InputProps={{  startAdornment: (  <InputAdornment position='start' > <Search sx={{color:'white'}}  /> </InputAdornment> ),   disableUnderline:true}} className={classNames(styles.backgroundInputSearch)}  fullWidth    color='secondary'  />
+                     <FormControl sx={{padding:"4"}} >  <TextField variant="standard" InputProps={{  startAdornment: (  <InputAdornment position='start' > <Search sx={{color:'white'}}  /> </InputAdornment> ),   disableUnderline:true}} className={classNames(styles.backgroundInputSearch)}  fullWidth    color='secondary'  />
                             </FormControl>  
                 </Stack>
              
