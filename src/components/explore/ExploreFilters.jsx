@@ -14,9 +14,10 @@ export default function ExploreFilters({filters}) {
                      <FormControl sx={{m:1}} size="small" fullWidth>
                      <InputLabel shrink htmlFor="price">Price range</InputLabel>
 
-                         <Select color="primary" labelId="sort-order" id="sort-order" variant="outlined" value={1} label={filters?  'sdf' :'' }>
+                         <Select color="primary" labelId="sort-order" id="sort-order" variant="outlined" value={1}  >
                             {/* <Stack direction="column" spacing={2}> */}
-                              { filters.sort.map((x)=><MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)}   
+                              { filters.sort.map((x)=>{
+                                  return (<MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)})}   
                             {/* </Stack> */}
                          </Select>
                      </FormControl>
@@ -27,12 +28,12 @@ export default function ExploreFilters({filters}) {
                                 id="price"
                                 value={3} //needs to be here because without value throws Error
                                 color='primary'
-                                label={filters?  'sdf' :'' }
+                                 
                                 className={classNames(styles.selectBox)} 
                                 >
                                     {/* <Stack direction="column" spacing={2}> */}
 
-                                   {/* {filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}   */}
+                                   {/* {filters.price.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}   */}
                                     {/* </Stack> */}
                                </Select>
                      </FormControl>
