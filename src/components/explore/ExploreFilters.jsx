@@ -28,13 +28,15 @@ export default function ExploreFilters({ filters }) {
             color={"primary"}
             onChange={(e) => setSortBy(e.target.value)}
           >
-            {filters.sort.map((filter) => {
+             {filters.sort.map((filter) => {
               return (
+                  <Stack direction="column">
                 <MenuItem key={filter.label} value={filter.value}>
                   {filter.label}
                 </MenuItem>
+                </Stack>
               );
-            })}
+            })}  
           </Select>
         </FormControl>
         <FormControl>
@@ -46,15 +48,18 @@ export default function ExploreFilters({ filters }) {
             color={"primary"}
             onChange={(e) => setPriceRange(e.target.value)}
           >
-            {/* {filters.price.map((filter) => {
+              <Stack direction="column" >
+             {filters.price.map((filter) => {
               return (
                 <MenuItem key={filter.label} value={filter.value}>
                   {filter.label}
                 </MenuItem>
               );
-            })} */}
+            })}  
+            </Stack>
           </Select>
         </FormControl>
+
         <TextField
           InputProps={{
             startAdornment: (
@@ -66,7 +71,7 @@ export default function ExploreFilters({ filters }) {
             disableUnderline: true,
             sx: { width: "240px" },
           }}
-          
+          variant="standard"
         />
       </Stack>
     </div>
