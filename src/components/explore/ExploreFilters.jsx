@@ -15,7 +15,7 @@ export default function ExploreFilters({filters}) {
 
                          <Select color="primary" labelId="sort-order" id="sort-order" variant="outlined" value={1} label={filters?  'sdf' :'none' }>
                             <Stack direction="column" spacing={2}>
-                              {filters.sort.map((x)=><MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)}  
+                              {/* {filters.sort.map((x)=><MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)}   */}
                             </Stack>
                          </Select>
                      </FormControl>
@@ -31,7 +31,7 @@ export default function ExploreFilters({filters}) {
                                 >
                                     <Stack direction="column" spacing={2}>
 
-                                   {filters && filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)} 
+                                   {/* {filters && filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}  */}
                                     </Stack>
                                </Select>
                      </FormControl>
