@@ -9,7 +9,7 @@ import {
   TextField,
 } from "@mui/material";
 
-import SearchIcon from "@mui/icons-material/Search";
+import Search from "@mui/icons-material/Search";
 import { useState } from "react";
 
 export default function ExploreFilters({ filters }) {
@@ -18,7 +18,7 @@ export default function ExploreFilters({ filters }) {
 
   return (
     <div className={styles["explore-filters"]}>
-        <Container>
+       
       <Stack direction={"row"} spacing={2} justifyContent={"flex-end"}>
         <FormControl>
           <InputLabel id="sort-by-label">Sort by</InputLabel>
@@ -65,7 +65,7 @@ export default function ExploreFilters({ filters }) {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon className={styles["search-icon"]} />
+                <Search className={styles["search-icon"]} />
               </InputAdornment>
             ),
             className: styles.search,
@@ -75,7 +75,7 @@ export default function ExploreFilters({ filters }) {
           variant="standard"
         />
       </Stack>
-      </Container>
+      
     </div>
   );
 }
