@@ -33,7 +33,7 @@ export default function ExploreFilters({filters}) {
                                 >
                                     {/* <Stack direction="column" spacing={2}> */}
 
-                                   {/* {filters.price.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}   */}
+                                    {filters.price.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}    
                                     {/* </Stack> */}
                                </Select>
                      </FormControl>
