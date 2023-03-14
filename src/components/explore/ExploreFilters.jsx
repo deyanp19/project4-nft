@@ -8,15 +8,15 @@ export default function ExploreFilters({filters}) {
         <div className={styles["explore-filters"]}>
             <Container>
                 
-                <Grid container direction="column" >
+                <Stack direction={"row"} spacing={2} justifyContent={"flex-end"}  >
 
                      <FormControl sx={{m:1}} size="small" fullWidth>
                      <InputLabel shrink htmlFor="price">Price range</InputLabel>
 
                          <Select color="primary" labelId="sort-order" id="sort-order" variant="outlined" value={1} label={filters?  'sdf' :'none' }>
-                            <Stack direction="column" spacing={2}>
-                              {/* {filters.sort.map((x)=><MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)}   */}
-                            </Stack>
+                            {/* <Stack direction="column" spacing={2}> */}
+                              { filters.sort.map((x)=><MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)}   
+                            {/* </Stack> */}
                          </Select>
                      </FormControl>
                      <FormControl sx={{m:1}} size="small" fullWidth>
@@ -29,17 +29,17 @@ export default function ExploreFilters({filters}) {
                                 label={filters?  'sdf' :'none' }
                                 className={classNames(styles.selectBox)} 
                                 >
-                                    <Stack direction="column" spacing={2}>
+                                    {/* <Stack direction="column" spacing={2}> */}
 
                                    {/* {filters && filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}  */}
-                                    </Stack>
+                                    {/* </Stack> */}
                                </Select>
                      </FormControl>
                      <FormControl sx={{padding:"4"}} >  
 
                                 <TextField variant="standard" InputProps={{  startAdornment: (  <InputAdornment position='start' > <Search sx={{color:'white'}}  /> </InputAdornment> ),   disableUnderline:true}} className={classNames(styles.backgroundInputSearch)}  fullWidth    color='secondary'  />
                             </FormControl>  
-                </Grid>
+                </Stack>
              
             </Container>
         </div>
