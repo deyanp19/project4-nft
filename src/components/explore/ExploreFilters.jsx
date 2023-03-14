@@ -13,7 +13,7 @@ export default function ExploreFilters({filters}) {
                      <InputLabel shrink htmlFor="price">Price range</InputLabel>
 
                          <Select color="primary" labelId="sort-order" id="sort-order" variant="outlined" value={1} label={filters?  'sdf' :'none' }>
-                    <Stack >
+                    <Stack direction="column" spacing={2}>
                               {filters.sort.map((x)=><MenuItem key={x.value} value={x.value}>{x.label}</MenuItem>)}  
                      </Stack>
                          </Select>
