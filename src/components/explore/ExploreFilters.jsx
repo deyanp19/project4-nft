@@ -6,7 +6,7 @@ import {Search} from '@mui/icons-material';
 export default function ExploreFilters({filters}) {
     return (
         <div className={styles["explore-filters"]}>
-            <Container>
+            {/* <Container> */}
                 
                 <Stack direction={"row"} spacing={2} justifyContent={"flex-end"}  >
 
@@ -39,7 +39,7 @@ export default function ExploreFilters({filters}) {
                             </FormControl>  
                 </Stack>
              
-            </Container>
+            {/* </Container> */}
         </div>
     );
 }
