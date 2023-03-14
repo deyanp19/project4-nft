@@ -46,13 +46,13 @@ export default function ExploreFilters({ filters }) {
             color={"primary"}
             onChange={(e) => setPriceRange(e.target.value)}
           >
-            {filters.price.map((filter) => {
+            {/* {filters.price.map((filter) => {
               return (
                 <MenuItem key={filter.label} value={filter.value}>
                   {filter.label}
                 </MenuItem>
               );
-            })}
+            })} */}
           </Select>
         </FormControl>
         <TextField
@@ -66,7 +66,7 @@ export default function ExploreFilters({ filters }) {
             disableUnderline: true,
             sx: { width: "240px" },
           }}
-          variant="standard"
+          
         />
       </Stack>
     </div>
