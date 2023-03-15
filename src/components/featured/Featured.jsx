@@ -40,7 +40,7 @@ export default  function Featured({items=[]}) {
 
                 {featuredCards && featuredCards.map((item,i)=><ImageListItem 
                 key={item.image+i}
-                cols={item.cols || 2} rows={item.rows || 2}
+                cols={item.cols || 3} rows={item.rows || 2}
                  
                 >
                     <img alt={item.title} src={item.image}
