@@ -34,27 +34,79 @@ import ProductContainer from "../src/components/product/ProductContainer";
  
 export default function Index() {
 
+
+
+  async function getTrendingData() {
+    return await (await fetch('https://project-4-api.boom.dev/trending')).json()
+  }
+
+  async function getAuctionData(){
+    return await (await fetch('https://project-4-api.boom.dev/live-auctions')).json()
+  }
+  async function getTopCollectorData() {
+    return await (await fetch('https://project-4-api.boom.dev/top-collectors')).json();
+  }
+  async function getFeaturedPics() {
+    let url='https://project-4-api.boom.dev/featured'
+    let data=await fetch(url);
+    return  await data.json();
+  }
+
+  async function getAction(){
+    return fetch('https://project-4-api.boom.dev/live-actions')
+  }
+
   const [featuredCards, setFeaturedCards]=useState([]);
   const [trending,setTrending]=useState([]);
   const [auctions,setAuctions]=useState([]);
-  const [dataProfile,setTopProfile] = useState([]);
+  const [topCollectors,setTopCollectors] = useState([]);
+
+  async function resolve(callback) {
+    let resolvedData =await callback();
+    console.log(resolvedData,callback.name);
+    switch (true) {
+      case callback.name=='getTrendingData':
+        const {nfts}=resolvedData;
+        setTrending(nfts);
+        
+        break;
+      case callback.name=='getAuctionData':
+        setAuctions(resolvedData)
+      break;
+      case callback.name==='getFeaturedPics':
+        setFeaturedCards(resolvedData)
+      break;
+      case callback.name==='getTopCollectorData':
+        setTopCollectors(resolvedData);
+      break;
+
+      case callback.name==='getAction':
+        setAction(resolvedData);
+      break;
+      default:
+        break;
+    }
+  }
  
   useEffect(()=>{
-    setFeaturedCards(dataFeatured);
-    setTrending(dataTrending);
-    setAuctions(dataNfts);
-    
-    setTopProfile(dataProfile)
+
+    resolve(getTrendingData);
+    resolve(getAuctionData);
+    resolve(getFeaturedPics);
+    resolve(getTopCollectorData);
+
   },[])
 
   return (
     <div>
   <Container >
     <Header />
-    {/* <ProductTabs />
-    <ProductActions /> */}
    <Featured items={featuredCards}/>
-  {/* <ProductInfo /> */}
+    <Trending cards={trending} />
+    <TopCollectors collectors={topCollectors} />
+    <How />
+    <Auctions cards={auctions}/>
+ 
     <Footer />
   
   </Container>

@@ -8,7 +8,6 @@ export default function Avatar({size=90, url,verified=false}) {
     if(verified) {
         verifiedBadge.display = "block";
     }
-    console.log(size,verified,url);
     return (
         <div>
             <div className={styles.avatar}   style={{height: size,width: size}}  >

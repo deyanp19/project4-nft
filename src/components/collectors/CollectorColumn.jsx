@@ -5,9 +5,9 @@ import styles from './CollectorColumn.module.scss';
 
   
 
-export default function CollectorColumn({items=[],key}) {
+export default function CollectorColumn({items=[],keys}) {
 
-console.log(key);
+console.log(keys);
 
 
     let light= styles.lighter;
@@ -28,7 +28,7 @@ console.log(key);
             <div className={light}>
                 <Grid  className={styles.collectors} container spacing={2}>
                   <Grid item className={classNames(styles.collector)} xs={1}>
-                    {item.id}
+                    {keys+i+1}
                   </Grid>
                   <Grid item  className={styles.collectors} xs={3}>
                     <Collector key={i+item.name} {...item} type={type}/>

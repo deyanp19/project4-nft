@@ -1,70 +1,12 @@
 import styles from './TopCollectors.module.scss';
 import _ from 'lodash';
-import { Container, FormControl, Grid, MenuItem, Select, Typography } from '@mui/material';
+import { Container, FormControl, Grid, MenuItem, Select, Stack, Typography } from '@mui/material';
 import classNames from 'classnames';
 import CollectorColumn from './CollectorColumn';
 
 export default function TopCollectors({collectors=[]}) {
-    // collectors= [
-    //     {
-    //       "name": 'jhon',
-    //       "nftsCount": "Number 1",
-    //       "avatar": "/images/nft.jpg",
-    //       "verified": Boolean,
-    //       "id": 1
-    //     },
-    //     {
-    //       "name": 'jhon',
-    //       "nftsCount": "Number 2",
-    //       "avatar": "/images/nft.jpg",
-    //       "verified": Boolean,
-    //       "id": 2
-    //     },
-    //     {
-    //       "name": 'jhon',
-    //       "nftsCount": "Number 3",
-    //       "avatar": "/images/nft.jpg",
-    //       "verified": Boolean,
-    //       "id": 3
-    //     },
-    //     {
-    //       "name": 'jhon',
-    //       "nftsCount": "Number 4",
-    //       "avatar": "/images/nft.jpg",
-    //       "verified": Boolean,
-    //       "id": 4
-    //     },
-    //     {
-    //       "name": 'jhon',
-    //       "nftsCount": "Number 2",
-    //       "avatar": "/images/nft.jpg",
-    //       "verified": Boolean,
-    //       "id": 5
-    //     },
-    //     {
-    //       "name": 'jhon',
-    //       "nftsCount": "Number 3",
-    //       "avatar": "/images/nft.jpg",
-    //       "verified": Boolean,
-    //       "id": 6
-    //     },
-    //     {
-    //       "name": 'jhon',
-    //       "nftsCount": "Number 4",
-    //       "avatar": "/images/nft.jpg",
-    //       "verified": Boolean,
-    //       "id": 7
-    //     },
-    //     {
-    //       "name": 'jhon',
-    //       "nftsCount": "Number 3",
-    //       "avatar": "/images/nft.jpg",
-    //       "verified": Boolean,
-    //       "id": 8
-    //     },
-  
-    //   ]
-
+    const {users,filters} =collectors;
+    console.log(users,filters);
 return (
     <Container className={classNames(styles.container)}  >
     <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >
@@ -80,10 +22,15 @@ return (
                 label='This week'
                 className={classNames(styles.selectBox)} 
                 >
-                    <MenuItem key={'this_week'}  value={'this_week'}>This week</MenuItem>
-                    <MenuItem key={'last_week'} value={'last_week'}>Last week</MenuItem>
-                    <MenuItem key={'last_month'} value={'last_month'}>Last month</MenuItem>
-
+                     {filters && filters.sort.map((filter) => {
+              return (
+                  <Stack direction="column">
+                <MenuItem key={filter.label} value={filter.value}>
+                  {filter.label}
+                </MenuItem>
+                </Stack>
+              );
+            })}   
                 
                 {/* </TextField> */}
                 </Select>
@@ -93,10 +40,10 @@ return (
     </Grid>
     <Grid container direction="row"   spacing={1} >
        
-            { _.chunk(collectors,3).map((threeMembers,i)=>{
+            { _.chunk(users,3).map((threeMembers,i)=>{
 
                return <Grid item key={i} justifyContent="center"
-               alignItems="center"><CollectorColumn items={threeMembers} /></Grid>
+               alignItems="center"><CollectorColumn items={threeMembers} keys={i*3} /></Grid>
             }) }
           
     </Grid>

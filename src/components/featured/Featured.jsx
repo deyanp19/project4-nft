@@ -16,11 +16,7 @@ export default  function Featured({items=[]}) {
  
     const router = useRouter();
     const currentPathname = router.pathname;
-
-    const handleClick=(href,e)=>{
-        router.push({pathname:`/product/${href.id}`})
-    }
-
+    
     async function resolve(){
       const {nfts}=await getFeaturedPics();
       setFeatured(nfts);
@@ -29,7 +25,6 @@ export default  function Featured({items=[]}) {
     useEffect(()=>{
       resolve(); 
     },[]);
-    console.log(featuredCards);
     return (
         <div>
             <Container >

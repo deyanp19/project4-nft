@@ -1,60 +1,14 @@
-import { Box, Chip,  FormControl, Grid,  MenuItem, Typography } from '@mui/material';
+import { Box, Chip,  FormControl, Grid,  MenuItem, Stack, Typography } from '@mui/material';
 import { Container } from "@mui/material";
 import Card from '../card/Card';
 import styles from './Auctions.module.scss';
 import classNames from 'classnames';
 import Select from '@mui/material/Select';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-const element={"cards":[
-                                {
-                                    "name":"Ivy",
-                                    "user":{
-                                        "avatar":"images/avatar.png",
-                                        "verified":true
-                                    },
-                                    "mediaUrl":"images/nft.jpg",
-                                    "price":1,
-                                    "currency":"ETH",
-                                    "likes":300,
-                                    "timeLeft":2000
-                                },
-                                {
-                                    "name":"Judie",
-                                    "user":{
-                                        "avatar":"images/avatar.png",
-                                        "verified":true
-                                    },
-                                    "mediaUrl":"images/nft.jpg",
-                                    "price":2.3,
-                                    "currency":"ETH",
-                                    "timeLeft":20055
-                                },
-                                {
-                                    "name":"Juniper",
-                                    "user":{
-                                        "avatar":"images/avatar.png",
-                                        "verified":true
-                                    },
-                                    "mediaUrl":"images/nft.jpg",
-                                    "price":5,
-                                    "currency":"ETH",
-                                    "timeLeft":440
-                                },
-                                {
-                                    "name":"Maple",
-                                    "user":{
-                                        "avatar":"images/avatar.png",
-                                        "verified":true
-                                    },
-                                    "mediaUrl":"images/nft.jpg",
-                                    "price":10,
-                                    "currency":"ETH",
-                                    "timeLeft":440
-                                }
-                                ]
-                        }
-                       
- export default function Trending( {cards=element.cards} ) {
+ 
+ export default function Auctions( {cards=[]} ) {
+     const {nfts,filters} = cards;
+     console.log(nfts,filters && filters.price);
     return (
         <div>
         <Container className={classNames(styles.container)}  >
@@ -71,10 +25,15 @@ const element={"cards":[
                         label='This week'
                         className={classNames(styles.selectBox)} 
                         >
-                            <MenuItem key={'this_week'}  value={'this_week'}>This week</MenuItem>
-                            <MenuItem key={'last_week'} value={'last_week'}>Last week</MenuItem>
-                            <MenuItem key={'last_month'} value={'last_month'}>Last month</MenuItem>
-
+                      {filters && filters.price.map((filter) => {
+                            return (
+                                <Stack direction="column">
+                                    <MenuItem key={filter.label} value={filter.value}>
+                                    {filter.label}
+                                    </MenuItem>
+                                </Stack>
+                            );
+                        })}  
                         
                         {/* </TextField> */}
                         </Select>
@@ -83,9 +42,9 @@ const element={"cards":[
                 </Grid>
             </Grid>
             <Grid container wrap='nowrap' spacing={1} >
-            {cards.map(x=>{
+            {/* {nfts.map(x=>{
                return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  name={x.name} title={x.name} likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} timeLeft={x.timeLeft} /></Grid>
-            })}            
+            })}             */}
             </Grid>
         </Container>
         </div>
