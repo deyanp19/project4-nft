@@ -10,11 +10,18 @@ import {
 } from "@mui/material";
 
 import Search from "@mui/icons-material/Search";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Card from '../card/Card';
+import nftsData from '../../../data/nfts.json';
 
 export default function ExploreFilters({ filters }) {
   const [sortBy, setSortBy] = useState("");
   const [priceRange, setPriceRange] = useState("");
+  const [nfts,setNfts]=useState([]);
+
+  useEffect(()=>{
+      setNfts(nftsData);
+  })
 
   return (
     <div className={styles["explore-filters"]}>
@@ -25,7 +32,7 @@ export default function ExploreFilters({ filters }) {
           <Select
             labelId="sort-by-label"
             value={sortBy}
-            sx={{ width: "220px" }}
+            sx={{ minWidth: "120px" }}
             color={"primary"}
             onChange={(e) => setSortBy(e.target.value)}
           >
@@ -45,12 +52,12 @@ export default function ExploreFilters({ filters }) {
           <Select
             labelId="price-range-label"
             value={priceRange}
-            sx={{ minWidth: "220px" }}
+            sx={{ minWidth: "120px" }}
             color={"primary"}
             onChange={(e) => setPriceRange(e.target.value)}
           >
               <Stack direction="column" >
-             {filters.price.map((filter) => {
+             {filters.type.map((filter) => {
               return (
                 <MenuItem key={filter.label} value={filter.value}>
                   {filter.label}
@@ -70,10 +77,12 @@ export default function ExploreFilters({ filters }) {
             ),
             className: styles.search,
             disableUnderline: true,
-            sx: { width: "240px" },
+            sx: { minWidth: "140px" },
           }}
+          sx={{ minWidth: "40px" }}
           variant="standard"
         />
+        {nfts.map((item)=><Card {...item}></Card>)}
       </Stack>
       
     </div>

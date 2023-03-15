@@ -16,7 +16,7 @@ import ExploreFilters from "../../src/components/explore/ExploreFilters";
 export default function About() {
 
     const [activity,setActivity] =useState([])
-    const [filters,setFilters] =useState([])
+    const [filters,setFilters] =useState("")
 
     useEffect(()=>{
         setActivity(dataActivity);
@@ -26,14 +26,14 @@ export default function About() {
 
   return (
     <div >
-
+      <Container>
       <Header/>
-    <ExploreTitle text={"explore"}/>
-    
-    <ExploreFilters filters={filters}/>
-
-        <Footer />
-
+      <Grid container direction="row" justifyContent="space-between" wrap="nowrap">
+        <Grid item><ExploreTitle text={"explore"}/></Grid>
+        <Grid item>{filters && (<ExploreFilters filters={filters}/>)}</Grid>
+      </Grid>
+      <Footer />
+      </Container>
     </div>
     
   );

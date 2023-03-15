@@ -2,29 +2,9 @@ import { Container, ImageList, ImageListItem } from '@mui/material';
 import styles from './Featured.module.scss';
 import {useRouter} from 'next/router';
 
-
-const images=[
-    {
-      image:
-        "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e?w=500&h=500",
-      title: "Breakfast",
-      rows: 2,
-      cols: 3,
-      href: "/about",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500&h=500",
-      title: "Burger",
-      href: "/about",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1522770179533-24471fcdba45?w=500&h=500",
-      title: "Camera",
-      href: "/about",
-    }];
 export default function Featured({items=[]}) {
+
+
 console.log(items, 'from featured');
     const router = useRouter();
     const currentPathname = router.pathname;
