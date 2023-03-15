@@ -1,3 +1,6 @@
+@use "../../styles/colors.scss";
+
+
 .selectBox {
     font-family: 'Montserrat';
     font-style: normal;
@@ -10,4 +13,7 @@
     /* text-primary-contrast */
     color: #E1E1FC;
     min-width: 220px;
+    svg {
+        color: colors.$text_primary !important;
+      }
 }

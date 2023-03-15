@@ -2,10 +2,13 @@ import { Container, ImageList, ImageListItem } from '@mui/material';
 import styles from './Featured.module.scss';
 import {useRouter} from 'next/router';
 import { useEffect,useState } from 'react';
+ 
+
+
 
 async function getFeaturedPics() {
   
-  let url='https://project-4-api.boom.dev/featured'
+  let url=process.env.apiUrl+'/featured'
   let data=await fetch(url);
   return  await data.json();
 }
@@ -37,7 +40,7 @@ export default  function Featured({items=[]}) {
 
                 {featuredCards && featuredCards.map((item,i)=><ImageListItem 
                 key={item.image+i}
-                cols={item.cols || 1} rows={item.rows || 1}
+                cols={item.cols || 2} rows={item.rows || 2}
                  
                 >
                     <img alt={item.title} src={item.image}
