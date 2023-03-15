@@ -46,12 +46,13 @@ export default function About() {
 
   return (
     <div >
-      <Container>
+      <Container maxWidth="x1">
       <Header/>
       <Grid container direction="row" justifyContent="space-between" wrap="nowrap">
         <Grid item><ExploreTitle text={"explore"}/></Grid>
         <Grid item>{filters && (<ExploreFilters filters={filters}/>)}</Grid>
       </Grid>
+      {nfts && nfts.map((item)=><Card {...item}></Card>)}
       <Footer />
       </Container>
     </div>

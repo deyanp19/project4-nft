@@ -82,7 +82,7 @@ export default function ExploreFilters({ filters }) {
           sx={{ minWidth: "40px" }}
           variant="standard"
         />
-        {nfts.map((item)=><Card {...item}></Card>)}
+       
       </Stack>
       
     </div>
