@@ -53,7 +53,7 @@ export default function Index() {
     <Header />
     {/* <ProductTabs />
     <ProductActions /> */}
-   <Featured iitems={featuredCards}/>
+   <Featured items={featuredCards}/>
   {/* <ProductInfo /> */}
     <Footer />
   

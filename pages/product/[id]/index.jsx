@@ -32,8 +32,8 @@ export default function Product(props) {
     <Container >
       <Header />
      <ExploreTitle text='oops'/>
-     <ExploreFilters  />
-      <ProductContainer />
+     {/* <ExploreFilters  /> */}
+      {/* <ProductContainer /> */}
        
       <Footer />
     </Container>

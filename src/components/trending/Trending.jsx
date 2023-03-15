@@ -5,63 +5,10 @@ import styles from './Trending.module.scss';
 import classNames from 'classnames';
 import Select from '@mui/material/Select';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-const element={"cards":[
-                                {
-                                    "name":"Ivy",
-                                    "user":{
-                                        "avatar":{
-                                            "url":"images/avatar.png"
-                                        },
-                                        "verified":true
-                                    },
-                                    "mediaUrl":"images/nft.jpg",
-                                    "price":1,
-                                    "currency":"ETH",
-                                    "likes":300,
-                                    "timeLeft":2000
-                                },
-                                {
-                                    "name":"Judie",
-                                    "user":{
-                                        "avatar":{
-                                            "url":"images/avatar.png"
-                                        },
-                                        "verified":true
-                                    },
-                                    "mediaUrl":"images/nft.jpg",
-                                    "price":2.3,
-                                    "currency":"ETH",
-                                    "timeLeft":20055
-                                },
-                                {
-                                    "name":"Juniper",
-                                    "user":{
-                                        "avatar":{
-                                            "url":"images/avatar.png"
-                                        },
-                                        "verified":true
-                                    },
-                                    "mediaUrl":"images/nft.jpg",
-                                    "price":5,
-                                    "currency":"ETH",
-                                    "timeLeft":440
-                                },
-                                {
-                                    "name":"Maple",
-                                    "user":{
-                                        "avatar":{
-                                            "url":"images/avatar.png"
-                                        },
-                                        "verified":true
-                                    },
-                                    "mediaUrl":"images/nft.jpg",
-                                    "price":10,
-                                    "currency":"ETH"
-                                }
-                                ]
-                        }
-                       
+                    
  export default function Trending( {cards=[]} ) {
+
+    
     return (
         <div>
         <Container className={classNames(styles.container)}  >
