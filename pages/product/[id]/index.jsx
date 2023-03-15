@@ -20,7 +20,7 @@ import ExploreFilters from "../../../src/components/explore/ExploreFilters";
 export default function Product() {
   const router = useRouter();
   const currentPathname = router.query.id;
-console.log(currentPathname)
+ 
     let url=process.env.apiUrl;
 
     const [product,setProduct]=useState('');

@@ -14,13 +14,33 @@ import ExploreTitle from "../../src/components/explore/ExploreTitle";
 import ExploreFilters from "../../src/components/explore/ExploreFilters";
 
 export default function About() {
+    let url=process.env.apiUrl;
 
-    const [activity,setActivity] =useState([])
+    const [nfts,setNtfs] =useState([])
     const [filters,setFilters] =useState("")
 
+    async function getExplore(){
+      return await (await fetch(url+'/activities')).json()
+    }
+
+    async function resolve(callback){
+      let resolvedData= await callback();
+      switch (true) {
+        case callback.name=='getExplore':
+          const {nfts,filters}=resolvedData;
+          setFilters(filters);
+          setNtfs(nfts);
+          break;
+          case callback.name=='getExplore':
+            setProduct(resolvedData);
+            break;
+        
+        default:
+          break;
+      }
+    }
     useEffect(()=>{
-        setActivity(dataActivity);
-        setFilters(dataExploreFilters)
+    resolve(getExplore)
 
     },[]);
 
