@@ -17,15 +17,42 @@ import ExploreFilters from "../../../src/components/explore/ExploreFilters";
 
 
 
-export default function Product(props) {
-    console.log(props);
-    const [ntfs,setNtfs]=useState();
-    useEffect(()=>{
-        setNtfs(dataNtfs)
-    },[]);
+export default function Product() {
+  const router = useRouter();
+  const currentPathname = router.query.id;
+console.log(currentPathname)
+    let url=process.env.apiUrl;
 
-    const router=useRouter();
-    
+    const [product,setProduct]=useState('');
+
+    async function getProduct(currentPathname){
+      return await (await fetch(url+`/nfts/${currentPathname}`)).json();
+    }
+
+    async function resolve(callback,id) {
+      let resolvedData = await callback(id);
+      console.log( resolvedData );
+
+      switch (true) {
+        case callback.name=='getProduct':
+          setProduct(resolvedData);
+          break;
+      
+        default:
+          break;
+      }
+    }
+
+    useEffect(()=>{
+      if (router.isReady) {
+        try {
+          resolve(getProduct,currentPathname)
+          
+        } catch (error) {
+          res.status(500).json({error:"rima bima data wrong"})
+        }
+      }
+    },[router]);
 
   return (
     <div>
@@ -33,7 +60,7 @@ export default function Product(props) {
       <Header />
      <ExploreTitle text='oops'/>
      {/* <ExploreFilters  /> */}
-      {/* <ProductContainer /> */}
+       <ProductContainer {...product} />  
        
       <Footer />
     </Container>
