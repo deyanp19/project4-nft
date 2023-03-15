@@ -34,26 +34,25 @@ import ProductContainer from "../src/components/product/ProductContainer";
  
 export default function Index() {
 
-
+  let url=process.env.apiUrl
 
   async function getTrendingData() {
-    return await (await fetch('https://project-4-api.boom.dev/trending')).json()
+    return await (await fetch(url+'/trending')).json()
   }
 
   async function getAuctionData(){
-    return await (await fetch('https://project-4-api.boom.dev/live-auctions')).json()
+    return await (await fetch(url+'/live-auctions')).json()
   }
   async function getTopCollectorData() {
-    return await (await fetch('https://project-4-api.boom.dev/top-collectors')).json();
+    return await (await fetch(url+'/top-collectors')).json();
   }
   async function getFeaturedPics() {
-    let url='https://project-4-api.boom.dev/featured'
-    let data=await fetch(url);
+    let data=await fetch(url+'/featured');
     return  await data.json();
   }
 
   async function getAction(){
-    return fetch('https://project-4-api.boom.dev/live-actions')
+    return fetch(url+'/live-actions')
   }
 
   const [featuredCards, setFeaturedCards]=useState([]);
