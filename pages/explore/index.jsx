@@ -53,7 +53,7 @@ console.log(nfts)
         <Grid item><ExploreTitle text={"explore"}/></Grid>
         <Grid item>{filters && (<ExploreFilters filters={filters}/>)}</Grid>
       </Grid>
-      {nfts && nfts.map((item)=><Card {...item}></Card>)}
+      {nfts && nfts.map((item)=><Card {...item} title={item.name}></Card>)}
       <Footer />
       </Container>
     </div>
