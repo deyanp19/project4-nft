@@ -12,6 +12,7 @@ import dataExploreFilters from "../../data/filtersActivity.json";
 import { useEffect, useState } from "react";
 import ExploreTitle from "../../src/components/explore/ExploreTitle";
 import ExploreFilters from "../../src/components/explore/ExploreFilters";
+import Card from "../../src/components/card/Card";
 
 export default function About() {
     let url=process.env.apiUrl;
@@ -20,7 +21,7 @@ export default function About() {
     const [filters,setFilters] =useState("")
 
     async function getExplore(){
-      return await (await fetch(url+'/activities')).json()
+      return await (await fetch(url+'/explore')).json()
     }
 
     async function resolve(callback){
@@ -43,7 +44,7 @@ export default function About() {
     resolve(getExplore)
 
     },[]);
-
+console.log(nfts)
   return (
     <div >
       <Container maxWidth="x1">

@@ -57,7 +57,7 @@ export default function ExploreFilters({ filters }) {
             onChange={(e) => setPriceRange(e.target.value)}
           >
               <Stack direction="column" >
-             {filters.type.map((filter) => {
+             {filters.price.map((filter) => {
               return (
                 <MenuItem key={filter.label} value={filter.value}>
                   {filter.label}
