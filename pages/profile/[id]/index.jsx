@@ -1,14 +1,14 @@
-import Header from "../../src/components/header/Header";
-import ProfileHero from "../../src/components/profile/ProfileHero";
-import Footer from "../../src/components/footer/Footer";
+import Header from "../../../src/components/header/Header";
+import ProfileHero from "../../../src/components/profile/ProfileHero";
+import Footer from "../../../src/components/footer/Footer";
 import { Container } from "@mui/material";
-import ProfileUser from "../../src/components/profile/ProfileUser";
-import ProfileCollection from "../../src/components/profile/ProfileCollection";
-import dataProfile from '../../data/profile.json';
+import ProfileUser from "../../../src/components/profile/ProfileUser";
+import ProfileCollection from "../../../src/components/profile/ProfileCollection";
+import dataProfile from '../../../data/profile.json';
 import { useEffect, useState } from "react";
-import ActivityFilters from "../../src/components/activity/ActivityFilters";
-import ActivityListItem from "../../src/components/activity/ActivityListItem";
-import ActivityList from "../../src/components/activity/ActivityList";
+import ActivityFilters from "../../../src/components/activity/ActivityFilters";
+import ActivityListItem from "../../../src/components/activity/ActivityListItem";
+import ActivityList from "../../../src/components/activity/ActivityList";
 import { useRouter } from "next/router";
  
 
@@ -19,6 +19,7 @@ export default function Profile() {
   const [profileFilters,setProfileFilters] = useState('');
 
   async function getProfile(id){
+      console.log(url+`/users/${id}`)
     return await (await fetch(url+`/users/${id}`)).json();
   }
 
@@ -34,7 +35,7 @@ export default function Profile() {
 
     useEffect(()=>{
         resolve(getProfile,id);
-    },[]);
+    },[router]);
 
     return (
         <div>
