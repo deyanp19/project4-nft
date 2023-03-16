@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import Card from '../card/Card';
 import nftsData from '../../../data/nfts.json';
 
-export default function ExploreFilters({ filters }) {
+export default function ExploreFilters({ filters ,fooPrice,fooSort }) {
   const [sortBy, setSortBy] = useState("");
   const [priceRange, setPriceRange] = useState("");
   const [nfts,setNfts]=useState([]);
@@ -34,15 +34,15 @@ export default function ExploreFilters({ filters }) {
             value={sortBy}
             sx={{ minWidth: "120px" }}
             color={"primary"}
-            onChange={(e) => setSortBy(e.target.value)}
+            onChange={(e) => fooSort(e)}
           >
              {filters.sort.map((filter) => {
               return (
-                  <Stack direction="column">
+                  
                 <MenuItem key={filter.label} value={filter.value}>
                   {filter.label}
                 </MenuItem>
-                </Stack>
+                
               );
             })}  
           </Select>
@@ -54,9 +54,9 @@ export default function ExploreFilters({ filters }) {
             value={priceRange}
             sx={{ minWidth: "120px" }}
             color={"primary"}
-            onChange={(e) => setPriceRange(e.target.value)}
+            onChange={(e) => fooPrice(e)}
           >
-              <Stack direction="column" >
+              
              {filters.price.map((filter) => {
               return (
                 <MenuItem key={filter.label} value={filter.value}>
@@ -64,7 +64,7 @@ export default function ExploreFilters({ filters }) {
                 </MenuItem>
               );
             })}  
-            </Stack>
+            
           </Select>
         </FormControl>
 

@@ -18,12 +18,14 @@ export default function About() {
     let url=process.env.apiUrl;
 
     const [nfts,setNtfs] =useState([])
-    const [filters,setFilters] =useState("")
+    const [filters,setFilters] =useState("");
+    const [priceVal,setPriceVal ]=useState('');
+    const [sortVal,setSortVal]=useState('');
 
     async function getExplore(){
       return await (await fetch(url+'/explore')).json()
     }
-
+    
     async function resolve(callback){
       let resolvedData= await callback();
       switch (true) {
@@ -40,18 +42,33 @@ export default function About() {
           break;
       }
     }
+
+    const handleChangePrice=(e)=>{
+      console.log(e.target.value);
+      setPriceVal(e.target.value);
+      
+    }
+    const handleChangeSort=(e)=>{
+      console.log(e.target.value);
+      setSortVal(e.target.value);
+      
+    }
+    useEffect(()=>{
+      console.log(priceVal,sortVal)
+    },[priceVal,sortVal])
+
     useEffect(()=>{
     resolve(getExplore)
 
     },[]);
-console.log(nfts)
+
   return (
     <div >
       <Container maxWidth="x1">
       <Header/>
       <Grid container direction="row" justifyContent="space-between" wrap="nowrap">
         <Grid item><ExploreTitle text={"explore"}/></Grid>
-        <Grid item>{filters && (<ExploreFilters filters={filters}/>)}</Grid>
+            <Grid item>{filters && (<ExploreFilters filters={filters} fooPrice={handleChangePrice} fooSort={handleChangeSort}/>)}</Grid>
       </Grid>
       {nfts && nfts.map((item)=><Card {...item} title={item.name}></Card>)}
       <Footer />
