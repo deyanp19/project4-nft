@@ -22,12 +22,20 @@ export default function About() {
     const [priceVal,setPriceVal ]=useState('');
     const [sortVal,setSortVal]=useState('');
 
-    async function getExplore(){
-      return await (await fetch(url+'/explore')).json()
+    async function getExplore(price,sort){
+      console.log(price == true)
+      if (price||sort) {
+        
+        let query=encodeURIComponent(`/?price"=${price}&sort=${sort}`)
+        console.log(query);
+        return await (await fetch(url+'/explore'+query)).json();
+      } else {
+        return await (await fetch(url+'/explore')).json();
+      }
     }
-    
-    async function resolve(callback){
-      let resolvedData= await callback();
+
+    async function resolve(callback,price,sort){
+      let resolvedData= await callback(price,sort);
       switch (true) {
         case callback.name=='getExplore':
           const {nfts,filters}=resolvedData;
@@ -54,7 +62,7 @@ export default function About() {
       
     }
     useEffect(()=>{
-      console.log(priceVal,sortVal)
+      resolve(getExplore,priceVal,sortVal)
     },[priceVal,sortVal])
 
     useEffect(()=>{
