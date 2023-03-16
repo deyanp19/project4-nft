@@ -33,28 +33,28 @@ export default function About() {
       console.log(e.target.value);
       setSortVal(e.target.value);
     }
-    useEffect(async ()=>{
-      async function getExplore(price,sort){
-          return await (await fetch(url+'/explore'+`?price=${price}&sort=${sort}`)).json();
+    // useEffect(async ()=>{
+    //   async function getExplore(price,sort){
+    //       return await (await fetch(url+'/explore'+`?price=${price}&sort=${sort}`)).json();
 
-      }
-      async function resolve(callback,price,sort){
-            let resolvedData= await callback(price,sort);
-            switch (true) {
-              case callback.name=='getExplore':
-                const {nfts,filters}=resolvedData;
-                setFilters(filters);
-                setNtfs(nfts);
-                break;
+    //   }
+    //   async function resolve(callback,price,sort){
+    //         let resolvedData= await callback(price,sort);
+    //         switch (true) {
+    //           case callback.name=='getExplore':
+    //             const {nfts,filters}=resolvedData;
+    //             setFilters(filters);
+    //             setNtfs(nfts);
+    //             break;
                
               
-              default:
-                break;
-            }
-          }
+    //           default:
+    //             break;
+    //         }
+    //       }
 
-     await  resolve(getExplore,priceVal,sortVal);
-    },[priceVal,sortVal])
+    //  await  resolve(getExplore,priceVal,sortVal);
+    // },[priceVal,sortVal])
 
     useEffect(async ()=>{
       async function getExplore(sort){
