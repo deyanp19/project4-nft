@@ -23,15 +23,12 @@ export default function About() {
     const [sortVal,setSortVal]=useState('');
     const [sordAndPrice,setSortAndPrice]=useState("");
 
-    
-
-   
-
     const handleChangePrice=(e)=>{
       console.log(e.target.value);
       setPriceVal(e.target.value);
       
     }
+
     const handleChangeSort=(e)=>{
       console.log(e.target.value);
       setSortVal(e.target.value);
@@ -39,13 +36,13 @@ export default function About() {
     }
     useEffect(async ()=>{
       async function getExplore(price,sort){
-        console.log(price == true)
-        if (price!==null) {
+         
+        if (price>=7) {
           
           let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
            
           return await (await fetch(url+'/explore'+`?sort=${sort}`)).json();
-        } else if(sort!=null) {
+        } else if(sort>=1) {
           
           return await (await fetch(url+'/explore'+`?price=${price}`)).json();
           
