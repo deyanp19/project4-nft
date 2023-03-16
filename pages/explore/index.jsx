@@ -106,7 +106,7 @@ export default function About() {
     useEffect(()=>{
       async function getExplore(){
         
-          return await (await fetch(url+'/explore')).json();
+          return await (await fetch(url+'/explore'+`?sort=1&price=8`)).json();
         
       }
       async function resolve(callback,price,sort){
