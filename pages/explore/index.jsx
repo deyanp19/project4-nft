@@ -40,13 +40,18 @@ export default function About() {
     useEffect(async ()=>{
       async function getExplore(price,sort){
         console.log(price == true)
-        if (price||sort) {
+        if (price!==null) {
           
           let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
            
           return await (await fetch(url+'/explore'+`?sort=${sort}`)).json();
+        } else if(sort!=null) {
+          
+          return await (await fetch(url+'/explore'+`?price=${price}`)).json();
+          
         } else {
-          return await (await fetch(url+'/explore')).json();
+          return await (await fetch(url+'/explore'+`?price=${price}&sort=${sort}`)).json();
+
         }
       }
       async function resolve(callback,price,sort){
@@ -70,16 +75,10 @@ export default function About() {
     },[priceVal,sortVal])
 
     useEffect(()=>{
-      async function getExplore(price,sort){
-        console.log(price == true)
-        if (price||sort) {
-          
-          let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
-           
-          return await (await fetch(url+'/explore'+`?sort=${sort}`)).json();
-        } else {
+      async function getExplore(){
+        
           return await (await fetch(url+'/explore')).json();
-        }
+        
       }
       async function resolve(callback,price,sort){
         let resolvedData= await callback(price,sort);
