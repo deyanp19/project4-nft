@@ -9,15 +9,31 @@ import { useEffect, useState } from "react";
 import ActivityFilters from "../../src/components/activity/ActivityFilters";
 import ActivityListItem from "../../src/components/activity/ActivityListItem";
 import ActivityList from "../../src/components/activity/ActivityList";
+import { useRouter } from "next/router";
  
 
 
 export default function Profile() {
+  let url = process.env.apiUrl;
+  const [profile, setProfile]=useState('');
+  const [profileFilters,setProfileFilters] = useState('');
 
-    const [profile, setProfile]=useState('');
+  async function getProfile(id){
+    return await (await fetch(url+`/users/${id}`)).json();
+  }
+
+  async function resolve(callback,id) {
+    let {user,filters} = await callback(id);
+    setProfile(user);
+    setProfileFilters(filters)
+  }
+
+  let router=useRouter();
+  const id = router.query.id;
+  console.log(id);
 
     useEffect(()=>{
-        setProfile(dataProfile);
+        resolve(getProfile,id);
     },[]);
 
     return (
@@ -25,12 +41,10 @@ export default function Profile() {
         <Container >
           <Header />
          
-            {/* <ProfileHero />
+             <ProfileHero />
             <ProfileUser/>
            
-            <ProfileCollection /> */}
-            {/* <ActivityFilters /> */}
-            <ActivityList />
+            <ProfileCollection user={profile} filters={profileFilters}/>  
            
           <Footer />
         </Container>
