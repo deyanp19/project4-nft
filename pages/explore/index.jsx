@@ -32,24 +32,11 @@ export default function About() {
     const handleChangeSort=(e)=>{
       console.log(e.target.value);
       setSortVal(e.target.value);
-      
     }
     useEffect(async ()=>{
       async function getExplore(price,sort){
-         
-        if (price!=null) {
-          
-          let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
-           
-          return await (await fetch(url+'/explore'+`?sort=${sort}`)).json();
-        } else if(sort>=1) {
-          
-          return await (await fetch(url+'/explore'+`?price=${price}`)).json();
-          
-        } else {
           return await (await fetch(url+'/explore'+`?price=${price}&sort=${sort}`)).json();
 
-        }
       }
       async function resolve(callback,price,sort){
             let resolvedData= await callback(price,sort);
@@ -68,6 +55,53 @@ export default function About() {
 
      await  resolve(getExplore,priceVal,sortVal);
     },[priceVal,sortVal])
+
+    useEffect(async ()=>{
+      async function getExplore(sort){
+          console.log('sort is activated');
+          return await (await fetch(url+'/explore'+`?sort=${sort}`)).json();
+      }
+
+      async function resolve(callback,sort){
+            let resolvedData= await callback(sort);
+            switch (true) {
+              case callback.name=='getExplore':
+                const {nfts,filters}=resolvedData;
+                setFilters(filters);
+                setNtfs(nfts);
+                break;
+            }
+          }
+
+     await  resolve(getExplore,sortVal);
+    },[sortVal])
+
+    useEffect(async ()=>{
+      async function getExplore(price ){
+          
+          console.log('price is active')
+        
+           
+          return await (await fetch(url+'/explore'+`?price=${price}`)).json();
+       
+      }
+      async function resolve(callback,price){
+            let resolvedData= await callback(price);
+            switch (true) {
+              case callback.name=='getExplore':
+                const {nfts,filters}=resolvedData;
+                setFilters(filters);
+                setNtfs(nfts);
+                break;
+               
+              
+              default:
+                break;
+            }
+          }
+
+     await  resolve(getExplore,priceVal);
+    },[priceVal]);
 
     useEffect(()=>{
       async function getExplore(){
