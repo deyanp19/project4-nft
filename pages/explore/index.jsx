@@ -21,35 +21,11 @@ export default function About() {
     const [filters,setFilters] =useState("");
     const [priceVal,setPriceVal ]=useState('');
     const [sortVal,setSortVal]=useState('');
+    const [sordAndPrice,setSortAndPrice]=useState("");
 
-    async function getExplore(price,sort){
-      console.log(price == true)
-      if (price||sort) {
-        
-        let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
-        console.log(query);
-        return await (await fetch(url+'/explore')).json();
-      } else {
-        return await (await fetch(url+'/explore')).json();
-      }
-    }
+    
 
-    async function resolve(callback,price,sort){
-      let resolvedData= await callback(price,sort);
-      switch (true) {
-        case callback.name=='getExplore':
-          const {nfts,filters}=resolvedData;
-          setFilters(filters);
-          setNtfs(nfts);
-          break;
-          case callback.name=='getExplore':
-            setProduct(resolvedData);
-            break;
-        
-        default:
-          break;
-      }
-    }
+   
 
     const handleChangePrice=(e)=>{
       console.log(e.target.value);
@@ -61,14 +37,58 @@ export default function About() {
       setSortVal(e.target.value);
       
     }
-    useEffect(()=>{
-      resolve(getExplore,priceVal,sortVal)
+    useEffect(async ()=>{
+      async function getExplore(price,sort){
+        console.log(price == true)
+        if (price||sort) {
+          
+          let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
+          console.log(query);
+          return await (await fetch(url+'/explore')).json();
+        } else {
+          return await (await fetch(url+'/explore')).json();
+        }
+      }
+      async function resolve(callback,price,sort){
+            let resolvedData= await callback(price,sort);
+            switch (true) {
+              case callback.name=='getExplore':
+                const {nfts,filters}=resolvedData;
+                setFilters(filters);
+                setNtfs(nfts);
+                break;
+                case callback.name=='getExplore':
+                  setProduct(resolvedData);
+                  break;
+              
+              default:
+                break;
+            }
+          }
+
+     await  resolve(getExplore,priceVal,sortVal);
     },[priceVal,sortVal])
 
-    useEffect(()=>{
-    resolve(getExplore)
+    // useEffect(()=>{
+    //   async function resolve(callback,price,sort){
+    //     let resolvedData= await callback(price,sort);
+    //     switch (true) {
+    //       case callback.name=='getExplore':
+    //         const {nfts,filters}=resolvedData;
+    //         setFilters(filters);
+    //         setNtfs(nfts);
+    //         break;
+    //         case callback.name=='getExplore':
+    //           setProduct(resolvedData);
+    //           break;
+          
+    //       default:
+    //         break;
+    //     }
+    //   }
+    // resolve(getExplore)
 
-    },[]);
+    // },[]);
 
   return (
     <div >
