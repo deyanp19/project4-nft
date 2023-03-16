@@ -13,16 +13,29 @@ import ActivityFilters from "../../src/components/activity/ActivityFilters";
 import dataActivityFilters from "../../data/filtersActivity.json";
 import ExploreTitle from "../../src/components/explore/ExploreTitle";
 import ExploreFilters from "../../src/components/explore/ExploreFilters";
-export default function About() {
-
+export default function Activity() {
+    let url=process.env.apiUrl;
     const [activity,setActivity] =useState([]);
     const [filters, setFilters] = useState([]);
 
+    async function getActivity(){
+      return  await (await fetch(url+'/activities')).json();
+    }
+
+    async function resolve(callback){
+        let resolvedData= await callback();
+        if (callback.name=='getActivity') {
+          const {activities,filters}=resolvedData;
+          setActivity(activities);
+          setFilters(filters);
+        }
+    }
+
     useEffect(()=>{
-        setActivity(dataActivity);
+        resolve(getActivity);
         setFilters(dataActivityFilters)
     },[]);
-    // console.log(activity);
+   console.log(activity);
     console.log(filters);
 
   return (
