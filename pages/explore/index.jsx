@@ -43,8 +43,8 @@ export default function About() {
         if (price||sort) {
           
           let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
-          console.log(query);
-          return await (await fetch(url+'/explore')).json();
+           
+          return await (await fetch(url+'/explore'+`?sort=${sort}`)).json();
         } else {
           return await (await fetch(url+'/explore')).json();
         }
@@ -69,26 +69,37 @@ export default function About() {
      await  resolve(getExplore,priceVal,sortVal);
     },[priceVal,sortVal])
 
-    // useEffect(()=>{
-    //   async function resolve(callback,price,sort){
-    //     let resolvedData= await callback(price,sort);
-    //     switch (true) {
-    //       case callback.name=='getExplore':
-    //         const {nfts,filters}=resolvedData;
-    //         setFilters(filters);
-    //         setNtfs(nfts);
-    //         break;
-    //         case callback.name=='getExplore':
-    //           setProduct(resolvedData);
-    //           break;
+    useEffect(()=>{
+      async function getExplore(price,sort){
+        console.log(price == true)
+        if (price||sort) {
           
-    //       default:
-    //         break;
-    //     }
-    //   }
-    // resolve(getExplore)
+          let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
+           
+          return await (await fetch(url+'/explore'+`?sort=${sort}`)).json();
+        } else {
+          return await (await fetch(url+'/explore')).json();
+        }
+      }
+      async function resolve(callback,price,sort){
+        let resolvedData= await callback(price,sort);
+        switch (true) {
+          case callback.name=='getExplore':
+            const {nfts,filters}=resolvedData;
+            setFilters(filters);
+            setNtfs(nfts);
+            break;
+            case callback.name=='getExplore':
+              setProduct(resolvedData);
+              break;
+          
+          default:
+            break;
+        }
+      }
+    resolve(getExplore)
 
-    // },[]);
+    },[]);
 
   return (
     <div >
