@@ -26,9 +26,9 @@ export default function About() {
       console.log(price == true)
       if (price||sort) {
         
-        let query=encodeURIComponent(`/?price"=${price}&sort=${sort}`)
+        let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
         console.log(query);
-        return await (await fetch(url+'/explore'+query)).json();
+        return await (await fetch(url+'/explore')).json();
       } else {
         return await (await fetch(url+'/explore')).json();
       }
