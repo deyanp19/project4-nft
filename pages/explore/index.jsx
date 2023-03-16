@@ -37,7 +37,7 @@ export default function About() {
     useEffect(async ()=>{
       async function getExplore(price,sort){
          
-        if (price>=7) {
+        if (price!=null) {
           
           let query=encodeURIComponent(`/?price=${price}&sort=${sort}`)
            
@@ -59,9 +59,7 @@ export default function About() {
                 setFilters(filters);
                 setNtfs(nfts);
                 break;
-                case callback.name=='getExplore':
-                  setProduct(resolvedData);
-                  break;
+               
               
               default:
                 break;
