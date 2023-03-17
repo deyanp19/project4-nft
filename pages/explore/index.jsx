@@ -24,112 +24,78 @@ export default function About() {
     const [sordAndPrice,setSortAndPrice]=useState("");
 
     const handleChangePrice=(e)=>{
-      console.log(e.target.value);
       setPriceVal(e.target.value);
-      
     }
 
     const handleChangeSort=(e)=>{
-      console.log(e.target.value);
       setSortVal(e.target.value);
     }
 
-    useEffect(async ()=>{
-      async function getExplore(price,sort){
-          return await (await fetch(url+'/explore'+`?sort=${sort}&price=${price}`)).json();
+    async function getExplore(price,sort){
+            return await (await fetch(url+'/explore'+`?sort=${sort}&price=${price}`)).json();
+        }
 
+    async function resolve(callback,price,sort){
+      let resolvedData= await callback(price,sort);
+      switch (true) {
+        case callback.name=='getExplore':
+          const {nfts,filters}=resolvedData;
+          setFilters(filters);
+          setNtfs(nfts);
+          break;
+        default:
+          break;
       }
-      async function resolve(callback,price,sort){
-            let resolvedData= await callback(price,sort);
-            switch (true) {
-              case callback.name=='getExplore':
-                const {nfts,filters}=resolvedData;
-                setFilters(filters);
-                setNtfs(nfts);
-                break;
-               
-              
-              default:
-                break;
-            }
-          }
+    }
 
-     await  resolve(getExplore,priceVal,sortVal);
+  useEffect(async ()=>{
+  
+        console.log(priceVal&&sortVal)
+
+        if (priceVal&&sortVal) {
+          
+         return await  resolve(getExplore,priceVal,sortVal);
+        }
+        if (priceVal) {
+         return  await  resolve(getExplore,priceVal,sortVal);
+        }
+        if (sortVal) {
+         return await  resolve(getExplore,priceVal,sortVal);
+        }
+
     },[priceVal,sortVal])
 
-    useEffect(async ()=>{
-      async function getExplore(sort){
-          console.log('sort is activated');
-          return await (await fetch(url+'/explore'+`?sort=${sort}`)).json();
-      }
 
-      async function resolve(callback,sort){
-            let resolvedData= await callback(sort);
-            switch (true) {
-              case callback.name=='getExplore':
-                const {nfts,filters}=resolvedData;
-                setFilters(filters);
-                setNtfs(nfts);
-                break;
-            }
-          }
 
-     await  resolve(getExplore,sortVal);
-    },[sortVal])
-
-    useEffect(async ()=>{
-      async function getExplore(price ){
-          
-          console.log('price is active')
-        
-           
-          return await (await fetch(url+'/explore'+`?price=${price}`)).json();
-       
-      }
-      async function resolve(callback,price){
-            let resolvedData= await callback(price);
-            switch (true) {
-              case callback.name=='getExplore':
-                const {nfts,filters}=resolvedData;
-                setFilters(filters);
-                setNtfs(nfts);
-                break;
-               
-              
-              default:
-                break;
-            }
-          }
-
-     await  resolve(getExplore,priceVal);
-    },[priceVal]);
-
-    useEffect(()=>{
-      async function getExplore(){
-        
-          return await (await fetch(url+'/explore')).json();
-        
-      }
-      async function resolve(callback,price,sort){
-        let resolvedData= await callback(price,sort);
-        switch (true) {
+  useEffect(()=>{
+    async function getExplore(){
+      
+        return await (await fetch(url+'/explore')).json();
+      
+    }
+    async function resolve(callback,price,sort){
+      let resolvedData= await callback(price,sort);
+      switch (true) {
+        case callback.name=='getExplore':
+          const {nfts,filters}=resolvedData;
+          setFilters(filters);
+          setNtfs(nfts);
+          break;
           case callback.name=='getExplore':
-            const {nfts,filters}=resolvedData;
-            setFilters(filters);
-            setNtfs(nfts);
+            setProduct(resolvedData);
             break;
-            case callback.name=='getExplore':
-              setProduct(resolvedData);
-              break;
-          
-          default:
-            break;
-        }
+        
+        default:
+          break;
       }
-    resolve(getExplore)
+    }
+  resolve(getExplore)
 
-    },[]);
+  },[]);
 
+
+ 
+  
   return (
     <div >
       <Container maxWidth="x1">
