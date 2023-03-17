@@ -12,15 +12,18 @@ import {useState, useEffect} from 'react';
 export default function ActivityFilters({filters,fooSort,fooType }) {
   const [sortBy, setSortBy] = useState("");
   const [priceRange, setPriceRange] = useState("");
+  const [filtersStateSaved, setFiltersStateSaved]=useState("")
 console.log(filters,fooSort);
+useEffect(()=>{
+  setFiltersStateSaved(filters)
+},[]);
+
+
     return (
         <div className={styles["activity-filters"]} >
             <Container >
 
-            <Grid container direction="column" >
-                <Grid item >
-                <Typography variant='h3' >Activity</Typography>
-                </Grid>
+            <Stack direction={"row"} spacing={2} justifyContent={"flex-end"}>
                 <Grid item >
                 <FormControl sx={{ m: 1}} size="small" fullWidth>
                 <InputLabel id="sort-by-label">Sort by</InputLabel>
@@ -31,15 +34,15 @@ console.log(filters,fooSort);
                                   color={"primary"}
                                   onChange={(e) => fooSort(e)}
                                 >
-                                     {filters && filters.sort.map((filter) => {
-              return (
-                  
-                <MenuItem key={filter.label} value={filter.value}>
-                  {filter.label}
-                </MenuItem>
-                
-              );
-            })}   
+                                    {filtersStateSaved && filtersStateSaved.sort.map((filter) => {
+                                          return (
+                                              
+                                            <MenuItem key={filter.label} value={filter.value}>
+                                              {filter.label}
+                                            </MenuItem>
+                                            
+                                          );
+                                        })}     
                                 </Select>
                            </FormControl>
 
@@ -54,7 +57,7 @@ console.log(filters,fooSort);
                                 color='primary'
                                 className={classNames(styles.selectBox)} 
                                 >
-                                     {filters && filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}    
+                                     {filters && filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}     
                                </Select>
                               </FormControl> 
                               <FormControl sx={{padding:"4"}} >  
@@ -64,7 +67,7 @@ console.log(filters,fooSort);
                 </Grid>
             
              
-            </Grid>
+            </Stack>
                                 </Container>
         </div>
     );

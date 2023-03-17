@@ -13,10 +13,11 @@ import ActivityFilters from "../../src/components/activity/ActivityFilters";
 import dataActivityFilters from "../../data/filtersActivity.json";
 import ExploreTitle from "../../src/components/explore/ExploreTitle";
 import ExploreFilters from "../../src/components/explore/ExploreFilters";
+
 export default function Activity() {
     let url=process.env.apiUrl;
     const [activity,setActivity] =useState([]);
-    const [filters, setFilters] = useState([]);
+    const [filters, setFilters] = useState("");
     const [sortVal,setSortVal] =useState("");
     const [typeVal,setTypeVal] = useState("");
 
@@ -71,7 +72,7 @@ export default function Activity() {
         resolve(getActivity);
        
     },[]);
-
+console.log(filters)
   return (
     <div>
       
