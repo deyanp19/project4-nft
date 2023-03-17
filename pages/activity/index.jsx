@@ -77,14 +77,14 @@ export default function Activity() {
       
       <Header/>
         <Hero text={"Activity"}/>
-        <Grid container direction="row" justifyContent="space-between" wrap="nowrap">
+        
 
         {filters && <ActivityFilters filters={filters} fooSort={handleSort} fooType={handleType} />}
 
         
         {activity && <ActivityList items={activity} /> }
 
-        </Grid>
+       
       <Footer />
       
     </div>
