@@ -29,7 +29,7 @@ export default function Activity() {
     }
 
     async function getActivity(type,sort){
-     return await (await fetch(url+'/activities'+`?type=${type}`)).json();
+     return await (await fetch(url+'/activities'+`?type=${type}&sort=${sort}`)).json();
     }
 
     async function resolve(callback,type,sort){
