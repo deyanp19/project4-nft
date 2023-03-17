@@ -13,7 +13,7 @@ export default function ActivityFilters({filters,fooSort,fooType }) {
   const [sortBy, setSortBy] = useState("");
   const [priceRange, setPriceRange] = useState("");
   const [filtersStateSaved, setFiltersStateSaved]=useState("")
-console.log(filters,fooSort);
+ 
 useEffect(()=>{
   setFiltersStateSaved(filters)
 },[]);

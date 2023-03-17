@@ -29,7 +29,13 @@ export default function Activity() {
     }
 
     async function getActivity(type,sort){
-     return await (await fetch(url+'/activities'+`?type=${type}&sort=${sort}`)).json();
+      try {
+        return await (await fetch(url+'/activities'+`?type=${type}sort=${sort}`)).json();
+        
+      } catch (error) {
+          console.log(error)
+          throw error;
+      }
     }
 
     async function resolve(callback,type,sort){
@@ -72,7 +78,7 @@ export default function Activity() {
         resolve(getActivity);
        
     },[]);
-console.log(filters)
+ 
   return (
     <div>
       
