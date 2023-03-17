@@ -30,7 +30,7 @@ export default function Activity() {
 
     async function getActivity(type,sort){
       try {
-        return await (await fetch(url+'/activities'+`?type=${type}sort=${sort}`)).json();
+        return await (await fetch(url+'/activities'+`?type=${type}`)).json();
         
       } catch (error) {
           console.log(error)
