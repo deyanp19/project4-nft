@@ -13,7 +13,7 @@ export default function ActivityFilters({filters,fooSort,fooType }) {
   const [sortBy, setSortBy] = useState("");
   const [priceRange, setPriceRange] = useState("");
   const [filtersStateSaved, setFiltersStateSaved]=useState("")
- 
+console.log(filters,fooSort);
 useEffect(()=>{
   setFiltersStateSaved(filters)
 },[]);
@@ -57,7 +57,7 @@ useEffect(()=>{
                                 color='primary'
                                 className={classNames(styles.selectBox)} 
                                 >
-                                     {filters && filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}     
+                                     {filters && filters.price.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}     
                                </Select>
                               </FormControl> 
                               <FormControl sx={{padding:"4"}} >  

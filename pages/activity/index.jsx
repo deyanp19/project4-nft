@@ -30,7 +30,15 @@ export default function Activity() {
 
     async function getActivity(type,sort){
       try {
-        return await (await fetch(url+'/activities'+`?type=${type}`)).json();
+        const result=await (await fetch(url+'/explore'+`?price=${type}&sort=${sort}`)).json();
+        if (result.ok == false) {
+          const error = await result.json();
+          throw {
+              message: error.error,
+              code: error.code
+          }
+      }
+        return result;
         
       } catch (error) {
           console.log(error)
@@ -57,6 +65,7 @@ export default function Activity() {
        return  await  resolve(getActivity,typeVal,sortVal);
       }
       if (sortVal) {
+        console.log('sort val ',sortVal)
        return await  resolve(getActivity,typeVal,sortVal);
       }
 
@@ -64,7 +73,7 @@ export default function Activity() {
 
     useEffect(()=>{
       async function getActivity(){
-        return await (await fetch(url+'/activities')).json();
+        return await (await fetch(url+'/explore')).json();
        }
    
        async function resolve(callback){
