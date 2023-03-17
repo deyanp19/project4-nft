@@ -21,7 +21,6 @@ export default function About() {
     const [filters,setFilters] =useState("");
     const [priceVal,setPriceVal ]=useState('');
     const [sortVal,setSortVal]=useState('');
-    const [sordAndPrice,setSortAndPrice]=useState("");
 
     const handleChangePrice=(e)=>{
       setPriceVal(e.target.value);

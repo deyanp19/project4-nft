@@ -17,13 +17,22 @@ export default function Activity() {
     let url=process.env.apiUrl;
     const [activity,setActivity] =useState([]);
     const [filters, setFilters] = useState([]);
+    const [sortVal,setSortVal] =useState("");
+    const [typeVal,setTypeVal] = useState("");
 
-    async function getActivity(){
-      return  await (await fetch(url+'/activities')).json();
+    const handleSort=(e)=>{
+          setSortVal(e.target.value)
+        }
+    const handleType=(e)=>{
+      setTypeVal(e.target.value);
     }
 
-    async function resolve(callback){
-        let resolvedData= await callback();
+    async function getActivity(type,sort){
+     return await (await fetch(url+'/activities'+`?type=${type}`)).json();
+    }
+
+    async function resolve(callback,type,sort){
+        let resolvedData= await callback(type,sort);
         if (callback.name=='getActivity') {
           const {activities,filters}=resolvedData;
           setActivity(activities);
@@ -31,28 +40,54 @@ export default function Activity() {
         }
     }
 
+    useEffect(async ()=>{
+
+      if (typeVal&&sortVal) {
+        
+       return await  resolve(getActivity,typeVal,sortVal);
+      }
+      if (typeVal) {
+       return  await  resolve(getActivity,typeVal,sortVal);
+      }
+      if (sortVal) {
+       return await  resolve(getActivity,typeVal,sortVal);
+      }
+
+  },[typeVal,sortVal])
+
     useEffect(()=>{
+      async function getActivity(){
+        return await (await fetch(url+'/activities')).json();
+       }
+   
+       async function resolve(callback){
+           let resolvedData= await callback();
+           if (callback.name=='getActivity') {
+             const {activities,filters}=resolvedData;
+             setActivity(activities);
+             setFilters(filters);
+           }
+       }
         resolve(getActivity);
-        setFilters(dataActivityFilters)
+       
     },[]);
-   console.log(activity);
-    console.log(filters);
 
   return (
     <div>
-
+      <Container maxWidth="x1">
       <Header/>
-      
-
         <Hero text={"Activity"}/>
-        {/* <ExploreFilters filters={filters}/> */}
-        {filters && <ActivityFilters filters={filters}/>}
-        {activity && <ActivityList items={activity} />}
-        
-        <Footer />
+        <Grid container direction="row" justifyContent="space-between" wrap="nowrap">
 
+        {filters && <ActivityFilters filters={filters} fooSort={handleSort} fooType={handleType} />}
+
+        
+        {activity && <ActivityList items={activity} /> }
+
+        </Grid>
+      <Footer />
+      </Container>
     </div>
-    
   );
 }
 
