@@ -74,7 +74,7 @@ export default function Activity() {
 
   return (
     <div>
-      <Container maxWidth="x1">
+      
       <Header/>
         <Hero text={"Activity"}/>
         <Grid container direction="row" justifyContent="space-between" wrap="nowrap">
@@ -86,7 +86,7 @@ export default function Activity() {
 
         </Grid>
       <Footer />
-      </Container>
+      
     </div>
   );
 }
