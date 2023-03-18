@@ -1,11 +1,7 @@
 ![banner.png](https://boomcdn.fra1.digitaloceanspaces.com/eb1541cf817d1c7ba6d621bbfdad316a.png)
-<img src="./public/project-1.jpg"
+<img src="./public/aboutPage.jpg"
      alt="First page"
-     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/project-2.jpg"
-     alt="First page"
-     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/aboutPage.jpg"
-     alt="First page"
-     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./publicactivityPage.jpg"
+     style="float: left; margin-right: 10px;" height="362px" width="175px" /><img src="./public/activityPage.jpg"
      alt="First page"
      style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/explorePage.jpg"
      alt="First page"
