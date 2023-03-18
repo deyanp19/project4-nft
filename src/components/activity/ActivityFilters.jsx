@@ -57,7 +57,7 @@ useEffect(()=>{
                                 color='primary'
                                 className={classNames(styles.selectBox)} 
                                 >
-                                     {filters && filters.price.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}     
+                                     {filters && filters.type.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}     
                                </Select>
                               </FormControl> 
                               <FormControl sx={{padding:"4"}} >  

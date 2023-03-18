@@ -30,7 +30,8 @@ export default function Activity() {
 
     async function getActivity(type,sort){
       try {
-        const result=await (await fetch(url+'/explore'+`?price=${type}&sort=${sort}`)).json();
+        //needs to put &sort=${sort} but there is error and its notworking
+        const result=await (await fetch(url+'/activities'+`?type=${type}`)).json();
         if (result.ok == false) {
           const error = await result.json();
           throw {
@@ -73,7 +74,7 @@ export default function Activity() {
 
     useEffect(()=>{
       async function getActivity(){
-        return await (await fetch(url+'/explore')).json();
+        return await (await fetch(url+'/activities')).json();
        }
    
        async function resolve(callback){
