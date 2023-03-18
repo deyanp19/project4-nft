@@ -58,8 +58,7 @@ export default function Product() {
     <div>
     <Container >
       <Header />
-     <ExploreTitle text='oops'/>
-     {/* <ExploreFilters  /> */}
+   
        <ProductContainer {...product} />  
        
       <Footer />

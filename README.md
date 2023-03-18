@@ -1,4 +1,40 @@
 ![banner.png](https://boomcdn.fra1.digitaloceanspaces.com/eb1541cf817d1c7ba6d621bbfdad316a.png)
+<img src="./public/project-1.jpg"
+     alt="First page"
+     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/project-2.jpg"
+     alt="First page"
+     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/aboutPage.jpg"
+     alt="First page"
+     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./publicactivityPage.jpg"
+     alt="First page"
+     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/explorePage.jpg"
+     alt="First page"
+     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/howPage.jpg"
+     alt="First page"
+     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/productPage.jpg"
+     alt="First page"
+     style="float: left; margin-right: 10px;" height="162px" width="75px" />
+
+
+## Used technologies
+- Next.js, SCSS, HTML, JS, @mui, millify, react-countdown
+- Different Next.js modules
+1. Next.js router
+2. Hooks- useEffect, useState, useParams
+
+- [ x ] able to personalize your account preferences
+- [ x ] preferences must be saved in localStorage
+- [ x ] sending requests to server by selecting filters
+- [ x ] displaying data from server - profiles and bids associated with NFT
+- [ x ] numbers and classes
+- [ x ] trending page
+- [ x ] product page
+- [ x ] colector page
+- [ x ] activity page
+- [ x ] explore page
+
+###
+## Thank you!
 
 ## 🤔 How to use
 
@@ -6,6 +42,8 @@
 npm i
 npm run dev
 ```
+
+
 
 ## 😏 Some tips
 
