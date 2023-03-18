@@ -3,13 +3,13 @@
      alt="First page"
      style="float: left; margin-right: 10px;" height="362px" width="175px" /><img src="./public/activityPage.jpg"
      alt="First page"
-     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/explorePage.jpg"
+     style="float: left; margin-right: 10px;" height="262px" width="175px" /><img src="./public/explorePage.jpg"
      alt="First page"
-     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/howPage.jpg"
+     style="float: left; margin-right: 10px;" height="262px" width="175px" /><img src="./public/howPage.jpg"
      alt="First page"
-     style="float: left; margin-right: 10px;" height="162px" width="75px" /><img src="./public/productPage.jpg"
+     style="float: left; margin-right: 10px;" height="262px" width="175px" /><img src="./public/productPage.jpg"
      alt="First page"
-     style="float: left; margin-right: 10px;" height="162px" width="75px" />
+     style="float: left; margin-right: 10px;" height="262px" width="175px" />
 
 
 ## Used technologies
