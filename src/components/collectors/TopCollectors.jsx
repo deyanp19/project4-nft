@@ -6,7 +6,6 @@ import CollectorColumn from './CollectorColumn';
 
 export default function TopCollectors({collectors=[],fooSort}) {
     const {users,filters} =collectors;
-    console.log(users,filters);
 return (
     <Container className={classNames(styles.container)}  >
     <Grid container sx={{ justifyContent:"space-between"}} wrap='nowrap' >

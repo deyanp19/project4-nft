@@ -7,8 +7,6 @@ import Select from '@mui/material/Select';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
                     
  export default function Trending( {cards=[],fooSort} ) {
-
-    console.log(cards.filters);
     return (
         <div>
         <Container className={classNames(styles.container)}  >

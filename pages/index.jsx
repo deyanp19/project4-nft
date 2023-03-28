@@ -44,7 +44,10 @@ export default function Index() {
   }
  
 
-  async function getAuctionData(){
+  async function getAuctionData(sort){
+    if (sort) {
+      fetch(url+'/live-auctions'+`?sort=${sort}`)
+    }
     return await (await fetch(url+'/live-auctions')).json()
   }
   async function getTopCollectorData(sort) {
@@ -58,24 +61,18 @@ export default function Index() {
     return  await data.json();
   }
 
-  async function getAction(sort){
-    if (sort) {
-      fetch(url+'/live-actions'+`?sort=${sort}`)
-    }
-    return fetch(url+'/live-actions')
-  }
+ 
 
   const [featuredCards, setFeaturedCards]=useState([]);
   const [trending,setTrending]=useState([]);
   const [trendingSortVal,setTrendingSortVal]=useState("");
   const [auctions,setAuctions]=useState([]);
-  const [auctionVal,setAuctionVal] =useState([]);
+  const [auctionVal,setAuctionVal] =useState("");
   const [topCollectors,setTopCollectors] = useState([]);
   const [topCollectorsVal,setTopCollectorsVal] = useState("");
 
   async function resolve(callback,sort) {
     let resolvedData =await callback(sort);
-    console.log(resolvedData,callback.name);
     switch (true) {
       case callback.name=='getTrendingData':
         setTrending(resolvedData);
@@ -91,23 +88,22 @@ export default function Index() {
         setTopCollectors(resolvedData);
       break;
 
-      case callback.name==='getAction':
-        setAction(resolvedData);
-      break;
       default:
         break;
     }
   }
   
   const handleSortTrending=(e)=>{
-    console.log(e.target.value)
     setTrendingSortVal(e.target.value);
   }
   const handleSortTopCollectors=(e)=>{
-    console.log(e.target.value)
-
     setTopCollectorsVal(e.target.value)
   }
+  const handleSortAuction=(e)=>{
+    console.log(e.target.value)
+    setAuctionVal(e.target.value);
+  }
+
   useEffect(()=>{
     resolve(getTrendingData,trendingSortVal);
     
@@ -115,6 +111,9 @@ export default function Index() {
   useEffect(()=>{
     resolve(getTopCollectorData,topCollectorsVal)
   },[topCollectorsVal])
+  useEffect(()=>{
+    resolve(getAuctionData,auctionVal)
+  },[auctionVal])
 
   useEffect(()=>{
 
@@ -133,7 +132,7 @@ export default function Index() {
     <Trending cards={trending} fooSort={handleSortTrending}/>
     <TopCollectors collectors={topCollectors} fooSort={handleSortTopCollectors} />
     <How />
-    <Auctions cards={auctions}/>
+    <Auctions cards={auctions} fooSort={handleSortAuction}/>
  
     <Footer />
   

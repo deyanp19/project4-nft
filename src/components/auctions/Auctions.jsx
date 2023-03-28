@@ -6,9 +6,8 @@ import classNames from 'classnames';
 import Select from '@mui/material/Select';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
  
- export default function Auctions( {cards=[]} ) {
+ export default function Auctions( {cards=[],fooSort} ) {
      const {nfts,filters} = cards;
-     console.log(nfts,filters && filters.price);
     return (
         <div>
         <Container className={classNames(styles.container)}  >
@@ -24,14 +23,13 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
                         color='secondary'
                         label='This week'
                         className={classNames(styles.selectBox)} 
+                        onChange={fooSort}
                         >
                       {filters && filters.price.map((filter) => {
                             return (
-                                <Stack direction="column">
                                     <MenuItem key={filter.label} value={filter.value}>
                                     {filter.label}
                                     </MenuItem>
-                                </Stack>
                             );
                         })}  
                         

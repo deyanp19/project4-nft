@@ -6,10 +6,6 @@ import styles from './CollectorColumn.module.scss';
   
 
 export default function CollectorColumn({items=[],keys}) {
-
-console.log(keys);
-
-
     let light= styles.lighter;
     let type;
     return (
@@ -17,8 +13,6 @@ console.log(keys);
           if ((i)%2===0) {
             light =styles.lighter;
             type ='lighter';
-            console.log(type);
-
           } else{
             light===styles.darker;
             type='darker';
