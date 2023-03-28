@@ -24,7 +24,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
                         color='secondary'
                         label='This week'
                         className={classNames(styles.selectBox)} 
-                        onClick={fooSort}
+                        onChange={fooSort}
                         >
                            {cards.filters && cards.filters.sort.map((x)=>{
                                return <MenuItem key={x.label}  value={x.value}>{x.label}</MenuItem>

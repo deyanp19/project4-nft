@@ -37,9 +37,9 @@ export default function Index() {
   let url=process.env.apiUrl
 
   async function getTrendingData(sort) {
-    // if (sort) {
-    //   return await (await fetch(url+'/trending'+`?sort${sort}`)).json()
-    //           }
+    if (sort) {
+      return await (await fetch(url+'/trending'+`?sort${sort}`)).json()
+              }
     return await (await fetch(url+'/trending')).json();
   }
  
@@ -67,7 +67,7 @@ export default function Index() {
   const [trendingSortVal,setTrendingSortVal]=useState("");
   const [auctions,setAuctions]=useState([]);
   const [topCollectors,setTopCollectors] = useState([]);
-
+  const [topCollectorsVal,setTopCollectorsVal] = useState("");
 
   async function resolve(callback,sort) {
     let resolvedData =await callback(sort);
@@ -96,14 +96,17 @@ export default function Index() {
   }
   
   const handleSortTrending=(e)=>{
-    console.log(e.target.dataset.value)
-    setTrendingSortVal(e.target.dataset.value);
-    
+    console.log(e.target.value)
+    setTrendingSortVal(e.target.value);
   }
-  
+  const handleSortTopCollectors=(e)=>{
+
+    setTopCollectorsVal(e.target.value)
+  }
   useEffect(()=>{
-    resolve(getTrendingData,trendingSortVal)
-  },[trendingSortVal])
+    resolve(getTrendingData,trendingSortVal);
+    resolve(getTopCollectorData,topCollectorsVal)
+  },[trendingSortVal,topCollectorsVal])
 
 
   useEffect(()=>{
@@ -121,7 +124,7 @@ export default function Index() {
     <Header />
    <Featured items={featuredCards}/>
     <Trending cards={trending} fooSort={handleSortTrending}/>
-    <TopCollectors collectors={topCollectors} />
+    <TopCollectors collectors={topCollectors} fooSort={handleSortTopCollectors} />
     <How />
     <Auctions cards={auctions}/>
  

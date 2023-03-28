@@ -4,7 +4,7 @@ import { Container, FormControl, Grid, MenuItem, Select, Stack, Typography } fro
 import classNames from 'classnames';
 import CollectorColumn from './CollectorColumn';
 
-export default function TopCollectors({collectors=[]}) {
+export default function TopCollectors({collectors=[],fooSort}) {
     const {users,filters} =collectors;
     console.log(users,filters);
 return (
@@ -21,6 +21,7 @@ return (
                 color='secondary'
                 label='This week'
                 className={classNames(styles.selectBox)} 
+                onChange={fooSort}
                 >
                      {filters && filters.sort.map((filter) => {
               return (
