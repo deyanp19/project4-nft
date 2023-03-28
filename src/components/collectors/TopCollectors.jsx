@@ -42,7 +42,7 @@ return (
        
             { _.chunk(users,3).map((threeMembers,i)=>{
 
-               return <Grid item key={i} justifyContent="center"
+               return <Grid item key={i*3} justifyContent="center"
                alignItems="center"><CollectorColumn items={threeMembers} keys={i*3} /></Grid>
             }) }
           

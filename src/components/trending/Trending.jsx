@@ -6,9 +6,9 @@ import classNames from 'classnames';
 import Select from '@mui/material/Select';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
                     
- export default function Trending( {cards=[]} ) {
+ export default function Trending( {cards=[],fooSort} ) {
 
-    console.log(cards);
+    console.log(cards.filters);
     return (
         <div>
         <Container className={classNames(styles.container)}  >
@@ -24,10 +24,12 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
                         color='secondary'
                         label='This week'
                         className={classNames(styles.selectBox)} 
+                        onClick={fooSort}
                         >
-                            <MenuItem key={'this_week'}  value={'this_week'}>This week</MenuItem>
-                            <MenuItem key={'last_week'} value={'last_week'}>Last week</MenuItem>
-                            <MenuItem key={'last_month'} value={'last_month'}>Last month</MenuItem>
+                           {cards.filters && cards.filters.sort.map((x)=>{
+                               return <MenuItem key={x.label}  value={x.value}>{x.label}</MenuItem>
+                            })}  
+                           
 
                         
                         {/* </TextField> */}
@@ -37,7 +39,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
                 </Grid>
             </Grid>
             <Grid container wrap='nowrap' spacing={1} >
-            {cards.map(x=>{
+            {cards.nfts && cards.nfts.map(x=>{
                return <Grid item lg={3} key={x.name} ><Card  mediaUrl={x.mediaUrl}  name={x.name} title={x.name} likes={x.likes}  verified={x.user?.verified}   price={x.price} currency={x.currency} timeLeft={x.timeLeft} /></Grid>
             })}            
             </Grid>
