@@ -37,20 +37,20 @@ export default function Index() {
   let url=process.env.apiUrl
 
   async function getTrendingData(sort) {
-
-    if (sort) {
-      
-      return await (await fetch(url+'/trending'+`?sort${sort}`)).json()
-    }
+    // if (sort) {
+    //   return await (await fetch(url+'/trending'+`?sort${sort}`)).json()
+    //           }
     return await (await fetch(url+'/trending')).json();
-
   }
  
 
   async function getAuctionData(){
     return await (await fetch(url+'/live-auctions')).json()
   }
-  async function getTopCollectorData() {
+  async function getTopCollectorData(sort) {
+    if (sort) {
+      return await (await fetch(url+'/top-collectors'+`?sort${sort}`)).json();
+    }
     return await (await fetch(url+'/top-collectors')).json();
   }
   async function getFeaturedPics() {
