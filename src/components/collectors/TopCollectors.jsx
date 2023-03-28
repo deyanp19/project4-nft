@@ -25,11 +25,11 @@ return (
                 >
                      {filters && filters.sort.map((filter) => {
               return (
-                  <Stack direction="column">
+                 
                 <MenuItem key={filter.label} value={filter.value}>
                   {filter.label}
                 </MenuItem>
-                </Stack>
+                 
               );
             })}   
                 

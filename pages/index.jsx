@@ -38,7 +38,7 @@ export default function Index() {
 
   async function getTrendingData(sort) {
     if (sort) {
-      return await (await fetch(url+'/trending'+`?sort${sort}`)).json()
+      return await (await fetch(url+'/trending'+`?sort=${sort}`)).json()
               }
     return await (await fetch(url+'/trending')).json();
   }
@@ -49,7 +49,7 @@ export default function Index() {
   }
   async function getTopCollectorData(sort) {
     if (sort) {
-      return await (await fetch(url+'/top-collectors'+`?sort${sort}`)).json();
+      return await (await fetch(url+'/top-collectors'+`?sort=${sort}`)).json();
     }
     return await (await fetch(url+'/top-collectors')).json();
   }
@@ -58,7 +58,10 @@ export default function Index() {
     return  await data.json();
   }
 
-  async function getAction(){
+  async function getAction(sort){
+    if (sort) {
+      fetch(url+'/live-actions'+`?sort=${sort}`)
+    }
     return fetch(url+'/live-actions')
   }
 
@@ -66,6 +69,7 @@ export default function Index() {
   const [trending,setTrending]=useState([]);
   const [trendingSortVal,setTrendingSortVal]=useState("");
   const [auctions,setAuctions]=useState([]);
+  const [auctionVal,setAuctionVal] =useState([]);
   const [topCollectors,setTopCollectors] = useState([]);
   const [topCollectorsVal,setTopCollectorsVal] = useState("");
 
@@ -100,14 +104,17 @@ export default function Index() {
     setTrendingSortVal(e.target.value);
   }
   const handleSortTopCollectors=(e)=>{
+    console.log(e.target.value)
 
     setTopCollectorsVal(e.target.value)
   }
   useEffect(()=>{
     resolve(getTrendingData,trendingSortVal);
+    
+  },[trendingSortVal])
+  useEffect(()=>{
     resolve(getTopCollectorData,topCollectorsVal)
-  },[trendingSortVal,topCollectorsVal])
-
+  },[topCollectorsVal])
 
   useEffect(()=>{
 
