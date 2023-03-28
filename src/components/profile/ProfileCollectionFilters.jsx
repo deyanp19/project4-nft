@@ -21,7 +21,7 @@ export default function ProfileCollectionFilters({filters={
         value: 5,
       },
     ],
-    }}) {
+    },priceFilter,fooSort}) {
     return (
         <div className={styles["profile-collection-filters"]}>
             <Grid container direction="row"  wrap='nowrap' spacing={2} justifyContent="space-between"    alignItems="center">
@@ -31,6 +31,7 @@ export default function ProfileCollectionFilters({filters={
                                 id="sort-order"
                                 value={1}
                                 label={filters.sort.label}
+                                onChange={fooSort}
                                 >
                                     {filters.sort.map((pumba)=><MenuItem key={pumba.value} value={pumba.value}>{pumba.label}</MenuItem>)}
                                 </Select>
@@ -43,6 +44,8 @@ export default function ProfileCollectionFilters({filters={
                                 color='secondary'
                                 label='This week'
                                 className={classNames(styles.selectBox)} 
+                                onChange={priceFilter}
+
                                 >
                                    {filters.price.map((timon)=><MenuItem key={timon.value} value={timon.value}>{timon.label}</MenuItem>)}
 

@@ -3,7 +3,8 @@ import Card from '../card/Card';
 import styles from './ProfileCollection.module.scss'
 import ProfileCollectionFilters from './ProfileCollectionFilters'
 
-export default function ProfileCollection({user,filters,items=[]}){
+export default function ProfileCollection({user,filters,items=[],fooPrice,fooSort}){
+    
     return (
         <div className={styles["profile-collection"]}>
             <Container>
@@ -12,7 +13,7 @@ export default function ProfileCollection({user,filters,items=[]}){
                         <Typography variant='h3' inputprops={{textTransform:'uppercase'}}>Collection</Typography>
                     </Grid>
                     <Grid item xs={9}>
-                        <ProfileCollectionFilters />
+                        <ProfileCollectionFilters priceFilter={fooPrice} fooSort={fooSort} />
                     </Grid>
                     
             </Grid>

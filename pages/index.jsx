@@ -46,7 +46,7 @@ export default function Index() {
 
   async function getAuctionData(sort){
     if (sort) {
-      fetch(url+'/live-auctions'+`?sort=${sort}`)
+     return fetch(url+'/live-auctions'+`?sort=${sort}`);
     }
     return await (await fetch(url+'/live-auctions')).json()
   }
@@ -118,9 +118,9 @@ export default function Index() {
   useEffect(()=>{
 
     resolve(getTrendingData);
-    resolve(getAuctionData);
     resolve(getFeaturedPics);
     resolve(getTopCollectorData);
+    resolve(getAuctionData);
 
   },[])
 

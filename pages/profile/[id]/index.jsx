@@ -17,10 +17,12 @@ export default function Profile() {
   let url = process.env.apiUrl;
   const [profile, setProfile]=useState('');
   const [profileFilters,setProfileFilters] = useState('');
-
-  async function getProfile(id){
+  const [filtersPriceVal,setFiltersPriceVal] =useState("");
+  const [filtersSort,setFiltersSort] = useState("");
+  async function getProfile(id,price,sort){
       console.log(url+`/users/${id}`)
-    return await (await fetch(url+`/users/${id}`)).json();
+
+    return await (await fetch(url+`/users/${id}`+`?price=${price}`+`&sort=${sort}`)).json();
   }
 
   async function resolve(callback,id) {
@@ -32,6 +34,21 @@ export default function Profile() {
   let router=useRouter();
   const id = router.query.id;
   console.log(id);
+
+  const handlePriceValue=(e)=>{
+    console.log('foo handlePrice')
+    setFiltersPriceVal(e.target.value);
+  }
+
+  const handleSortValue=(e)=>{
+    console.log(e.target.value)
+    setFiltersSort(e.target.value)
+  }
+
+  useEffect(()=>{
+  
+    resolve(getProfile,id,price,filtersSort)
+  },[filtersPriceVal,filtersSort])
 
     useEffect(()=>{
         resolve(getProfile,id);
@@ -45,7 +62,7 @@ export default function Profile() {
              <ProfileHero />
             <ProfileUser/>
            
-            <ProfileCollection user={profile} filters={profileFilters}/>  
+            <ProfileCollection user={profile} filters={profileFilters} fooSort={handleSortValue} fooPrice={handlePriceValue}/>  
            
           <Footer />
         </Container>
