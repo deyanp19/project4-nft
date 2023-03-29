@@ -22,13 +22,13 @@ export default function Profile() {
   const [filtersSort,setFiltersSort] = useState("");
 
   async function getProfile(id,price,sort){
-   
-            let result={};
+    
             if (price&&sort) {
                 return await (await fetch(url+`/users/${id}?price=${price}&sort=${sort}`)).json();
-            } else if (price){
+            } else if (price>=0&&price!=""){
+              console.log('only price: ',price)
               return await (await fetch(url+`/users/${id}?price=${price}`)).json();
-            } else if (sort>=0) {
+            } else if (sort>=0&&sort!="") {
               return await (await fetch(url+`/users/${id}?sort=${sort}`)).json();
             }
             return await (await fetch(url+`/users/${id}`)).json();
@@ -45,7 +45,6 @@ export default function Profile() {
 
   let router=useRouter();
   let id=router.query.id;
-  console.log(id);
 
   const handlePriceValue=(e)=>{
     console.log(e.target.value)

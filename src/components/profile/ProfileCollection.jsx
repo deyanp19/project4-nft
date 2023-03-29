@@ -5,7 +5,7 @@ import styles from './ProfileCollection.module.scss'
 import ProfileCollectionFilters from './ProfileCollectionFilters'
 
 export default function ProfileCollection({user,filters,items=[],fooPrice,fooSort}){
-    console.log(user,filters)
+
     
     return (
         <div className={styles["profile-collection"]}>
