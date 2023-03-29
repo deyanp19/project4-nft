@@ -47,32 +47,32 @@ export default function Profile() {
     setFiltersSort(e.target.value)
   }
 
-  // useEffect(()=>{
+  useEffect(()=>{
   
-  //   if (filtersPriceVal&&filtersSort) {
-  //     return resolve(getProfile,id,filtersPriceVal,filtersSort);
-  //   }
-  //   if (filtersPriceVal) {
+    if (filtersPriceVal&&filtersSort) {
+      return resolve(getProfile,id,filtersPriceVal,filtersSort);
+    }
+    if (filtersPriceVal) {
       
-  //     resolve(getProfile,id,filtersPriceVal,filtersSort)
-  //   }
-  //   if (filtersSort) {
+      resolve(getProfile,id,filtersPriceVal,filtersSort)
+    }
+    if (filtersSort) {
       
-  //     resolve(getProfile,id,filtersPriceVal,filtersSort)
-  //   }
-  // },[filtersPriceVal,filtersSort])
+      resolve(getProfile,id,filtersPriceVal,filtersSort)
+    }
+  },[filtersPriceVal,filtersSort])
 
     useEffect(()=>{
         resolve(getProfile,id);
     },[router]);
 
-    useEffect(() => {
-      if (filtersPriceVal !== "" && filtersSort !== "") {
-        resolve(getProfile, id, filtersPriceVal, filtersSort);
-      } else {
-        resolve(getProfile, id);
-      }
-    }, [id, filtersPriceVal, filtersSort, router]);
+    // useEffect(() => {
+    //   if (filtersPriceVal !== "" && filtersSort !== "") {
+    //     resolve(getProfile, id, filtersPriceVal, filtersSort);
+    //   } else {
+    //     resolve(getProfile, id);
+    //   }
+    // }, [id, filtersPriceVal, filtersSort, router]);
     
 
     return (
