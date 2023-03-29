@@ -17,26 +17,28 @@ export default function Profile() {
   let url = process.env.apiUrl;
   const [profile, setProfile]=useState('');
   const [profileFilters,setProfileFilters] = useState('');
+
   const [filtersPriceVal,setFiltersPriceVal] =useState("");
   const [filtersSort,setFiltersSort] = useState("");
+
   async function getProfile(id,price,sort){
       console.log(url+`/users/${id}`)
 
-    return await (await fetch(url+`/users/${id}`+`?price=${price}`+`&sort=${sort}`)).json();
+    return await (await fetch(url+`/users/${id}?price=${price}&sort=${sort}`)).json();
   }
 
-  async function resolve(callback,id) {
-    let {user,filters} = await callback(id);
+  async function resolve(callback,id,price,sort) {
+    let {user,filters} = await callback(id,price,sort);
     setProfile(user);
     setProfileFilters(filters)
   }
 
   let router=useRouter();
-  const id = router.query.id;
+  let id=router.query.id;
   console.log(id);
 
   const handlePriceValue=(e)=>{
-    console.log('foo handlePrice')
+    console.log(e.target.value)
     setFiltersPriceVal(e.target.value);
   }
 
@@ -45,14 +47,33 @@ export default function Profile() {
     setFiltersSort(e.target.value)
   }
 
-  useEffect(()=>{
+  // useEffect(()=>{
   
-    resolve(getProfile,id,price,filtersSort)
-  },[filtersPriceVal,filtersSort])
+  //   if (filtersPriceVal&&filtersSort) {
+  //     return resolve(getProfile,id,filtersPriceVal,filtersSort);
+  //   }
+  //   if (filtersPriceVal) {
+      
+  //     resolve(getProfile,id,filtersPriceVal,filtersSort)
+  //   }
+  //   if (filtersSort) {
+      
+  //     resolve(getProfile,id,filtersPriceVal,filtersSort)
+  //   }
+  // },[filtersPriceVal,filtersSort])
 
     useEffect(()=>{
         resolve(getProfile,id);
     },[router]);
+
+    useEffect(() => {
+      if (filtersPriceVal !== "" && filtersSort !== "") {
+        resolve(getProfile, id, filtersPriceVal, filtersSort);
+      } else {
+        resolve(getProfile, id);
+      }
+    }, [id, filtersPriceVal, filtersSort, router]);
+    
 
     return (
         <div>

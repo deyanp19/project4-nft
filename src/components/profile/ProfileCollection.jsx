@@ -1,9 +1,11 @@
 import { Container, Grid, Typography } from '@mui/material'
+import { useEffect } from 'react';
 import Card from '../card/Card';
 import styles from './ProfileCollection.module.scss'
 import ProfileCollectionFilters from './ProfileCollectionFilters'
 
 export default function ProfileCollection({user,filters,items=[],fooPrice,fooSort}){
+    console.log(user,filters)
     
     return (
         <div className={styles["profile-collection"]}>
@@ -13,11 +15,11 @@ export default function ProfileCollection({user,filters,items=[],fooPrice,fooSor
                         <Typography variant='h3' inputprops={{textTransform:'uppercase'}}>Collection</Typography>
                     </Grid>
                     <Grid item xs={9}>
-                        <ProfileCollectionFilters priceFilter={fooPrice} fooSort={fooSort} />
+                        {filters &&  <ProfileCollectionFilters filters={filters} fooPrice={fooPrice} fooSort={fooSort} />    }
                     </Grid>
                     
             </Grid>
-            {items.map((item)=><Card {...item}></Card>)}
+            {user && <Card ></Card> }
             </Container>
 
         </div>
