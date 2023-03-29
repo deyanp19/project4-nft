@@ -22,9 +22,30 @@ export default function Profile() {
   const [filtersSort,setFiltersSort] = useState("");
 
   async function getProfile(id,price,sort){
-      console.log(url+`/users/${id}`)
-
-    return await (await fetch(url+`/users/${id}?price=${price}&sort=${sort}`)).json();
+    try { 
+      let result={};
+      if (price&&sort) {
+          result=await (await fetch(url+`/users/${id}?price=${price}&sort=${sort}`)).json();
+      } else if (price){
+         result=await (await fetch(url+`/users/${id}?price=${price}`)).json();
+      } else if (sort) {
+         result=await (await fetch(url+`/users/${id}?sort=${sort}`)).json();
+      }
+      result=await (await fetch(url+`/users/${id}`)).json();
+      if (result.ok == false) {
+        const error = await result.json();
+        throw {
+            message: error.error,
+            code: error.code
+        }
+    }
+      return result;
+      
+    } catch (error) {
+        console.log(error)
+        throw error;
+    }
+     
   }
 
   async function resolve(callback,id,price,sort) {
@@ -65,16 +86,6 @@ export default function Profile() {
     useEffect(()=>{
         resolve(getProfile,id);
     },[router]);
-
-    // useEffect(() => {
-    //   if (filtersPriceVal !== "" && filtersSort !== "") {
-    //     resolve(getProfile, id, filtersPriceVal, filtersSort);
-    //   } else {
-    //     resolve(getProfile, id);
-    //   }
-    // }, [id, filtersPriceVal, filtersSort, router]);
-    
-
     return (
         <div>
         <Container >
