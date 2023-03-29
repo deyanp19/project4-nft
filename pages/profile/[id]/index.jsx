@@ -22,29 +22,18 @@ export default function Profile() {
   const [filtersSort,setFiltersSort] = useState("");
 
   async function getProfile(id,price,sort){
-    try { 
-      let result={};
-      if (price&&sort) {
-          result=await (await fetch(url+`/users/${id}?price=${price}&sort=${sort}`)).json();
-      } else if (price){
-         result=await (await fetch(url+`/users/${id}?price=${price}`)).json();
-      } else if (sort) {
-         result=await (await fetch(url+`/users/${id}?sort=${sort}`)).json();
-      }
-      result=await (await fetch(url+`/users/${id}`)).json();
-      if (result.ok == false) {
-        const error = await result.json();
-        throw {
-            message: error.error,
-            code: error.code
-        }
-    }
-      return result;
-      
-    } catch (error) {
-        console.log(error)
-        throw error;
-    }
+   
+            let result={};
+            if (price&&sort) {
+                return await (await fetch(url+`/users/${id}?price=${price}&sort=${sort}`)).json();
+            } else if (price){
+              return await (await fetch(url+`/users/${id}?price=${price}`)).json();
+            } else if (sort>=0) {
+              return await (await fetch(url+`/users/${id}?sort=${sort}`)).json();
+            }
+            return await (await fetch(url+`/users/${id}`)).json();
+         
+        
      
   }
 
